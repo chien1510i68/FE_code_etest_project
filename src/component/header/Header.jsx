@@ -1,10 +1,11 @@
 "use client";
-import { Button, Dropdown, Menu, notification, Space } from "antd";
+import { Button, Dropdown, Menu, message, notification, Space } from "antd";
 import Link from "next/link";
 import { useState } from "react";
 import RegisterModal from "../modal/RegisterModal";
 import LoginModal from "../modal/LoginModal";
 import InforUserModal from "../modal/InforUserModal";
+import RegisterAccountModal from '../modal/RegisterAccountModal'
 const menus = [
   {
     label: <Link href="/">TRANG CHỦ</Link>,
@@ -63,14 +64,19 @@ const menus = [
     key: "test",
   },
   {
-    label: "ĐĂNG KÝ TƯ VẤN",
-    key: "advise",
+    label:(
+      <h2 onClick={()=>{
+        message.info("Dang nhap cai lol")
+      }}> ĐĂNG KÝ TƯ VẤN</h2>
+    ),
+    key: "register",
   },
 ];
 
 function Header() {
   const [current, setCurrent] = useState("home");
   const [isModalRegisterOpen, setIsModalRegisterOpen] = useState(false);
+  const [isModalRegisterAccountOpen, setIsModalRegisterAccountOpen] = useState(false);
   const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
   const [isModalInforUserOpen, setIsModalInforUsernOpen] = useState(false);
   const showModalRegister = () => {
@@ -84,6 +90,21 @@ function Header() {
   const handleCancelRegister = () => {
     setIsModalRegisterOpen(false);
   };
+  
+  
+  const showModalRegisterAccount = () => {
+    // console.log("123");
+    setIsModalRegisterAccountOpen(true);
+  };
+  const handleOkRegisterAccount = () => {
+    console.log("123");
+    // setIsModalRegisterOpen(false);
+  };
+  const handleCancelRegisterAccount = () => {
+    setIsModalRegisterAccountOpen(false);
+  };
+
+
   const showModalLogin = () => {
     setIsModalLoginOpen(true);
   };
@@ -119,6 +140,12 @@ function Header() {
     // setCurrent(e.key);
   };
 
+  const onclickMenu = (e)=>{
+    if(e.key == "register"){
+      showModalRegisterAccount();
+    }
+  }
+
   // const onClick = (e) => {
   //   message.info(`Click on item ` + e.key);
   // };
@@ -149,7 +176,7 @@ function Header() {
           <div className=" flex items-center pr-[25rem]">
             <Menu
               className="font-[600] items-center w-[70vw]"
-              onClick={onClick}
+              onClick={onclickMenu}
               selectedKeys={[current]}
               mode="horizontal"
             >
@@ -157,7 +184,7 @@ function Header() {
                 item.children ? (
                   <Menu.SubMenu key={item.key} title={item.label}>
                     {item.children.map((subItem) => (
-                      <Menu.Item key={subItem.key} className="">
+                      <Menu.Item key={subItem.key} className="" onClick={(e) =>{onclickMenu}}>
                         <Link href="/">{subItem.label}</Link>
                       </Menu.Item>
                     ))}
@@ -198,6 +225,11 @@ function Header() {
         handleCancel={handleCancelRegister}
         handleOk={handleOkRegister}
       />
+      <RegisterAccountModal
+        isModalOpen={isModalRegisterAccountOpen}
+        handleCancel={handleCancelRegisterAccount}
+        handleOk={handleOkRegisterAccount}
+      />
       <LoginModal
         isModalOpen={isModalLoginOpen}
         handleCancel={handleCancelLogin}
@@ -210,6 +242,8 @@ function Header() {
         handleOk={handleOkInforUser}
       />
     </>
+
+    
   );
 }
 
