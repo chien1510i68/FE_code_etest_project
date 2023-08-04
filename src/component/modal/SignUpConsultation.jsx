@@ -1,9 +1,9 @@
 import { Modal, Form, Button, Input, Row, Col } from "antd";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
+
 import React from "react";
 import Image from "next/image";
 import balo from "public/zyro-image.svg";
-const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
+const SignUpConsultation = ({ isModalOpen, handleOk, handleCancel }) => {
   const onFinish = async (data) => {
     console.log(data);
   };
@@ -23,7 +23,7 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
             <Image src={balo} alt="icon" height={140} width={157} />
           </Col>
           <Col span={15} className="text-white text-left my-[10px]">
-            <h2 className="font-black text-[32px] cl">Đăng ký</h2>
+            <h2 className="font-black text-[32px] cl">Đăng ký tư vấn</h2>
             <p className="font-normal text-[19.4px]">
               E-Test sẽ liên hệ với bạn sớm nhất có thể
             </p>
@@ -35,38 +35,46 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
           initialValues={{
             remember: true,
           }}
-          //   layout="vertical"
+          layout="vertical"
           onFinish={onFinish}
         >
           <Form.Item
-            name="username"
+            label="Họ và tên"
+            name="fullName"
             rules={[
+              { required: true, message: "Vui lòng nhập họ và tên!" },
+              { type: "text", message: "Vui lòng nhập họ và tên!" },
+            ]}
+          >
+            <Input className="h-52" />
+          </Form.Item>
+
+          <Form.Item
+            label="Số điện thoại"
+            type=""
+            name="phone"
+            rules={[
+              { required: true, message: "Vui lòng nhập số điện thoại!" },
               {
-                required: true,
-                message: "Vui lòng nhập tài khoản.",
+                pattern: /^[0-9]{10,}$/,
+                message: "Số điện thoại không hợp lệ!",
               },
             ]}
           >
-            <Input
-              prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="Tài khoản: "
-              allowClear
-            />
+            <Input className="h-52" />
           </Form.Item>
           <Form.Item
-            name="password"
+            label="Email"
+            name="email"
             rules={[
-              {
-                required: true,
-                message: "Vui lòng nhập mật khẩu.",
-              },
+              { required: true, message: "Vui lòng nhập email!" },
+              { type: "email", message: "Email không hợp lệ!" },
             ]}
           >
-            <Input.Password
-              prefix={<LockOutlined className="site-form-item-icon" />}
-              type="password"
-              placeholder="Mật khẩu:"
-            />
+            <Input className="h-52" />
+          </Form.Item>
+          <Form.Item label="Nội dung tư vấn" name="content">
+            <Input.TextArea rows={5} />
           </Form.Item>
 
           <Form.Item className="flex justify-end ">
@@ -83,4 +91,4 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
     </>
   );
 };
-export default RegisterModal;
+export default SignUpConsultation;

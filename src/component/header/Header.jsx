@@ -1,10 +1,10 @@
 "use client";
-import { Button, Dropdown, Menu, notification, Space } from "antd";
+import { Button, Dropdown, Image, Menu, notification, Space } from "antd";
 import Link from "next/link";
 import { useState } from "react";
 import RegisterModal from "../modal/RegisterModal";
 import LoginModal from "../modal/LoginModal";
-import InforUserModal from "../modal/InforUserModal";
+import SignUpConsultation from "../modal/SignUpConsultation";
 const menus = [
   {
     label: <Link href="/">TRANG CHỦ</Link>,
@@ -180,10 +180,10 @@ function Header() {
                 arrow
               >
                 <a onClick={(e) => e.preventDefault()}>
-                  <img
+                  <Image
                     src="/profile-user.png"
                     className="pl-[2rem] my-auto h-[7rem] cursor-pointer "
-                    alt=""
+                    alt="sth"
                   />
                 </a>
               </Dropdown>
@@ -204,7 +204,7 @@ function Header() {
         handleOk={handleOkLogin}
       />
 
-      <InforUserModal
+      <SignUpConsultation
         isModalOpen={isModalInforUserOpen}
         handleCancel={handleCancelInforUser}
         handleOk={handleOkInforUser}
