@@ -165,7 +165,7 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
           onFinish={onFinish}
         >
           <Form.Item
-            label="Họ và tên"
+            // label="Họ và tên"
             name="fullName"
             rules={[
               { required: true, message: "Vui lòng nhập họ và tên!" },
@@ -190,7 +190,7 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
             />
           </Form.Item>
           <Form.Item
-            label="Số điện thoại"
+            // label="Số điện thoại"
             type=""
             name="phone"
             rules={[
@@ -208,7 +208,7 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
             />
           </Form.Item>
           <Form.Item
-            label="Email"
+            // label="Email"
             name="email"
             rules={[
               { required: true, message: "Vui lòng nhập email!" },
