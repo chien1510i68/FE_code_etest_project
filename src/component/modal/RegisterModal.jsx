@@ -171,7 +171,7 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
               { type: "text", message: "Vui lòng nhập họ và tên!" },
             ]}
           >
-            <Input className="h-52" />
+            <Input className="h-55" />
           </Form.Item>
 
           <Form.Item
