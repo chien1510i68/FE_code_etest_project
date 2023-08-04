@@ -109,7 +109,6 @@ import { Modal, Form, Button, Input, Row, Col } from "antd";
 import React from "react";
 import Image from "next/image";
 import balo from "public/zyro-image.svg";
-import { LockOutlined, MailOutlined, PhoneOutlined, UserOutlined } from "@ant-design/icons";
 const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
   const onFinish = async (data) => {
     console.log(data);
@@ -149,9 +148,9 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
             <Image src={balo} alt="icon" height={140} width={157} />
           </Col>
           <Col span={15} className="text-white text-left my-[10px]">
-            <h2 className="font-black text-[32px] cl">Đăng ký</h2>
+            <h2 className="font-black text-[32px] cl">Đăng ký tư vấn</h2>
             <p className="font-normal text-[19.4px]">
-              Học tiếng anh với E-Test
+              E-Test sẽ liên hệ với bạn sớm nhất có thể
             </p>
           </Col>
         </Row>
@@ -165,32 +164,18 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
           onFinish={onFinish}
         >
           <Form.Item
-            // label="Họ và tên"
+            label="Họ và tên"
             name="fullName"
             rules={[
               { required: true, message: "Vui lòng nhập họ và tên!" },
               { type: "text", message: "Vui lòng nhập họ và tên!" },
             ]}
           >
-            <Input
-              className="h-52"
-              prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="usename"
-            />
+            <Input className="h-52" />
           </Form.Item>
+
           <Form.Item
-            name="password"
-            rules={[{ required: true, message: "Please input your password!" }]}
-          >
-            <Input
-              className="h-52"
-              prefix={<LockOutlined className="site-form-item-icon" />}
-              type="password"
-              placeholder="Password"
-            />
-          </Form.Item>
-          <Form.Item
-            // label="Số điện thoại"
+            label="Số điện thoại"
             type=""
             name="phone"
             rules={[
@@ -201,27 +186,21 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
               },
             ]}
           >
-            <Input
-              className="h-52"
-              prefix={<PhoneOutlined className="site-form-item-icon" />}
-              placeholder="Nhập số điện thoại"
-            />
+            <Input className="h-52" />
           </Form.Item>
           <Form.Item
-            // label="Email"
+            label="Email"
             name="email"
             rules={[
               { required: true, message: "Vui lòng nhập email!" },
               { type: "email", message: "Email không hợp lệ!" },
             ]}
           >
-            <Input
-              className="h-52"
-              prefix={<MailOutlined className="site-form-item-icon" />}
-              placeholder="Nhập số điện thoại"
-            />
+            <Input className="h-52" />
           </Form.Item>
-         
+          <Form.Item label="Nội dung tư vấn" name="content">
+            <Input.TextArea rows={5} />
+          </Form.Item>
 
           <Form.Item className="flex justify-end ">
             <Button
@@ -229,7 +208,7 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
               htmlType="submit"
               className="rounded-[50px] bg-[#FB9400]"
             >
-              Dăng ký
+              Gửi thông tin
             </Button>
           </Form.Item>
         </Form>
