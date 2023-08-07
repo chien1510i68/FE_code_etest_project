@@ -100,12 +100,12 @@ function IeltsPage(props) {
       </>
 
       <>
-            <h2 className="title">Lộ trình học </h2>
-
+        <h2 className="title">Lộ trình học </h2>
       </>
 
       <>
-      <FormRegister/>
+        <h2 className="title">Đăng ký khóa học</h2>
+        <FormRegister />
       </>
     </div>
   );

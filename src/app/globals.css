@@ -14,7 +14,7 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
     --box-shadow: rgba(149, 157, 165, 0.2) 20px 8px 24px !important;
-    --primary-color: #fb9400;
+    /* --primary-color: #fb9400; */
   }
 }
 
@@ -41,7 +41,7 @@ html {
 
 }
 .custom-btn{
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
   /* padding: 2rem 6rem; */
   color: #fff;
   border: none;
