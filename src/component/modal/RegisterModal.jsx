@@ -1,5 +1,5 @@
 import { Modal, Form, Button, Input, Row, Col } from "antd";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
+// import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import React from "react";
 import Image from "next/image";
 import balo from "public/zyro-image.svg";

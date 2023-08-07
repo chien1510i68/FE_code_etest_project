@@ -90,8 +90,8 @@ const FormRegister = () => (
     </div>
 
     <Form.Item>
-      <Button type="primary" htmlType="submit" className="bg-[#FB9400] block ml-auto  hover:opacity-80  my-[10rem] px-[5rem]">
-       Đăng ký
+      <Button type="primary" htmlType="submit" className="bg-[#FB9400] block mx-auto hover:opacity-80  my-[10rem] px-[5rem]">
+       Gửi thông tin 
       </Button>
     </Form.Item>
   </Form>

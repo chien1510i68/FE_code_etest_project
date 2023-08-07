@@ -146,7 +146,7 @@ export default function Home() {
         </Row>
       </div>
       <div className="px-[25rem] mt-[25rem]">
-        <h2 className="text-[8rem] font-[500] text-center mb-[10rem] break-before-column text-[#f79500]">
+        <h2 className="text-[8rem] font-[500] text-center mb-[10rem]  break-before-column text-[#f79500] animate__animated animate__bounce">
           Thế mạnh của chúng tôi
         </h2>
         <Row gutter={[32, 60]} className="mx-[100px]">

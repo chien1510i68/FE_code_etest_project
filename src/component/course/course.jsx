@@ -1,90 +1,28 @@
+import { Col, Row } from "antd";
 import React from "react";
 
 function Course(props) {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-evenly",
-        margin: "30px",
-      }}
-    >
-      <div
-        style={{
-          height: "883px",
-          width: "480px",
-          backgroundColor: "white",
-          boxShadow: "2px 4px #aaaaaa",
-          //   border: "solid 2px #000000",
-        }}
+    <>
+      <Col
+        span={8}
+        className="border-[1px] border-[var(--primary-color)] border-solid rounded-[5px]"
       >
-        <div
-          style={{
-            height: "80px",
-            backgroundColor: "#FB9400",
-            color: "white",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          KHÓA ÔN B1
-        </div>
-        <div style={{ margin: "30px", height: "690px" }}>Nội dung</div>
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <button
-            style={{
-              height: " 38px",
-              width: "112px",
-              backgroundColor: "#FB9400",
-              color: "white",
-              borderRadius: "8px",
-              boxShadow: "4px #aaaaaa",
-            }}
-          >
-            {" "}
-            ĐĂNG KÝ HỌC
-          </button>
-        </div>
-      </div>
-      <div
-        style={{
-          height: "883px",
-          width: "480px",
-          backgroundColor: "white",
-          boxShadow: "2px 4px #aaaaaa",
-        }}
-      >
-        <div
-          style={{
-            height: "80px",
-            backgroundColor: "#FB9400",
-            color: "white",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          KHÓA ÔN B2
-        </div>
-        <div style={{ margin: "30px", height: "690px" }}>Nội dung</div>
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <button
-            style={{
-              height: " 38px",
-              width: "112px",
-              backgroundColor: "#FB9400",
-              color: "white",
-              borderRadius: "8px",
-              boxShadow: "4px #aaaaaa ",
-            }}
-          >
-            {" "}
-            ĐĂNG KÝ HỌC
-          </button>
-        </div>
-      </div>
-    </div>
+        <h2 className="uppercase text-[5rem] font-[700] py-[2rem] bg-[var(--primary-color)] text-[#fff] text-center ">
+          Khóa ôn B1
+        </h2>
+        <p className="px-[10rem] py-[5rem] h-[100rem] ">
+          Nội dung khóa học : Nội dung khóa học : Nội dung khóa học : Nội dung
+          khóa học : Nội dung khóa học : Nội dung khóa học : Nội dung khóa học :
+          Nội dung khóa học : Nội dung khóa học : Nội dung khóa học : Nội dung
+          khóa học : Nội dung khóa học : Nội dung khóa học : Nội dung khóa học :
+          Nội dung khóa học : Nội dung khóa học : Nội dung khóa học : Nội dung
+          khóa học : Nội dung khóa học : Nội dung khóa học : Nội dung khóa học :
+          Nội dung khóa học : Nội dung khóa học :{" "}
+        </p>
+      </Col>
+      <Col span={4}></Col>
+    </>
   );
 }
 

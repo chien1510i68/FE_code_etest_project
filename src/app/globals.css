@@ -13,11 +13,13 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --box-shadow: rgba(149, 157, 165, 0.2) 20px 8px 24px !important;
+    --primary-color: #FB9400;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb)); */
   background: linear-gradient(
       to bottom,
       transparent,

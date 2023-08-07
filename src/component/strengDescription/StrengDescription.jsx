@@ -3,7 +3,7 @@ import React from "react";
 function StrengthDescription(props) {
   const { item } = props;
   return (
-    <div className="bg-[#fff] shadow-[0_0px_26px_-2px_#ffc60091] shadow-[#6c6a6391] relative rounded-[20px] hover:bg-[#f9f3f3] hover:delay-100 hover:duration-300 hover:ease-in-out">
+    <div className="bg-[#fff] shadow-[0_0px_26px_-2px_#ffc60091] shadow-[#6c6a6391] relative rounded-[20px] hover:bg-[#f9f3f3] hover:delay-50 hover:duration-300 hover:ease-in-out">
       <div className="absolute text-[#fff] left-[50%] top-[-7rem] translate-x-[-50%]    ">
         {React.cloneElement(item.icon, {
           className:
