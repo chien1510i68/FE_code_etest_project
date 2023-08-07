@@ -9,7 +9,7 @@ function IeltsIntro(props) {
         <Col
           span={7}
           key={index}
-          className="border-[2px]  p-[4rem]  border-solid border-[var(--primary-color)] mt-[20rem]"
+          className="border-[2px]  p-[4rem]  border-solid border-primaryColor mt-[20rem]"
         >
           <img
             src={item.image}
@@ -19,9 +19,7 @@ function IeltsIntro(props) {
           <p className="text-[4.5rem] text-center font-[600] py-[2rem] uppercase ">
             {item.title}
           </p>
-          <span className="text-[4rem] text-center">
-           {item.description}
-          </span>
+          <span className="text-[4rem] text-center">{item.description}</span>
         </Col>
       ))}
     </Row>

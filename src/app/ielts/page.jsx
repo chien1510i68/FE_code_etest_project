@@ -93,19 +93,18 @@ function IeltsPage(props) {
       <>
         <h2 className="title">Thông tin khóa học </h2>
         <Row className="mx-[100rem] mt-[50px] " gutter={0}>
-          {inforCourses.map((item) => (
-            <Course item={item} />
+          {inforCourses.map((item, ind) => (
+            <Course item={item} key={ind} />
           ))}
         </Row>
       </>
 
       <>
-            <h2 className="title">Lộ trình học </h2>
-
+        <h2 className="title">Lộ trình học </h2>
       </>
 
       <>
-      <FormRegister/>
+        <FormRegister />
       </>
     </div>
   );
