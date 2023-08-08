@@ -461,13 +461,13 @@ function Header() {
                 placement="bottom"
                 arrow
               >
-                <a onClick={(e) => e.preventDefault()}>
+                <p onClick={(e) => e.preventDefault()}>
                   <img
                     src="/profile-user.png"
                     className="pl-[2rem] my-auto h-[7rem] cursor-pointer "
                     alt="sth"
                   />
-                </a>
+                </p>
               </Dropdown>
             </div>
           </div>
