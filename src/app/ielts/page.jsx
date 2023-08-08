@@ -3,6 +3,7 @@ import React from "react";
 import IeltsIntro from "@/component/introduce/IeltsIntro";
 import Course from "@/component/course/course";
 import FormRegister from "@/component/form/FormRegister";
+import AnotherCoures from "@/component/course/AnotherCoures";
 
 const listIntroduceIelts = [
   {
@@ -92,7 +93,7 @@ function IeltsPage(props) {
 
       <>
         <h2 className="title">Thông tin khóa học </h2>
-        <Row className="mx-[100rem] mt-[50px] " gutter={0}>
+        <Row className="mx-[50rem] mt-[50px] " gutter={0}>
           {inforCourses.map((item, ind) => (
             <Course item={item} key={ind} />
           ))}
@@ -105,6 +106,9 @@ function IeltsPage(props) {
 
       <>
         <FormRegister />
+      </>
+      <>
+            <AnotherCoures/>
       </>
     </div>
   );

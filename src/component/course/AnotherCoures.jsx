@@ -19,14 +19,14 @@ function AnotherCoures(props) {
       <div>
         <Row
           // gutter={5}
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            alignItems: "center",
-            alignContent: "center",
-            justifyContent: "center",
-          }}
+          // style={{
+          //   display: "flex",
+          //   flexDirection: "row",
+          //   flexWrap: "wrap",
+          //   alignItems: "center",
+          //   alignContent: "center",
+          //   justifyContent: "center",
+          // }}
 
           // className="flex "
         >
@@ -39,7 +39,7 @@ function AnotherCoures(props) {
                 <Col span={12} className="text-left">
                   <div style={{ margin: "30px" }}>
                     <p>{value.title}</p>
-                    <button>Xem thêm</button>
+                    <button className="custom-btn px-[3rem] mt-[2rem] py-[1rem] rounded-[5px] "> Xem thêm</button>
                   </div>
                 </Col>
                 {/* <Col span={6}></Col> */}

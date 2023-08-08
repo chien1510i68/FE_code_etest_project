@@ -8,32 +8,32 @@ import {
 function Footer() {
   return (
     <div className="bg-[#fff]">
-       <h2 className="text-[8rem] font-[500] text-center pt-[20rem] pb-[10rem] break-before-column text-[#f79500]">
-           Các đơn vị tổ chức thi và cấp chứng chỉ 
-          </h2>
+      <h2 className="text-[8rem] font-[500] text-center pt-[20rem] pb-[10rem] break-before-column text-[#f79500]">
+        Các đơn vị tổ chức thi và cấp chứng chỉ
+      </h2>
       <Row gutter={0} className="px-[100rem] pb-[35rem] ">
         <Col span={4} className="max-h-[20rem]">
-          <h1>imge 01 </h1>
+          {/* <h1>imge 01 </h1> */}
           <img className="h-full object-cover" src="/đv_1.jpg" alt="" />
         </Col>
         <Col span={4} className="max-h-[20rem]">
-          <h1>imge 01 </h1>
+          {/* <h1>imge 01 </h1> */}
           <img className="h-full object-cover" src="/đv_2.png" alt="" />
         </Col>
         <Col span={4} className="max-h-[20rem]">
-          <h1>imge 01 </h1>
+          {/* <h1>imge 01 </h1> */}
           <img className="h-full object-cover" src="/đv_3.png" alt="" />
         </Col>
         <Col span={4} className="max-h-[20rem]">
-          <h1>imge 01 </h1>
+          {/* <h1>imge 01 </h1> */}
           <img className="h-full object-cover" src="/đv_4.png" alt="" />
         </Col>
         <Col span={4} className="max-h-[20rem]">
-          <h1>imge 01 </h1>
+          {/* <h1>imge 01 </h1> */}
           <img className="h-full object-cover" src="/đv_5.png" alt="" />
         </Col>
         <Col span={4} className="max-h-[20rem]">
-          <h1>imge 01 </h1>
+          {/* <h1>imge 01 </h1> */}
           <img className="h-full object-cover" src="/đv_6.jpg" alt="" />
         </Col>
       </Row>

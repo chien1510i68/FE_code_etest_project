@@ -338,10 +338,10 @@ function Header() {
     // console.log("123");
     setIsModalRegisterOpen(true);
   };
-  const handleOkRegister = () => {
-    console.log("123");
-    // setIsModalRegisterOpen(false);
-  };
+  // const handleOkRegister = () => {
+  //   console.log("123");
+  //   // setIsModalRegisterOpen(false);
+  // };
   const handleCancelRegister = () => {
     setIsModalRegisterOpen(false);
   };
@@ -478,7 +478,7 @@ function Header() {
       <RegisterModal
         isModalOpen={isModalRegisterOpen}
         handleCancel={handleCancelRegister}
-        handleOk={handleOkRegister}
+        // handleOk={handleOkRegister}
       />
       <RegisterAccountModal
         isModalOpen={isModalRegisterAccountOpen}

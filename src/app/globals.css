@@ -11,8 +11,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
     --box-shadow: rgba(149, 157, 165, 0.2) 20px 8px 24px !important;
     --primary-color: #fb9400 !important;
     /* --test-color : red ;  */
@@ -39,37 +39,52 @@ html {
   margin-bottom: 10rem;
   color: var(--primary-color);
   margin-top: 25rem;
-
 }
-.custom-btn{
+.custom-btn {
   background-color: var(--primary-color);
   /* padding: 2rem 6rem; */
   color: #fff;
   border: none;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  
 }
-.custom-btn:hover{
+.custom-btn:hover {
   opacity: 0.9;
   color: #ffffff;
   border: none;
- transform: scale(1.1) ;
- transition: linear .3s;
+  transform: scale(1.1);
+  transition: linear 0.3s;
 }
-h3{
+h3 {
   font-size: 18px;
   font-weight: 500;
 }
-p{
+p {
   font-size: 16px;
   font-weight: 400;
 }
-button{
+button {
   font-size: 15px;
   font-weight: 700px;
 }
-div{
+/* div {
   font-size: 16px;
   line-height: 28px;
-  font-weight: 400;
+  font-weight: 400; */
+/* } */
+
+.bgr-englishacademic {
+  background-image: url("/anhnguhocthuat_0.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* background-position: center; */
+}
+
+.block-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% ,-50%);
+
+
+
 }
