@@ -14,6 +14,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { CalendarOutlined } from "@ant-design/icons";
 import avatar from "public/Button.svg";
+import Link from "next/link";
 
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
@@ -75,7 +76,9 @@ function PageUserProfile(props) {
             <button className="custom-btn mr-[4rem] px-[3rem] ">
               Tải ảnh đại diện mới
             </button>
-            <button className="custom-btn px-[3rem]">Đổi mật khẩu</button>
+            <Link href="/user/edit-account">
+              <button className="custom-btn  px-[3rem] ">Đổi mật khẩu</button>
+            </Link>
           </div>
         </div>
         <div className="flex justify-between flex-wrap mx-[10rem]">
