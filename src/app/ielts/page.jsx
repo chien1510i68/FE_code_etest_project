@@ -105,6 +105,7 @@ function IeltsPage(props) {
       </>
 
       <>
+      <h2 className="title">Đăng ký tư vấn</h2>
         <FormRegister />
       </>
       <>
