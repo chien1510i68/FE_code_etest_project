@@ -9,7 +9,7 @@ function Introduce(props) {
   ];
   return (
     <div className="h-[608px] t-[138px]">
-      <div className="h-[516px] bg-[url(/banner_aptis.png)] flex item-center text-white font-medium ">
+      <div className="h-[516px] bg-[url(/banner_aptis.png)] bg-no-repeat flex item-center text-white font-medium ">
         {" "}
         <div className="ml-[60px] mt-[30px] leading-loose">
           <h2 className=" text-white text-[32px]">

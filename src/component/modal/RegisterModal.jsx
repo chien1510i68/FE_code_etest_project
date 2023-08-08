@@ -3,7 +3,12 @@ import { Modal, Form, Button, Input, Row, Col } from "antd";
 import React from "react";
 import Image from "next/image";
 import balo from "public/zyro-image.svg";
-import { LockOutlined, MailOutlined, PhoneOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  LockOutlined,
+  MailOutlined,
+  PhoneOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
   const onFinish = async (data) => {
     console.log(data);
@@ -98,7 +103,6 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
               placeholder="Nhập số điện thoại"
             />
           </Form.Item>
-         
 
           <Form.Item className="flex justify-end ">
             <Button
