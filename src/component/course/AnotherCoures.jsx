@@ -19,14 +19,14 @@ function AnotherCoures(props) {
       <div>
         <Row
           // gutter={5}
-          // style={{
-          //   display: "flex",
-          //   flexDirection: "row",
-          //   flexWrap: "wrap",
-          //   alignItems: "center",
-          //   alignContent: "center",
-          //   justifyContent: "center",
-          // }}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            alignItems: "center",
+            alignContent: "center",
+            justifyContent: "center",
+          }}
 
           // className="flex "
         >

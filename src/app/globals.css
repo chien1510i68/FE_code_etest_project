@@ -41,8 +41,8 @@ html {
   color: var(--primary-color);
   margin-top: 25rem;
 }
-.custom-btn {
-  background-color: var(--primary-color);
+.custom-btn{
+  background-color: #fb9400;
   /* padding: 2rem 6rem; */
   color: #fff;
   border: none;
@@ -109,4 +109,21 @@ button {
   html{
     font-size: 3px;
   }
+}
+h3{
+  font-size: 18px;
+  font-weight: 500;
+}
+p{
+  font-size: 16px;
+  font-weight: 400;
+}
+button{
+  font-size: 15px;
+  font-weight: 700px;
+}
+div{
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
 }
