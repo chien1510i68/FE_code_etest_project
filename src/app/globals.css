@@ -42,7 +42,7 @@ html {
   margin-top: 25rem;
 }
 .custom-btn {
-  background-color: var(--primary-color);
+  background-color: #fb9400;
   /* padding: 2rem 6rem; */
   color: #fff;
   border: none;

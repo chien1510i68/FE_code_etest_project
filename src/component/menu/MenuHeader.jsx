@@ -17,7 +17,6 @@ const items = [
   getItem("TRANG CHỦ", "/", null),
   getItem("CHƯƠNG TRÌNH ĐÀO TẠO ANH NGỮ", "ielts", null, [
     getItem("Option 5", "5"),
-
     getItem("Option 6", "6"),
     getItem("Submenu", "sub3", null, [
       getItem("Option 7", "7", null),
