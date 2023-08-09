@@ -24,8 +24,8 @@ function PageUserProfile(props) {
   const [selectedDate, setSelectedDate] = useState(null);
   const onPickdate = (date, dateString) => {
     setSelectedDate(dateString);
-    console.log(dateString);
-    console.log("date", date);
+    // console.log(dateString);
+    // console.log("date", date);
   };
   const onFinish = (values) => {
     console.log("Success:", values);
