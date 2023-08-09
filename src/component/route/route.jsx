@@ -9,46 +9,18 @@ function Route(props) {
     { step: "Bước 5", title: "Nhận kết quả", content: "học viên nhận" },
   ];
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
+    <div className="flex flex-col items-center block mx-auto w-[100vw] ">
       <h2 className="title">Lộ trình học và thi</h2>
       <div>
-        <ul>
+        <ul className="grid tablet:grid-cols-1 phone:grid-cols-1 gap-48">
           {list.map((value, ind) => (
-            <li key={ind} style={{ padding: "10px" }}>
-              <div
-                style={{
-                  height: "105px",
-                  width: "994px",
-                  display: "flex",
-                  boxShadow: "1px 4px #aaaaaa",
-                }}
-              >
-                <div
-                  style={{
-                    width: "142px",
-                    fontSize: "22px",
-                    fontWeight: "700",
-                    color: "white",
-                    backgroundColor: "#FB9400",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
+            <li key={ind} className="p-[3rem] w-[100vw]">
+              <div className="h-[25rem] col-span-1 w-[80%] bg-[#fff4e5] mx-auto flex shadow-lg shadow-[#aaaaaa]">
+                <div className="w-[35.5rem] text-[22px] font-bold text-white bg-[#fb9400] flex justify-center items-center ">
                   {value.step}
                 </div>
-                <div
-                  style={{
-                    backgroundColor: "#FFF4E5",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    width: "852px",
-                  }}
-                >
-                  <div style={{ padding: "30px" }}>
+                <div className="bg-[#fff4e5] flex flex-col justify-center w-[213rem]">
+                  <div className="p-[8rem]">
                     <h3>{value.title}</h3>
                     <p>{value.content}</p>
                   </div>

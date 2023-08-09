@@ -17,44 +17,27 @@ function AnotherCoures(props) {
     <div className="flex flex-col items-center block mx-auto">
       <h2 className="title">Các chương trình học khác</h2>
       <div>
-        <Row
-          // gutter={5}
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            alignItems: "center",
-            alignContent: "center",
-            justifyContent: "center",
-          }}
-
-          // className="flex "
-        >
+        <div className="grid tablet:grid-cols-2 phone:grid-cols-1 gap-48">
           {list.map((value, ind) => (
-            <Col span={12} key={ind}>
-              <div style={{ display: "flex", margin: "30px 40px" }}>
-                <Col span={12} className="flex justify-end">
+            <div className="col-span-1" key={ind}>
+              <div className="grid-cols-2 grid gap-24 items-center">
+                <div className="col-span-1">
                   <Image src={value.pic} height={183} width={224} alt="pic" />
-                </Col>
-                <Col span={12} className="text-left">
-                  <div style={{ margin: "30px" }}>
+                </div>
+                <div span={12} className="col-span-1">
+                  <div>
                     <p>{value.title}</p>
-                    <button>Xem thêm</button>
+                    <button className="custom-btn px-[3rem] mt-[2rem] py-[1rem] rounded-[5px] ">
+                      {" "}
+                      Xem thêm
+                    </button>
                   </div>
-                </Col>
+                </div>
                 {/* <Col span={6}></Col> */}
               </div>
-            </Col>
+            </div>
           ))}
-        </Row>
-
-        {/* <Row className="flex justify-between px-[500px] ">
-          {list.map((item, index) => (
-            <Col span={12} key={index} className="my-[20px] pl-[20px]">
-              <Image src={item.pic} height={183} width={224} alt="pic" />
-            </Col>
-          ))}
-        </Row> */}
+        </div>
       </div>
     </div>
   );
