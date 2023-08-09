@@ -70,16 +70,20 @@ function PageUserProfile(props) {
         onFinishFailed={onFinishFailed}
         className="w-[187.5rem] h-[207rem] mx-[100px] bg-white border-2 border-solid border-[#808080/40]"
       >
-        <div className="flex flex-row items-center justify-evenly ">
-          <Image src={avatar} alt="avatar" height={150} width={150} />
-          <div>
-            <button className="custom-btn mr-[4rem] px-[3rem] ">
-              Tải ảnh đại diện mới
-            </button>
-            <Link href="/user/edit-account">
-              <button className="custom-btn  px-[3rem] ">Đổi mật khẩu</button>
-            </Link>
-          </div>
+        <div className="grid gap-12 tablet:grid-cols-3  phone:grid-cols-1 flex-row items-center justify-evenly ">
+          <Image
+            src={avatar}
+            alt="avatar"
+            height={150}
+            width={150}
+            className="col-span-1 phone:mx-auto"
+          />
+          <button className="custom-btn mr-[4rem] block px-[3rem] phone:mx-auto phone:w-[60%] tablet:w-full col-span-1 ">
+            Tải ảnh đại diện mới
+          </button>
+          <button className="custom-btn  px-[3rem] phone:mx-auto phone:w-[60%] tablet:w-full  col-span-1">
+            <Link href="/user/edit-account">Đổi mật khẩu</Link>
+          </button>
         </div>
         <div className="flex justify-between flex-wrap mx-[10rem]">
           <Form.Item
