@@ -8,12 +8,18 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
   const onFinish = async (data) => {
     console.log(data);
   };
+
+  const handleOkRegister = () => {
+    console.log("123");
+    // setIsModalRegisterOpen(false);
+  };
+
   return (
     <>
       <Modal
         // title="ĐĂNG NHẬP"
         open={isModalOpen}
-        onOk={handleOk}
+        onOk={handleOkRegister}
         onCancel={handleCancel}
         // width={500}
         className="max-h-[208px] max-w-[508px] rounded-[38px] "

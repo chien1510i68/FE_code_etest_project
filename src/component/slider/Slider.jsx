@@ -40,29 +40,47 @@ export default function Sliders() {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination ,Autoplay ]}
+        modules={[Pagination, Autoplay]}
         autoplay={{ delay: 2000 }} // Set the autoplay delay to 2000ms (2 seconds)
         className="mySwiper mx-[100px]"
+        breakpoints={{
+          120: {
+            // Kích thước md (medium), hiển thị 2 mục
+            slidesPerView: 1,
+          },
+          768: {
+            // Kích thước md (medium), hiển thị 2 mục
+            slidesPerView: 2,
+          },
+          1024: {
+            // Kích thước md (medium), hiển thị 2 mục
+            slidesPerView: 3,
+          },
+          1280: {
+            // Kích thước md (medium), hiển thị 2 mục
+            slidesPerView: 4,
+          },
+        }}
       >
         <Row gutter={[0, 6]} className="">
-        {imageUrls.map((item) => (
-          <SwiperSlide
-          
-            wrapperProps={{ className: " " }}
-          >
-            <Col span={22} className="hover:scale-x-[1.2] hover:scale-y-[1.3] h-[450px] hover:delay-100 hover:duration-300 hover:ease-in-out">
-              <img
-                src={item.img}
-                alt=""
-                className="w-full h-[300px] object-cover rounded-tl-[5px] rounded-tr-[5px] "
-              />
-              <h2 className="text-center font-[600] text-[4rem] text-[#333] bg-[#FFF4E5] py-[5rem] ">
-                {item.title}
-              </h2>
-            </Col>
-            {/* </Col> */}
-          </SwiperSlide>
-        ))}
+          {imageUrls.map((item) => (
+            <SwiperSlide wrapperProps={{ className: " " }}>
+              <Col
+                span={22}
+                className="hover:scale-x-[1.2] hover:scale-y-[1.3] h-[450px] hover:delay-100 hover:duration-300 hover:ease-in-out"
+              >
+                <img
+                  src={item.img}
+                  alt=""
+                  className="w-full h-[300px] object-cover rounded-tl-[5px] rounded-tr-[5px] "
+                />
+                <h2 className="text-center font-[600] text-[4rem] text-[#333] bg-[#FFF4E5] py-[5rem] ">
+                  {item.title}
+                </h2>
+              </Col>
+              {/* </Col> */}
+            </SwiperSlide>
+          ))}
         </Row>
       </Swiper>
     </>

@@ -35,7 +35,7 @@ export default function Sliders() {
   return (
     <>
       <Swiper
-        slidesPerView={4}
+        slidesPerView={2}
         spaceBetween={10}
         pagination={{
           clickable: true,

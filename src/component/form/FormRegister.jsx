@@ -19,9 +19,9 @@ const FormRegister = () => (
     }}
     onFinish={onFinish}
     onFinishFailed={onFinishFailed}
-    className="max-w-full mx-[100px]"
+    className="max-w-full mx-[100px] "
   >
-    <div className="flex justify-between flex-wrap">
+    <div className="grid tablet:grid-cols-2 gap-12 phone:grid-cols-1 justify-between ">
       <Form.Item
         name="username"
         rules={[
@@ -30,10 +30,10 @@ const FormRegister = () => (
             message: "Please input your password!",
           },
         ]}
-        className="w-[45%] hover:border-[#FB9400]"
+        className=" hover:border-[#FB9400] col-span-1"
       >
         <Input
-          className="border-[2px] border-solid border-[#FB9400] py-6 my-5 hover:border-[#FB9400] py-6"
+          className="border-[2px] border-solid border-[#FB9400] col-span-1 py-6 my-5 hover:border-[#FB9400] py-6"
           prefix={<UserOutlined className="site-form-item-icon mr-5" />}
           placeholder="Họ và tên"
         />
@@ -47,7 +47,7 @@ const FormRegister = () => (
             message: "Please input your password!",
           },
         ]}
-        className="w-[45%]"
+        className=""
       >
         <Input
           className="border-[2px] border-solid border-[#FB9400] py-6 my-5 hover:border-[#FB9400]"
@@ -63,7 +63,7 @@ const FormRegister = () => (
             message: "Please input your password!",
           },
         ]}
-        className="w-[45%]"
+        className=""
       >
         <Input
           className="border-[2px] border-solid border-[#FB9400] py-6 my-5 hover:border-[#FB9400]"
@@ -79,7 +79,7 @@ const FormRegister = () => (
             message: "Please input your password!",
           },
         ]}
-        className="w-[45%]"
+        className=""
       >
         <Input
           className="border-[2px] border-solid border-[#FB9400] py-6 my-5 hover:border-[#FB9400] font-[500]]"

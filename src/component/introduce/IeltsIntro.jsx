@@ -4,12 +4,11 @@ import React from "react";
 function IeltsIntro(props) {
   const { listIntroduceIelts } = props;
   return (
-    <Row gutter={10} className="mx-[100px]  justify-between ">
+    <div className="mx-[100px] grid gap-12 tablet:grid-cols-3 phone:grid-cols-2 justify-between ">
       {listIntroduceIelts.map((item, index) => (
-        <Col
-          span={7}
+        <div
           key={index}
-          className="border-[2px]  p-[4rem]  border-solid border-primaryColor mt-[20rem]"
+          className="border-[2px] col-span-1 p-[4rem]  border-solid border-primaryColor mt-[20rem]"
         >
           <img
             src={item.image}
@@ -19,12 +18,10 @@ function IeltsIntro(props) {
           <p className="text-[4.5rem] text-center font-[600] py-[2rem] uppercase ">
             {item.title}
           </p>
-          <span className="text-[4rem] text-center">
-           {item.description}
-          </span>
-        </Col>
+          <span className="text-[4rem] text-center line-clamp-4 h-[25rem] block ">{item.description}</span>
+        </div>
       ))}
-    </Row>
+    </div>
   );
 }
 

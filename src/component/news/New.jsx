@@ -11,11 +11,11 @@ function New(props) {
 //         notification.success({message : "clicked to" + title})
 //   }
   return (
-    <>
-      <Row gutter={30} className="px-[100px] mt-[10rem]  " >
+    
+      <div className="tablet:px-[100px] phone:mx-[10px] grid laptop:grid-cols-3 tablet:grid-cols-2 phone:grid-cols-1 gap-24 mt-[10rem]   " >
         {
             newList.map((item)=>(
-                <Col span={8} className="w-full hover:cursor-pointer mt-[15rem]"
+                <div  className=" col-span-1  hover:cursor-pointer mt-[15rem] mx-auto"
                 //  onClick={() =>{handleNavigate(item.title)}}
                  >
                 <img
@@ -29,12 +29,12 @@ function New(props) {
                  {item.description}
                 </p>
                 <Button className="block ml-auto bg-[#FB9400] hover:bg-[#ffc00d] !important" type="primary"> Xem thêm</Button>
-              </Col>
+              </div>
             ))
         }
       
-      </Row>
-    </>
+      </div>
+    
   );
 }
 
