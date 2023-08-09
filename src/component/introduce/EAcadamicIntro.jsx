@@ -16,7 +16,7 @@ const inforCourses = [
 function EAcadamicIntro({item}) {
   return (
     <>
-      <Col span={7} className="p-[5rem]  shadow-md ">
+      <div className="p-[5rem]  shadow-md ">
         <div className="w-full">
           <img src={item.img} alt="" className="w-full" />
           <div className="text-left mt-[5rem]">
@@ -26,7 +26,7 @@ function EAcadamicIntro({item}) {
             </p>
           </div>
         </div>
-      </Col>
+      </div>
     </>
   );
 }

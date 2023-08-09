@@ -14,7 +14,7 @@ function AnotherCoures(props) {
     { pic: pic15, title: "Anh ngữ học thuật" },
   ];
   return (
-    <div className="flex flex-col items-center block mx-auto">
+    <div className="flex flex-col items-center block mx-96">
       <h2 className="title">Các chương trình học khác</h2>
       <div>
         <div className="grid tablet:grid-cols-2 phone:grid-cols-1 gap-48"        >

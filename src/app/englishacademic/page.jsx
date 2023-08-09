@@ -52,24 +52,24 @@ function PageEnglishAcademic(props) {
   return (
     <>
      <BannerEnglishAcademic/>
-      <Row gutter={40} className="mx-[100px] justify-between mt-[100px] ">
+      <div className="px-96 grid gap-48 laptop:grid-cols-3 tablet:grid-cols-2 phone:grid-cols-1 mt-[100px] ">
         {listEAcademic.map((item, index) => (
           <EAcadamicIntro item={item} key={index} />
         ))}
-      </Row>
+      </div>
       <>
         <h2 className="title">Thông tin khóa học </h2>
-        <Row className="mx-[50rem] mt-[50px] " gutter={0}>
+        <div className="mx-96 grid gap-24 tablet:grid-cols-2  phone:grid-cols-1 mt-[50px] " gutter={0}>
           {inforCourses.map((item, ind) => (
             <Course item={item} key={ind} />
           ))}
-        </Row>
+        </div>
 
         <div className="w-[80vw] mx-auto mt-[100px] border-none">
           <img src="/5.jpg" className="w-full " alt="" />
         </div>
 
-        <div className="mx-[100px]">
+        <div className="mx-96">
           <h2 className="title">Lộ trình học và thi</h2>
           {listStep.map((item, index) => (
             <Route item={item} key={index} />
