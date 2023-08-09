@@ -5,6 +5,7 @@ import Course from "@/component/course/course";
 import Route from "@/component/route/route";
 import AnotherCoures from "@/component/course/AnotherCoures";
 import FormRegister from "@/component/form/FormRegister";
+import BannerEnglishAcademic from '@/component/banner/BannerEnglishAcademic'
 
 const listEAcademic = [
   {
@@ -50,21 +51,7 @@ const listStep = [
 function PageEnglishAcademic(props) {
   return (
     <>
-      <div className="mt-[45px] w-[100vw] h-[500px] bgr-englishacademic text-[#fff] relative">
-        <div className="w-[40%] mx-auto text-center absolute top-[20%] left-[50%] translate-x-[-50%] translate-x-[-50%] border-[10px] p-[5rem] border-primaryColor border-solid ">
-          <h2 className="text-[8rem] font-[700] my-[5rem] uppercase">
-            Luyện thi Anh ngữ học thuật{" "}
-          </h2>
-          <p className="text-[4.5rem] font-[500]">
-            Khóa học mang đến cho học viên những kỹ năng cần thiết, giúp học
-            viên thành thạo các kỹ năng tiếng Anh học thuật tạo nên bước đột
-            phát cho quá trình học tập và con đường sự nghiệp tương lai.
-          </p>
-          <Button className="custom-btn uppercase font-[600] mt-[5rem] hover:border-none">
-            đăng ký tư vấn
-          </Button>
-        </div>
-      </div>
+     <BannerEnglishAcademic/>
       <Row gutter={40} className="mx-[100px] justify-between mt-[100px] ">
         {listEAcademic.map((item, index) => (
           <EAcadamicIntro item={item} key={index} />

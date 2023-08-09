@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import BannerToeic from "../../component/banner/BannerToeic";
 import Advantage from "@/component/introduce/advantage";
@@ -9,53 +10,53 @@ const listAdvange = [
   {
     img: "uudiem_1.png",
     title:
-      "Chương trình học bài bản, cung cấp học liệu miễn phí và bám sát cấu trúc đề",
-      className : "flex bg-[#EB1B26] rounded-full items-center my-[5rem] relative "
+      "Chương trình học bài bản, cung cấp học liệu miễn phí và bám sát cấu trúc đề,Chương trình học bài bản, cung cấp học liệu miễn phí và bám sát cấu trúc đề",
+      className : "flex bg-[#EB1B26] rounded-full items-center my-[5rem] relative col-span-1 "
   },
   {
     img: "uudiem_2.png",
     title: " Trải nghiệm đề thi thử, thành thục kỹ năng và chiến thuật làm bài",
-    className : "flex bg-[#EB1B26] rounded-full items-center my-[5rem] relative "
+    className : "flex bg-[#EB1B26] rounded-full items-center my-[5rem] relative col-span-1 "
 
   },
   {
     img: "uudiem_3.png",
     title: "Lộ trình học cá nhân hóa linh hoạt  theo từng mục têu điểm số  ",
-    className : "flex bg-[#01A14B] rounded-full items-center my-[5rem] relative "
+    className : "flex bg-[#01A14B] rounded-full items-center my-[5rem] relative col-span-1 "
 
   },
   {
     img: "uudiem_4.png",
     title:
       " Phát triển các kỹ năng Nghe- Nói - Đọc - Viết và vốn từ vựng hoàn chỉnh",
-      className : "flex bg-[#01A14B] rounded-full items-center my-[5rem] relative "
+      className : "flex bg-[#01A14B] rounded-full items-center my-[5rem] relative col-span-1 "
 
   },
   {
     img: "uudiem_5.png",
     title: " Đội ngũ giảng viên chuyên môn cao hướng dẫn giảng dạy chi tiết",
-    className : "flex bg-[#40498C] rounded-full items-center my-[5rem] relative "
+    className : "flex bg-[#40498C] rounded-full items-center my-[5rem] relative col-span-1 "
 
   },
   {
     img: "uudiem_6.png",
     title: "Đội ngũ giảng viên chuyên môn cao hướng dẫn giảng dạy chi tiết ",
-    className : "flex bg-[#40498C] rounded-full items-center my-[5rem] relative "
+    className : "flex bg-[#40498C] rounded-full items-center my-[5rem] relative col-span-1 "
 
   },
 ];
 function PageToeic(props) {
   return (
-    <div className="mt-[45px]">
+    <div className="">
       <BannerToeic />
 
       <div className="mx-[100px]">
         <h2 className="title">Ưu điểm của chúng tôi </h2>
-        <Row className="justify-between">
+        <div className="justify-between grid gap-12 phone:grid-cols-1 tablet:grid-cols-2">
           {listAdvange.map((item, index) => (
             <Advantage item={item} key={index} />
           ))}
-        </Row>
+        </div>
       </div>
 
       <>
@@ -69,7 +70,7 @@ function PageToeic(props) {
             <h2 className="uppercase text-[5rem] font-[700] py-[2rem] bg-primaryColor text-[#fff] text-center ">
               khóa ôn toeic
             </h2>
-            <p className="px-[10rem] py-[5rem] h-[100rem] ">
+            <p className="px-96 py-[5rem] h-[100rem] line-clamp-[10] ">
               {" "}
               Vận dụng thành thạo các chiến lược thi VSTEP Có kĩ năng viết tiếng
               Anh học thuật nhằm làm tốt các dạng bài viết trong kì thi. Có kĩ
@@ -92,8 +93,8 @@ function PageToeic(props) {
       </div>
       <div className="mx-[100px]">
         <h2 className="title ">Lộ trình học</h2>
-        <div className="w-[60vw] h-[60vh] mx-auto">
-        <img src="/toeic_5.webp" className=" h-full w-full object-cover" alt="" />
+        <div className="grid grid-cols-3">
+        <img src="/toeic_5.webp" className=" h-full w-full object-cover col-span-3" alt="" />
 
         </div>
       </div>
