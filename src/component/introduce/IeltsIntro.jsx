@@ -4,7 +4,7 @@ import React from "react";
 function IeltsIntro(props) {
   const { listIntroduceIelts } = props;
   return (
-    <div className="mx-[100px] grid gap-12 tablet:grid-cols-3 phone:grid-cols-2 justify-between ">
+    <div className="px-96 grid gap-24 tablet:grid-cols-3 phone:grid-cols-2 justify-between ">
       {listIntroduceIelts.map((item, index) => (
         <div
           key={index}
