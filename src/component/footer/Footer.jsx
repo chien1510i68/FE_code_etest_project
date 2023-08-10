@@ -5,45 +5,41 @@ import {
   EnvironmentFilled,
   MailOutlined,
 } from "@ant-design/icons";
+const listImageFooter = [
+  {
+    img: "/đv_1.jpg",
+  },
+  {
+    img: "/đv_2.png",
+  },
+  {
+    img: "/đv_3.png",
+  },
+  {
+    img: "/đv_4.png",
+  },
+  {
+    img: "/đv_5.png",
+  },
+  {
+    img: "/đv_6.jpg",
+  },
+];
 function Footer() {
   return (
     <div className="bg-[#fff]">
       <h2 className="text-[8rem] font-[500] text-center pt-[20rem] pb-[10rem] break-before-column text-[#f79500]">
         Các đơn vị tổ chức thi và cấp chứng chỉ
       </h2>
-      <Row gutter={0} className="px-[100rem] pb-[35rem] ">
-        <Col span={4} className="max-h-[20rem]">
-          {/* <h1>imge 01 </h1> */}
-          <img className="h-full object-cover" src="/đv_1.jpg" alt="" />
-        </Col>
-        <Col span={4} className="max-h-[20rem]">
-          {/* <h1>imge 01 </h1> */}
-          <img className="h-full object-cover" src="/đv_2.png" alt="" />
-        </Col>
-        <Col span={4} className="max-h-[20rem]">
-          {/* <h1>imge 01 </h1> */}
-          <img className="h-full object-cover" src="/đv_3.png" alt="" />
-        </Col>
-        <Col span={4} className="max-h-[20rem]">
-          {/* <h1>imge 01 </h1> */}
-          <img className="h-full object-cover" src="/đv_4.png" alt="" />
-        </Col>
-        <Col span={4} className="max-h-[20rem]">
-          {/* <h1>imge 01 </h1> */}
-          <img className="h-full object-cover" src="/đv_5.png" alt="" />
-        </Col>
-        <Col span={4} className="max-h-[20rem]">
-          {/* <h1>imge 01 </h1> */}
-          <img className="h-full object-cover" src="/đv_6.jpg" alt="" />
-        </Col>
+      <Row  justify="center" gutter={12} className="flex mx-[100px] justify-center pb-[35rem]  ">
+        {listImageFooter.map((item, index) => (
+          <Col xs={{span : 8}} md={{span:4}}  key={index} className="h-[80px] mb-[15rem] ">
+            <img className="h-full object-cover" src={item.img} alt="" />
+          </Col>
+        ))}
+
       </Row>
-      <div className="grid grid-cols-1 md:grid-cols-1 gap-x-3">
-        <div className="cols-span-2 row-span-2"><img src="" alt="" /></div>
-        <div><img src="" alt="" /></div>
-        <div><img src="" alt="" /></div>
-        <div><img src="" alt="" /></div>
-        <div><img src="" alt="" /></div>
-      </div>
+
       <Row gutter={30} className="px-[100px] bg-[#F3F3F3] py-[20rem] ">
         <Col span={12} className="">
           <h2 className="10rem"> logo</h2>

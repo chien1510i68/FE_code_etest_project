@@ -19,7 +19,7 @@ const FormRegister = () => (
     }}
     onFinish={onFinish}
     onFinishFailed={onFinishFailed}
-    className="max-w-full mx-[100px] "
+    className="max-w-full px-96 "
   >
     <div className="grid tablet:grid-cols-2 gap-12 phone:grid-cols-1 justify-between ">
       <Form.Item

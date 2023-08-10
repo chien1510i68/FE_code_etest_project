@@ -76,14 +76,18 @@ button {
 .bgr-englishacademic {
   background-image: url("/anhnguhocthuat_0.png");
   background-repeat: no-repeat;
+  object-fit: cover;
   background-size: contain;
+  height: 70vh;
   /* background-position: center; */
 }
 .bgr-ielts{
   background-image: url("/anhnguhocthuat_0.png");
   background-repeat: no-repeat;
   background-size: contain;
+  height: 500px;
 }
+
 
 .block-center{
   position: absolute;
