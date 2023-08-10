@@ -110,3 +110,20 @@ button {
     font-size: 3px;
   }
 }
+h3{
+  font-size: 18px;
+  font-weight: 500;
+}
+p{
+  font-size: 16px;
+  font-weight: 400;
+}
+button{
+  font-size: 15px;
+  font-weight: 700px;
+}
+div{
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+}
