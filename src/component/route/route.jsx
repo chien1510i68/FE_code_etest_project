@@ -5,7 +5,7 @@ function Route({item}) {
  
   return (
    
-    <div className="mx-auto h-[25rem] my-[5rem] shadow-md hover:opacity-90 cursor-pointer grid gap-48 grid-cols-10 gap-0">
+    <div className="mx-auto h-[25rem] my-[5rem] shadow-md hover:opacity-90 cursor-pointer grid  grid-cols-10 gap-0">
       <div  className="bg-primaryColor relative  col-span-2 block">
         <h2 className="text-[#fff] font-[600] tablet:text-[5.5rem]  block-center ">
           {item.step}
