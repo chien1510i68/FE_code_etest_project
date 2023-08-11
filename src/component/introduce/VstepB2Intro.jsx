@@ -1,11 +1,10 @@
-import { Col, Row } from "antd";
 import React from "react";
+import PropTypes from "prop-types";
 
-function IeltsIntro(props) {
-  const { listIntroduceIelts } = props;
+function VstepB2Intro({ listIntroduceVstepB2 }) {
   return (
-    <div className="mx-[100px] grid gap-12 tablet:grid-cols-3 phone:grid-cols-2 justify-between ">
-      {listIntroduceIelts.map((item, index) => (
+    <div>
+      {listIntroduceVstepB2.map((item, index) => {
         <div
           key={index}
           className="border-[2px] col-span-1 p-[4rem]  border-solid border-primaryColor mt-[20rem]"
@@ -19,12 +18,12 @@ function IeltsIntro(props) {
             {item.title}
           </p>
           <span className="text-[4rem] text-center line-clamp-4 h-[25rem] block ">
-            {item.description}
+            {item.content}
           </span>
-        </div>
-      ))}
+        </div>;
+      })}
     </div>
   );
 }
 
-export default IeltsIntro;
+export default VstepB2Intro;
