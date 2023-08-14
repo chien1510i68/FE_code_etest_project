@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { DownOutlined } from "@ant-design/icons";
-import { Menu, message } from "antd";
+import { DownOutlined, MenuOutlined } from "@ant-design/icons";
+import { Dropdown, Menu, Space, message } from "antd";
 import { useRouter } from "next/navigation";
 
 function getItem(label, key, icon, children) {
@@ -17,7 +17,6 @@ const items = [
   getItem("TRANG CHỦ", "/", null),
   getItem("CHƯƠNG TRÌNH ĐÀO TẠO ANH NGỮ", "ielts", null, [
     getItem("Option 5", "5"),
-
     getItem("Option 6", "6"),
     getItem("Submenu", "sub3", null, [
       getItem("Option 7", "7", null),
@@ -35,14 +34,25 @@ const items = [
 const MenuHeader = () => {
   const router = useRouter();
   return (
-    <Menu
-      onClick={(e) => {
-        router.push(e.key);
-      }}
-      className="font-[600] items-center w-[70vw]"
-      mode="horizontal"
-      items={items}
-    ></Menu>
+    <>
+      <Menu
+        onClick={(e) => {
+          router.push(e.key);
+        }}
+        className="font-[600] items-center w-[70vw] phone:hidden tablet:flex"
+        mode="horizontal"
+        items={items}
+      ></Menu>
+      <Dropdown
+        menu={{
+          items,
+        }}
+        trigger={["click"]}
+        className="block mr-auto phone:block tablet:hidden"
+      >
+        <MenuOutlined  className="" onClick={(e) => e.preventDefault()} />
+      </Dropdown>
+    </>
   );
 };
 
