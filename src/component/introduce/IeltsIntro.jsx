@@ -18,7 +18,9 @@ function IeltsIntro(props) {
           <p className="text-[4.5rem] text-center font-[600] py-[2rem] uppercase ">
             {item.title}
           </p>
-          <span className="text-[4rem] text-center line-clamp-4 h-[25rem] block ">{item.description}</span>
+          <span className="text-[4rem] text-center line-clamp-4 h-[25rem] block ">
+            {item.description}
+          </span>
         </div>
       ))}
     </div>

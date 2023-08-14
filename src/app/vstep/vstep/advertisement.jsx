@@ -1,91 +1,58 @@
 import React from "react";
 import Image from "next/image";
-import pic11 from "public/kh_11.jpg";
-import pic12 from "public/kh_12.jpg";
-import pic13 from "public/13.jpg";
 
-function Advertisement(props) {
-  const list = [
-    {
-      title: "MỤC TIÊU",
-      content: "abc",
-      pic: pic12,
-    },
-    {
-      title: "PHÁT TRIỂN",
-      content: "abcDEF",
-      pic: pic11,
-    },
-    {
-      title: "TRẢI NGHIỆM",
-      content: "abcGHI",
-      pic: pic13,
-    },
-  ];
+function Advertisement({ value, index }) {
+  console.log("object", index);
   return (
-    <div>
+    <>
       <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
+        className={`grid grid-cols-2 items-center h-[82.5rem]  my-[10rem] mx-[20rem] shadow-lg overflow-hidden rounded-[8px] `}
       >
-        <ul style={{ listStyleType: "none" }}>
-          {list.map((value, ind) => (
-            <li key={ind} style={{ padding: "50px" }}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: ind === 1 ? "row-reverse" : "row",
-                  alignItems: "center",
-                  justifyContent: "space-around",
-                  height: "330px",
-                  width: "1200px",
-                  backgroundColor: "white",
-                  borderRadius: "8px",
-                  overflow: "hidden",
-                  boxShadow: "2px 3px #aaaaaa",
-                }}
-              >
-                <div
-                  style={{
-                    flex: "1",
-                    // paddingLeft: "50px"
-                  }}
-                >
-                  <div style={{ padding: "30px" }}>
-                    <p style={{ fontSize: "22px", fontWeight: "500" }}>
-                      {value.title}
-                    </p>
-                    <p style={{ fontSize: "16px", fontWeight: "400" }}>
-                      {value.content}
-                    </p>
-                  </div>
-                </div>
-                <div
-                  style={{
-                    flex: "1",
-                    position: "relative",
-                    width: "600px",
-                    height: "330px",
-                    objectFit: "cover",
-                  }}
-                >
-                  <Image
-                    src={value.pic}
-                    alt="pic"
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="center"
-                  />
-                </div>
+        {index === 1 ? (
+          <>
+            <div className="col-span-1  ">
+              <div className=" w-[auto] h-[82.5rem] relative">
+                <Image
+                  src={value.pic}
+                  alt="pic"
+                  layout="fill"
+                  objectFit="cover"
+                />
               </div>
-            </li>
-          ))}
-        </ul>
+            </div>
+            <div className="col-span-1">
+              <h2 className="uppercase text-[5rem] px-[5rem] font-[700]">
+                {value.title}
+              </h2>
+              <p className="px-[5rem] tablet:text-[16px] phone:text-[12px]">
+                {value.content}
+              </p>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="col-span-1">
+              <h2 className="uppercase text-[5rem] px-[5rem] font-[700]">
+                {value.title}
+              </h2>
+              <p className="px-[5rem] tablet:text-[16px] phone:text-[12px]">
+                {value.content}
+              </p>
+            </div>
+            <div className="col-span-1  ">
+              <div className=" w-[auto] h-[82.5rem] relative">
+                <Image
+                  src={value.pic}
+                  alt="pic"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+            </div>
+          </>
+        )}
       </div>
-    </div>
+    </>
   );
 }
 

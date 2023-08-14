@@ -4,18 +4,17 @@ import React from "react";
 function Course({ item }) {
   return (
     <>
-      <div
-        className="border-[1px] border-primaryColor border-solid rounded-[5px] col-span-1 "
-      >
+      <div className="border-[1px] border-primaryColor border-solid rounded-[5px] col-span-1 ">
         <h2 className="uppercase text-[5rem] font-[700] py-[2rem] bg-primaryColor text-[#fff] text-center ">
-         {item.title}
+          {item.title}
         </h2>
-        <p className="px-[10rem] py-[5rem] h-[100rem] line-clamp-[14]  ">
-        {item.content}
+        <p className="px-[10rem] py-[5rem] h-[110rem] line-clamp-[14]  ">
+          {item.content}
         </p>
-        <Button className="mx-auto block mb-[5rem] bg-primaryColor custom-btn uppercase hover:text-[#fff]">Đăng ký học </Button>
+        <Button className="mx-auto block mb-[5rem] bg-primaryColor custom-btn uppercase hover:text-[#fff]">
+          Đăng ký học{" "}
+        </Button>
       </div>
-      
     </>
   );
 }

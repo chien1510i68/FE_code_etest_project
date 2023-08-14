@@ -20,7 +20,11 @@ function BannerEnglishAcademic(props) {
     // </div>
     <>
       <div className="w-[100vw] relative">
-        <img src="/anhnguhocthuat_0.png" className="w-full h-[70vh] object-cover" alt="" />
+        <img
+          src="/anhnguhocthuat_0.png"
+          className="w-full h-[70vh] object-cover"
+          alt=""
+        />
         <div className="w-[40%] mx-auto text-center absolute top-[20%] left-[50%] translate-x-[-50%] translate-x-[-50%] border-[10px] p-[5rem] border-primaryColor border-solid ">
           <h2 className="laptop:text-[8rem] tablet: font-[700] my-[5rem] uppercase">
             Luyện thi Anh ngữ học thuật{" "}

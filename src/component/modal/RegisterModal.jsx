@@ -1,3 +1,4 @@
+"use client";
 import { Modal, Form, Button, Input, Row, Col } from "antd";
 // import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import React from "react";
@@ -27,7 +28,7 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
         onOk={handleOkRegister}
         onCancel={handleCancel}
         // width={500}
-        className="max-h-[208px] max-w-[508px] rounded-[38px] "
+        className="max-h-[208px] tablet:w-[508px] phone:w-[340px] rounded-[38px] "
         footer={[]}
       >
         <Row className="bg-[#FB9400] rounded-[27px] my-20 overflow-hidden">
@@ -35,78 +36,67 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
             <Image src={balo} alt="icon" height={140} width={157} />
           </Col>
           <Col span={15} className="text-white text-left my-[10px]">
-            <h2 className="font-black text-[32px] cl">Đăng ký</h2>
+            <h2 className="font-black text-[32px] leading-snug">Đăng ký</h2>
             <p className="font-normal text-[19.4px]">
               Học tiếng anh với E-Test
             </p>
           </Col>
         </Row>
         <Form
-          // name="normal_login"
           className="login-form"
           initialValues={{
             remember: true,
           }}
-          //   layout="vertical"
           onFinish={onFinish}
         >
           <Form.Item
-            // label="Họ và tên"
-            name="fullName"
+            name="userName"
             rules={[
-              { required: true, message: "Vui lòng nhập họ và tên!" },
-              { type: "text", message: "Vui lòng nhập họ và tên!" },
+              { required: true, message: "Vui lòng nhập tên tài khoản!" },
+              { type: "text", message: "Vui lòng nhập tên tài khoản!" },
             ]}
           >
             <Input
               className="h-52"
               prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="usename"
+              placeholder="Tên tài khoản"
             />
           </Form.Item>
           <Form.Item
-            name="password"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            name="passWord"
+            rules={[{ required: true, message: "Vui lòng nhập mật khẩu" }]}
           >
             <Input
               className="h-52"
               prefix={<LockOutlined className="site-form-item-icon" />}
               type="password"
-              placeholder="Password"
+              placeholder="Mật khẩu"
             />
           </Form.Item>
           <Form.Item
-            // label="Số điện thoại"
             type=""
             name="phone"
             rules={[
               { required: true, message: "Vui lòng nhập số điện thoại!" },
-              {
-                required: true,
-                message: "Vui lòng nhập tài khoản.",
-              },
             ]}
           >
             <Input
               className="h-52"
               prefix={<PhoneOutlined className="site-form-item-icon" />}
-              placeholder="Nhập số điện thoại"
+              placeholder="Số điện thoại"
             />
           </Form.Item>
           <Form.Item
-            // label="Email"
             name="email"
             rules={[
-              {
-                required: true,
-                message: "Vui lòng nhập mật khẩu.",
-              },
+              { required: true, message: "Vui lòng nhập email!" },
+              { type: "email", message: "Email không hợp lệ!" },
             ]}
           >
             <Input
               className="h-52"
               prefix={<MailOutlined className="site-form-item-icon" />}
-              placeholder="Nhập số điện thoại"
+              placeholder="Email"
             />
           </Form.Item>
 
@@ -116,7 +106,7 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
               htmlType="submit"
               className="rounded-[50px] bg-[#FB9400]"
             >
-              Dăng ký
+              Đăng ký
             </Button>
           </Form.Item>
         </Form>

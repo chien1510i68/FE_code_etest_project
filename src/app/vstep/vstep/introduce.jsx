@@ -3,31 +3,9 @@ import Image from "next/image";
 import pic from "public/ctr_3 1.png";
 function Introduce(props) {
   return (
-    <div
-      style={{
-        height: "445px",
-        top: "138px",
-      }}
-    >
-      {/* <div> 123</div> */}
-
-      <div
-        style={{
-          height: "374px",
-          backgroundColor: "#FFF4E5",
-          display: "flex",
-          alignItems: "center",
-          gap: "100px",
-        }}
-      >
-        {" "}
-        <div
-        // style={{
-        //   flex: "1",
-        //   position: "relative",
-        //   paddingLeft: "123px",
-        // }}
-        >
+    <div className="grid bg-[#fff4e5] tablet:grid-cols-2 phone:grid-col-1 ">
+      <div className="col-span-1 max-h-[500px] phone: tablet:block ">
+        <div className="flex justify-end">
           <Image
             src={pic}
             alt="pic"
@@ -35,18 +13,17 @@ function Introduce(props) {
             height={410}
             // layout="fill"
             // objectFit="cover"
-            objectPosition="center"
+            // objectPosition="center"
+            // className="flex-end object-cover "
           />
         </div>
-        <div
-        // style={{ flex: "1", marginRight: "123px" }}
-        >
-          <h2
-          //  style={{ fontSize: "32px", fontWeight: "500" }}
-          >
+      </div>
+      <div className="col-span-1 ">
+        <div className="bg-[#FFF4E5] tablet:py-[20rem] phone:py-[10rem] h-full ">
+          <h2 className="pb-[5rem] block px-[10rem] font-[500] text-[8rem]">
             LUYỆN THI VSTEP
           </h2>
-          <p style={{ fontSize: "16px", fontWeight: "400" }}>
+          <p className="py-auto block px-[10rem] font-[400] text-[4rem]">
             VSTEP (Vietnamese Standardized Test of English Proficiency) là kỳ
             thi đánh giá năng lực tiếng Anh theo Khung năng lực ngoại ngữ (NLNN)
             6 bậc dùng cho Việt Nam (tương đương với trình độ A1, A2, B1, B2,
