@@ -48,7 +48,7 @@ const MenuHeader = () => {
           items,
         }}
         trigger={["click"]}
-        className="block mr-auto phone:block tablet:hidden"
+        className="block  phone:block tablet:hidden"
       >
         <MenuOutlined  className="" onClick={(e) => e.preventDefault()} />
       </Dropdown>

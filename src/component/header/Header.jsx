@@ -5,13 +5,15 @@ import LoginModal from "../modal/LoginModal";
 import RegisterModal from "../modal/RegisterModal";
 import MenuHeader from "@/component/menu/MenuHeader";
 import RegisterAccountModal from "../modal/RegisterAccountModal";
+import { useRouter } from "next/navigation";
 
 function Header() {
   const [isModalRegisterOpen, setIsModalRegisterOpen] = useState(false);
   const [isModalRegisterAccountOpen, setIsModalRegisterAccountOpen] =
     useState(false);
   const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
-  const [isModalInforUserOpen, setIsModalInforUsernOpen] = useState(false);
+  const route = useRouter();
+  
   const showModalRegister = () => {
     // console.log("123");
     setIsModalRegisterOpen(true);
@@ -21,10 +23,7 @@ function Header() {
     setIsModalRegisterOpen(false);
   };
 
-  const showModalRegisterAccount = () => {
-    // console.log("123");
-    setIsModalRegisterAccountOpen(true);
-  };
+
   const handleOkRegisterAccount = () => {
     console.log("123");
     // setIsModalRegisterOpen(false);
@@ -43,15 +42,8 @@ function Header() {
     setIsModalLoginOpen(false);
   };
 
-  const showModalInforUser = () => {
-    setIsModalInforUsernOpen(true);
-  };
-  const handleOkInforUser = () => {
-    setIsModalInforUsernOpen(false);
-  };
-  const handleCancelInforUser = () => {
-    setIsModalInforUsernOpen(false);
-  };
+
+
   const onClick = (e) => {
     console.log("Nhấp vào ");
     if (e.key == 1) {
@@ -63,7 +55,7 @@ function Header() {
       // notification.success({ message: "Đã nhấp vào day la " + e.key });
     }
     if (e.key == 3) {
-      showModalInforUser();
+      route.push('user/edit-profile')
     }
     // setCurrent(e.key);
   };
@@ -85,19 +77,16 @@ function Header() {
 
   return (
     <>
-      {/* <Button className="text-[#fff] text-3xl">Click me c </Button> */}
-      {/* <div className="flex justify-between items-center pl-[100px] lg:24 fixed top-0	w-full z-20 bg-[#fff]"> */}
+     
       <>
         <div className=" flex items-center justify-around ">
           {/* <div className=""> */}
             <h2 className="text-[#333] text-[24px] tablet:block phone:hidden ">logo</h2>
           {/* </div> */}
 
-          <MenuHeader />
+          <MenuHeader className="phone:hidden"/>
 
-          {/* <div className="text-[24px]"> */}
             <h2 className="text-[#333]  phone:block tablet:hidden">logo</h2>
-          {/* </div> */}
           <div className="max-h-[7rem]">
             <Dropdown
               menu={{
@@ -118,12 +107,10 @@ function Header() {
           </div>
         </div>
       </>
-      {/* </div> */}
 
       <RegisterModal
         isModalOpen={isModalRegisterOpen}
         handleCancel={handleCancelRegister}
-        // handleOk={handleOkRegister}
       />
       <RegisterAccountModal
         isModalOpen={isModalRegisterAccountOpen}
