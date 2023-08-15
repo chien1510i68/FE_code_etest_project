@@ -14,18 +14,18 @@ function AnotherCoures(props) {
     { pic: pic15, title: "Anh ngữ học thuật" },
   ];
   return (
-    <div className="flex flex-col items-center block mx-96">
+    <div className="flex flex-col items-center block ">
       <h2 className="title">Các chương trình học khác</h2>
       <div>
-        <div className="grid tablet:grid-cols-2 phone:grid-cols-1 gap-48"        >
+        <div className="grid tablet:grid-cols-2 phone:grid-cols-1 gap-48">
           {list.map((value, ind) => (
             <div className="col-span-1" key={ind}>
               <div className="grid-cols-2 grid gap-24 items-center">
-                <div  className="col-span-1">
+                <div className="col-span-1">
                   <Image src={value.pic} height={183} width={224} alt="pic" />
                 </div>
                 <div span={12} className="col-span-1">
-                  <div >
+                  <div>
                     <p>{value.title}</p>
                     <button className="custom-btn px-[3rem] mt-[2rem] py-[1rem] rounded-[5px] ">
                       {" "}

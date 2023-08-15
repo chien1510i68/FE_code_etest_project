@@ -57,41 +57,43 @@ export default function Page() {
     },
   ];
   return (
-    <div
-      style={
-        {
-          // margin: "0 auto",
-          // maxWidth: "1440px",
-          // backgroundColor: "#ECF4FF",
-        }
-      }
-    >
+    <div>
       <Introduce />
       <RegisterCourseVstep />
-      <>
-        <div className="flex items-center flex-col">
-          {listAds.map((value, ind) => (
-            <Advertisement value={value} index={ind} key={ind} />
-          ))}
-        </div>
-      </>
+      <div
+        style={{
+          margin: "0 auto",
+          maxWidth: "1440px",
+          // backgroundColor: "#ECF4FF",
+        }}
+      >
+        <div className="mx-[10%]">
+          <>
+            <div className="flex items-center flex-col">
+              {listAds.map((value, ind) => (
+                <Advertisement value={value} index={ind} key={ind} />
+              ))}
+            </div>
+          </>
 
-      <div>
-        <h2 className="title">Thông tin khóa học </h2>
-        <div className="px-96 mt-[50px] grid  tablet:grid-cols-2 phone:grid-cols-1  gap-24">
-          {inforCourses.map((item, ind) => (
-            <Course item={item} key={ind} />
-          ))}
+          <div>
+            <h2 className="title">Thông tin khóa học </h2>
+            <div className=" mt-[50px] grid  tablet:grid-cols-2 phone:grid-cols-1  gap-24">
+              {inforCourses.map((item, ind) => (
+                <Course item={item} key={ind} />
+              ))}
+            </div>
+          </div>
+          <div className="">
+            <h2 className="title">Lộ trình học và thi</h2>
+            {listStep.map((item, index) => (
+              <Route item={item} key={index} />
+            ))}
+          </div>
+          <AnotherCoures />
+          <FormRegister />
         </div>
       </div>
-      <div className="mx-96">
-        <h2 className="title">Lộ trình học và thi</h2>
-        {listStep.map((item, index) => (
-          <Route item={item} key={index} />
-        ))}
-      </div>
-      <AnotherCoures />
-      <FormRegister />
     </div>
   );
 }

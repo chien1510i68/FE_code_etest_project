@@ -3,7 +3,7 @@ import Image from "next/image";
 import pic from "public/ctr_3 1.png";
 function Introduce(props) {
   return (
-    <div className="grid bg-[#fff4e5] tablet:grid-cols-2 phone:grid-col-1 ">
+    <div className="grid bg-[#fff4e5] tablet:grid-cols-2 phone:grid-col-1 px-[10%] ">
       <div className="col-span-1 max-h-[500px] phone: tablet:block ">
         <div className="flex justify-end">
           <Image

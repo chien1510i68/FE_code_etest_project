@@ -84,20 +84,17 @@ function Header() {
   ];
 
   return (
-    <>
-      {/* <Button className="text-[#fff] text-3xl">Click me c </Button> */}
-      {/* <div className="flex justify-between items-center pl-[100px] lg:24 fixed top-0	w-full z-20 bg-[#fff]"> */}
-      <>
+    <div className="mx-[auto]">
+      <div>
         <div className=" flex items-center justify-around ">
-          {/* <div className=""> */}
-            <h2 className="text-[#333] text-[24px] tablet:block phone:hidden ">logo</h2>
-          {/* </div> */}
+          <h2 className="text-[#333] text-[24px] tablet:block phone:hidden ">
+            logo
+          </h2>
 
           <MenuHeader />
 
-          {/* <div className="text-[24px]"> */}
-            <h2 className="text-[#333]  phone:block tablet:hidden">logo</h2>
-          {/* </div> */}
+          <h2 className="text-[#333]  phone:block tablet:hidden">logo</h2>
+
           <div className="max-h-[7rem]">
             <Dropdown
               menu={{
@@ -117,8 +114,7 @@ function Header() {
             </Dropdown>
           </div>
         </div>
-      </>
-      {/* </div> */}
+      </div>
 
       <RegisterModal
         isModalOpen={isModalRegisterOpen}
@@ -135,7 +131,7 @@ function Header() {
         handleCancel={handleCancelLogin}
         handleOk={handleOkLogin}
       />
-    </>
+    </div>
   );
 }
 

@@ -3,7 +3,7 @@ import React from "react";
 
 function Route({ item }) {
   return (
-    <div className="mx-auto bg-[#FFF4E5] tablet:h-[25rem] phone:h-[30rem] my-[5rem] shadow-md hover:opacity-90 cursor-pointer grid  grid-cols-10 gap-0">
+    <div className=" bg-[#FFF4E5] tablet:h-[25rem] phone:h-[30rem] my-[5rem] shadow-md hover:opacity-90 cursor-pointer grid  grid-cols-10 gap-0">
       <div className="bg-primaryColor relative justify-center tablet:col-span-1 phone:col-span-3 block">
         <h2 className="text-[#fff] font-[600] laptop:text-[5rem] text-center block-center ">
           {item.step}

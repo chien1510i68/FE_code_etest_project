@@ -23,9 +23,9 @@ const FormRegister = () => (
     }}
     onFinish={onFinish}
     onFinishFailed={onFinishFailed}
-    className="max-w-full px-96 "
+    className="max-w-full "
   >
-    <div className="grid tablet:grid-cols-2 gap-12 phone:grid-cols-1 justify-between mt-[10rem]">
+    <div className="grid tablet:grid-cols-2 gap-12 phone:grid-cols-1 justify-between mt-[10%]">
       <Form.Item
         name="username"
         rules={[
@@ -97,7 +97,7 @@ const FormRegister = () => (
       <Button
         type="primary"
         htmlType="submit"
-        className="bg-[#FB9400] block mx-auto hover:opacity-80  my-[10rem] px-[5rem]"
+        className="bg-[#FB9400] block mx-auto hover:opacity-80  my-[5%] px-[10%]"
       >
         Gửi thông tin
       </Button>

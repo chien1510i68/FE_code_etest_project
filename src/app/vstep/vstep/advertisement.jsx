@@ -6,7 +6,7 @@ function Advertisement({ value, index }) {
   return (
     <>
       <div
-        className={`grid grid-cols-2 items-center h-[82.5rem]  my-[10rem] mx-[20rem] shadow-lg overflow-hidden rounded-[8px] `}
+        className={`grid grid-cols-2 items-center h-[82.5rem]  my-[10rem]  shadow-lg overflow-hidden rounded-[8px] `}
       >
         {index === 1 ? (
           <>

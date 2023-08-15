@@ -34,27 +34,31 @@ export default function Page({ item }) {
   return (
     <>
       <Introduce />
-      <h2 className="title">Tại sao nên chọn chúng tôi</h2>
-      <div className="px-96 grid gap-48 laptop:grid-cols-3 tablet:grid-cols-2 phone:grid-cols-1 mt-[100px]">
-        {introList.map((value, index) => (
-          <Advertisement key={index} value={value} />
-        ))}
-      </div>
+      <div className="max-w-[1440px] mx-auto">
+        <div className="mx-[10%]">
+          <h2 className="title mt-[0]">Tại sao nên chọn chúng tôi</h2>
+          <div className=" grid gap-48 laptop:grid-cols-3 tablet:grid-cols-2 phone:grid-cols-1 mt-[5%]">
+            {introList.map((value, index) => (
+              <Advertisement key={index} value={value} />
+            ))}
+          </div>
 
-      <h2 className="title">Thông tin khóa học </h2>
-      <div className="px-96  grid  tablet:grid-cols-2 phone:grid-cols-1  gap-24">
-        {inforCourses.map((item, ind) => (
-          <Course item={item} key={ind} />
-        ))}
+          <h2 className="title">Thông tin khóa học </h2>
+          <div className="  grid  tablet:grid-cols-2 phone:grid-cols-1  gap-24">
+            {inforCourses.map((item, ind) => (
+              <Course item={item} key={ind} />
+            ))}
+          </div>
+          <div className="">
+            <h2 className="title">Lộ trình học và thi</h2>
+            {listStep.map((item, index) => (
+              <Route item={item} key={index} />
+            ))}
+          </div>
+          <AnotherCoures />
+          <FormRegister />
+        </div>
       </div>
-      <div className="mx-96">
-        <h2 className="title">Lộ trình học và thi</h2>
-        {listStep.map((item, index) => (
-          <Route item={item} key={index} />
-        ))}
-      </div>
-      <AnotherCoures />
-      <FormRegister />
     </>
   );
 }
