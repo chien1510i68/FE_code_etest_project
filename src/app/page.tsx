@@ -102,7 +102,7 @@ export default function Home() {
   ];
   return (
 
-    <main className="bg-[#fff] mt-[20px] mx-[auto]">
+    <main className="bg-[#fff] mx-[auto]">
       <div className="">
       <div className="">
         <Carousels items={items} />

@@ -4,7 +4,7 @@ import teen from "/public/lovely-teenage-girl-with-curly-hair-posing-yellow-tshi
 function IntroduceAptisB1(props) {
   return (
     <>
-      <div className="grid grid-cols-2 items-center bg-[#FFF4E5]  h-[586px] mt-[50px]">
+      <div className="grid grid-cols-2 items-center bg-[#FFF4E5]  h-[586px] ">
         <div className="col-span-1">
           <div className="ml-[20rem]">
             <h2 className="uppercase text-[black]">luyện thi aptis b1</h2>
@@ -20,7 +20,7 @@ function IntroduceAptisB1(props) {
             </p>
           </div>
         </div>
-        <div className="col-span-1">
+        <div className="col-span-1 flex justify-center">
           <Image src={teen} alt="teen" height={536} width={340} />
         </div>
       </div>

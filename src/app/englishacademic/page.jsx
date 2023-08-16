@@ -5,7 +5,7 @@ import Course from "@/component/course/course";
 import Route from "@/component/route/route";
 import AnotherCoures from "@/component/course/AnotherCoures";
 import FormRegister from "@/component/form/FormRegister";
-import BannerEnglishAcademic from '@/component/banner/BannerEnglishAcademic'
+import BannerEnglishAcademic from "@/component/banner/BannerEnglishAcademic";
 
 const listEAcademic = [
   {
@@ -51,7 +51,7 @@ const listStep = [
 function PageEnglishAcademic(props) {
   return (
     <>
-     <BannerEnglishAcademic/>
+      <BannerEnglishAcademic />
       <div className="px-96 grid gap-48 laptop:grid-cols-3 tablet:grid-cols-2 phone:grid-cols-1 mt-[100px] ">
         {listEAcademic.map((item, index) => (
           <EAcadamicIntro item={item} key={index} />
@@ -59,7 +59,10 @@ function PageEnglishAcademic(props) {
       </div>
       <>
         <h2 className="title">Thông tin khóa học </h2>
-        <div className="mx-96 grid gap-24 tablet:grid-cols-2  phone:grid-cols-1 mt-[50px] " gutter={0}>
+        <div
+          className="mx-96 grid gap-24 tablet:grid-cols-2  phone:grid-cols-1 mt-[50px] "
+          gutter={0}
+        >
           {inforCourses.map((item, ind) => (
             <Course item={item} key={ind} />
           ))}

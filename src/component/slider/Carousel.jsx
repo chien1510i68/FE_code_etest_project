@@ -8,7 +8,7 @@ function Carousels(props) {
       <Carousel autoplay>
         {items.map((item, index) => (
           <div
-            className="h-[100rem] text-center bg-[#364d79] w-[100vw] h-[70vh]"
+            className="h-[100rem] text-center bg-[#364d79] w-[100vw] h-[50vh]"
             key={index}
           >
             <img src={item.id} alt="" className="w-full h-full object-cover" />
