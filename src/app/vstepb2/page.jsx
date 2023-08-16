@@ -2,6 +2,7 @@ import React from "react";
 import BannerVstepB2 from "../../component/banner/BannerVstepB2";
 import VstepB2Intro from "@/component/introduce/VstepB2Intro/VstepB2Intro";
 import ExamStructureVstepB2 from "@/component/examStructure/examStructureVstepB2";
+import CourseVstepB2 from "@/component/course/CourseVstepB2";
 
 function PageVstepB2(props) {
   const listIntroduceVstepB2 = [
@@ -60,10 +61,14 @@ function PageVstepB2(props) {
           năng:{" "}
         </p>
         <div>
-          {examSructureVstepB2.map((item, ind) => {
-            <ExamStructureVstepB2 key={ind} item={item} />;
-          })}
+          <ExamStructureVstepB2 examSructureVstepB2={examSructureVstepB2} />;
         </div>
+      </div>
+      <div>
+        <h2 className="text-orange-500 font-[500] text-[6rem] text-center">
+          Thông tin khóa học
+        </h2>
+        <CourseVstepB2 />
       </div>
     </div>
   );
