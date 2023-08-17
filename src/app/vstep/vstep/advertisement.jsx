@@ -8,7 +8,7 @@ function Advertisement({ value, index }) {
       <div
         className={`grid grid-cols-2 items-center h-[82.5rem]  my-[10rem]  shadow-lg overflow-hidden rounded-[8px] `}
       >
-        {index === 1 ? (
+        {index % 2 !== 0 ? (
           <>
             <div className="col-span-1  ">
               <div className=" w-[auto] h-[82.5rem] relative">
