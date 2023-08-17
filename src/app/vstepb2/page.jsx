@@ -50,25 +50,27 @@ function PageVstepB2(props) {
 
   return (
     <div>
-      <BannerVstepB2 />
-      <VstepB2Intro listIntroduceVstepB2={listIntroduceVstepB2} />
-      <div>
-        <h2 className="text-orange-500 font-[500] text-[6rem]">
-          Cấu trúc đề thi B2 VSTEP
-        </h2>
-        <p>
-          Tương tự như cấu trúc bài thi B1 VSTEP, bài thi B2 cũng gồm có 4 kỹ
-          năng:{" "}
-        </p>
+        <BannerVstepB2 />
+      <div className="max-w-[1440px] desktop:mx-auto tablet:mx-[10%] phone:mx-[5%]">
+        <VstepB2Intro listIntroduceVstepB2={listIntroduceVstepB2} />
         <div>
-          <ExamStructureVstepB2 examSructureVstepB2={examSructureVstepB2} />;
+          <h2 className="text-orange-500 mb-[8rem] mt-[10rem] font-[500] text-[6rem]">
+            Cấu trúc đề thi B2 VSTEP
+          </h2>
+          <p className="mb-[10rem]">
+            Tương tự như cấu trúc bài thi B1 VSTEP, bài thi B2 cũng gồm có 4 kỹ
+            năng:{" "}
+          </p>
+          <div>
+            <ExamStructureVstepB2 examSructureVstepB2={examSructureVstepB2} />;
+          </div>
         </div>
-      </div>
-      <div>
-        <h2 className="text-orange-500 font-[500] text-[6rem] text-center">
-          Thông tin khóa học
-        </h2>
-        <CourseVstepB2 />
+        <div>
+          <h2 className="title">
+            Thông tin khóa học
+          </h2>
+          <CourseVstepB2 />
+        </div>
       </div>
     </div>
   );

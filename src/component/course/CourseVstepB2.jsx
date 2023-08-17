@@ -3,16 +3,16 @@ import React from "react";
 
 const CourseVstepB2 = () => {
   return (
-    <div className="grid grid-cols-2 gap-5">
-      <div>
+    <div className="grid grid-cols-2 gap-[10rem]">
+      <div className="col-span-1">
         <img
           src="khoa_on_b2vstep.png"
           alt=""
-          className="w-[400px] h-[250px] border-[1px] border-transparent border-solid rounded-[20px]"
+          className=" border-[1px] border-transparent border-solid rounded-[20px]"
         />
       </div>
-      <div>
-        <h3 className="text-orange-500 font-[500] text-[6rem] uppercase	">
+      <div className="col-span-1">
+        <h3 className="text-orange-500 font-[500] mb-[5rem] text-[5.5rem] uppercase	">
           khóa ôn b2
         </h3>
         <p>
