@@ -1,10 +1,12 @@
 import React from "react";
 import IntroduceAptisB1 from "./luyen-thi-b1/introduce";
 import Customers from "./luyen-thi-b1/customers";
-
+import DOMPurify from "dompurify";
 import pic1 from "public/aptisb1pic1.png";
 import pic2 from "public/aptisb1pic2.png";
 import pic3 from "public/aptisb1pic3.png";
+import pic4 from "public/Mask Group.png";
+import Image from "next/image";
 
 function PageAptisB1(props) {
   const listCustomers = [
@@ -31,13 +33,20 @@ function PageAptisB1(props) {
     <section>
       <div style={{ margin: "0 auto", width: "1440px" }}>
         <IntroduceAptisB1 />
-        <div className="mx-[10%]">
+        <div className="mx-[10%] my-[5%]">
           <div>
             <h2>Đối tượng cần chứng chỉ tiếng Anh APTIS B1</h2>
             <div className="grid gap-48 grid-cols-3">
               {listCustomers.map((item, index) => (
                 <Customers item={item} key={index} />
               ))}
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-24">
+            <div className="col-span-2">ádd</div>
+            <div className="col-span-1 grid grid-rows-2 gap-[20%]">
+              <Image src={pic4} alt="pic" className="row-span-1" />
+              <Image src={pic4} alt="pic" className="row-span-1" />
             </div>
           </div>
         </div>

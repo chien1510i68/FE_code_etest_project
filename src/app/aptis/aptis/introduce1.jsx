@@ -41,7 +41,10 @@ function Introduce(props) {
             ĐĂNG KÝ TƯ VẤN
           </button>
         </div>
-        <div className="absolute laptop:h-[400px] laptop:w-[600px] laptop:top-[5%] right-[-10rem] tablet:h-[270px] tablet:w-[400px] tablet:top-[5%] phone:h-[170px] phone:w-[240px] phone: top-[40rem]">
+        <div
+          className="absolute laptop:h-[400px] laptop:w-[600px] laptop:top-[5%] right-[-10rem] tablet:h-[270px] tablet:w-[400px] tablet:top-[10
+          %] phone:h-[170px] phone:w-[240px] phone: top-[40rem]"
+        >
           <Image
             src={pic}
             alt="pic"
