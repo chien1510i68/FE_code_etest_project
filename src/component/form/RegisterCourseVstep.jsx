@@ -19,7 +19,7 @@ function RegisterCourseVstep(props) {
         }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
-        className="max-w-full px-[10%] bg-[#ff9400] text-white"
+        className="max-w-[100vw] my-[10rem] px-[10%] bg-[#ff9400] text-white"
       >
         <h2 className="py-6  font-bold">ĐĂNG KÝ KHÓA HỌC</h2>
         <div className="grid tablet:grid-cols-5 gap-10 phone:grid-cols-1 justify-between  ">
