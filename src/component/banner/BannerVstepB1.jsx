@@ -10,7 +10,7 @@ function BannerVstepB1(props) {
           alt=""
           className="w-full h-full object-cover"
         />
-        <div className="w-[60vw] bg-[#fff4e591] h-full block block-center opa">
+        <div className="w-[60vw] bg-[#fff4e5d6] h-full block block-center opa">
           <h2 className="text-[9rem] text-[#000000] font-[500] text-center mt-[10%] mb-[20px]">
             LUYỆN THI B1 VSTEP
           </h2>

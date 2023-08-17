@@ -39,7 +39,7 @@ html {
   font-weight: 500;
   text-align: center;
   margin-bottom: 10rem;
-  color: var(--primary-color);
+  color:#fb9400;
   margin-top: 25rem;
 }
 .custom-btn {
@@ -130,4 +130,17 @@ div{
 #button-register > .ant-btn{
   color: red;
   height: 50px !important;
+}
+
+.image-bottom-vstep-b1:after{
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 60%;
+  bottom: 20px;
+  left: -20px;
+  border-radius: 20px;
+  background-color: #fb9400;
+  z-index: -5;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }

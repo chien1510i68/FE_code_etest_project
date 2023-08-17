@@ -97,7 +97,7 @@ const FormRegister = () => (
       <Button
         type="primary"
         htmlType="submit"
-        className="bg-[#FB9400] block mx-auto hover:opacity-80  my-[5%] px-[10%]"
+        className="bg-[#FB9400] block mx-auto hover:opacity-80  my-[5%] px-[5%]"
       >
         Gửi thông tin
       </Button>
