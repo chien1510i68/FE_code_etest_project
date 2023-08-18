@@ -1,20 +1,28 @@
+import { url } from "inspector";
 import Image from "next/image";
 import React from "react";
 
 function Customers({ item }) {
+  console.log("item", item);
+  const img = "/aptisb1pic1.png";
   return (
     <>
       <div className="w-full py-[5%]  ">
-        <div className="relative bg-[#171B41/50]">
-          <Image
-            src={item.img}
+        <div className="relative   ">
+          <div
+            className={`rounded-[20px] flex items-center justify-center text-white uppercase h-[235px]`}
+            style={{ background: `url(${item.img})` }}
+          >
+            <h2>{item.title}</h2>
+          </div>
+          {/* src={}
             alt="pic"
             objectFit="cover"
-            className="rounded-[20px] "
-          />
-          <h2 className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white bg-opacity-50 uppercase overflow-hidden">
-            {item.title}
-          </h2>
+            className="rounded-[20px]  before:bg-black" */}
+
+          {/* <h2 className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white bg-opacity-50 uppercase overflow-hidden">
+            
+          </h2> */}
         </div>
 
         <div className="text-left mt-[5rem]">
