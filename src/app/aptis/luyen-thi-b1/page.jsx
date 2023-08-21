@@ -101,9 +101,9 @@ function PageAptisB1(props) {
           {listStep.map((item, index) => (
             <Route item={item} key={index} />
           ))}
+          <AnotherCoures />
+          <FormRegister />
         </div>
-        <AnotherCoures />
-        <FormRegister />
       </div>
     </section>
   );

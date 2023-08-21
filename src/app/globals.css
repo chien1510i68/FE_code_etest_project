@@ -136,9 +136,10 @@ div{
   color: #fb9400;
   font-size: 22px;
   font-weight: 600;
-  line-height: 25px;
+  line-height: 30px;
   margin: 10px 0;
 }
+
 .image-bottom-aptis-b1:before{
   content: "";
   position: absolute;

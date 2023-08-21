@@ -51,21 +51,23 @@ function Cautrucdethi(props) {
     <div>
       <h2 className="titleAptisB1">Cấu trúc đề thi Aptis B1</h2>
       <p>Bài thi gồm 4 kĩ năng và 1 phần thi ngữ pháp từ vựng</p>
-      {list.map((item, ind) => (
-        <div key={ind}>
-          <div className="flex items-end my-[10px]">
-            <h3>{item.title}</h3> <p>{item.descipt}</p>
-          </div>
+      <div>
+        {list.map((item, ind) => (
+          <div key={ind}>
+            <div className="flex items-end my-[10px]">
+              <h3>{item.title}</h3> <p>{item.descipt}</p>
+            </div>
 
-          <p>
-            <ul className="list-disc ml-[5%]">
-              {item.content.map((value, id) => (
-                <li key={id}>{value}</li>
-              ))}
-            </ul>
-          </p>
-        </div>
-      ))}
+            <p>
+              <ul className="list-disc ml-[5%]">
+                {item.content.map((value, id) => (
+                  <li key={id}>{value}</li>
+                ))}
+              </ul>
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
