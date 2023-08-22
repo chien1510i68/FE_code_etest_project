@@ -37,7 +37,7 @@ function PageVstepB1(props) {
         </>
         <AnotherCoures />
         <h2 className="title">Đăng ký nhận tư vấn </h2>
-        <FormRegister />
+        <FormRegister />  
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ const items = [
     ]),
   ]),
 
-  getItem("LỊCH THI", "aptis", null),
+  getItem("LỊCH THI", "test-schedule", null),
   getItem("LỊCH ÔN TẬP", "sub4", null),
   getItem("TIN TỨC", "new", null),
   getItem("THI THỬ", "englishacademic", null),

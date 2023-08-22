@@ -25,7 +25,7 @@ const FormRegister = () => (
     onFinishFailed={onFinishFailed}
     className="max-w-full "
   >
-    <div className="grid tablet:grid-cols-2 gap-12 phone:grid-cols-1 justify-between mt-[10%]">
+    <div className="grid tablet:grid-cols-2 gap-12 phone:grid-cols-1 justify-between mt-[5%]">
       <Form.Item
         name="username"
         rules={[

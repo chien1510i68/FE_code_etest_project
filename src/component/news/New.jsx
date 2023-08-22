@@ -1,4 +1,5 @@
 import { Button, Col, Row, notification } from "antd";
+import Link from "next/link";
 import React from "react";
 // import { useNavigate } from "react-router";
 
@@ -9,21 +10,24 @@ function New(props) {
   //         notification.success({message : "clicked to" + title})
   //   }
   return (
-    <div className="tablet:px-[100px] phone:mx-[10px] grid laptop:grid-cols-3 tablet:grid-cols-2 phone:grid-cols-1 gap-24 mt-[10rem]   ">
+    <div className="tablet:grid-cols-3 grid phone:grid-cols-1 gap-24   ">
       {newList.map((item) => (
-        <div
+        <Link
+          href={`new/${item.id}`}
           className=" col-span-1  hover:cursor-pointer mt-[15rem] mx-auto"
           //  onClick={() =>{handleNavigate(item.title)}}
         >
           <img
             src={item.img}
-            alt=""
+            alt="this is the image "
             className="h-[100rem] w-full object-cover rounded-t-[3rem] "
           />
-          <h2 className="text-[5rem] font-[600] text-[#FB9400] leading-[5rem]  py-[5rem] line-clamp-2 h-[15.7rem]">
+          <p className="text-[5rem]   font-[600] text-[#FB9400] leading-[5rem]  py-[5rem] line-clamp-2 h-[15.7rem]">
             {item.title}
-          </h2>
-          <p className="text-[#333] pt-[5rem] pb-[2rem]">{item.description}</p>
+          </p>
+          <p className="text-[#333] pt-[5rem] line-clamp-4 pb-[2rem]">
+            {item.description}
+          </p>
           <Button
             className="block ml-auto bg-[#FB9400] hover:bg-[#ffc00d] !important"
             type="primary"
@@ -31,7 +35,7 @@ function New(props) {
             {" "}
             Xem thêm
           </Button>
-        </div>
+        </Link>
       ))}
     </div>
   );

@@ -46,12 +46,7 @@ function Header() {
   const showModalInforUser = () => {
     setIsModalInforUsernOpen(true);
   };
-  const handleOkInforUser = () => {
-    setIsModalInforUsernOpen(false);
-  };
-  const handleCancelInforUser = () => {
-    setIsModalInforUsernOpen(false);
-  };
+
   const onClick = (e) => {
     console.log("Nhấp vào ");
     if (e.key == 1) {
