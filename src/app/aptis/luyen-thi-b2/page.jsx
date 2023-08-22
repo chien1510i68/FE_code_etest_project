@@ -32,11 +32,11 @@ function PageAptisB2(props) {
 
   return (
     <section>
-      <div style={{ margin: "0 auto", width: "1440px" }}>
-        <Intro />
+      <Intro />
+      <div style={{ margin: "0 auto", maxWidth: "1440px" }}>
         <div className="mx-[10%]    ">
-          <div className="grid grid-cols-3 gap-24 items-center  ">
-            <div className="col-span-2  mr-[5%]">
+          <div className="grid laptop:grid-cols-3 phone:grid-cols-1 gap-24 items-center  ">
+            <div className="col-span-2  mr-[5%] ">
               <h2 className="titleAptisB1">
                 Đối tượng cần chứng chỉ tiếng Anh APTIS B2
               </h2>
@@ -58,19 +58,27 @@ function PageAptisB2(props) {
               <h2 className="titleAptisB1">Cấu trúc đề thi APTIS B2</h2>
               <TableExample />
             </div>
-            <div className="col-span-1 grid grid-rows-3 items-center justify-items-end">
-              <Image src={pic1} alt="pic" className="row-span-2" />
-              <Image src={pic2} alt="pic" className="row-span-1" />
+            <div className=" laptop:col-span-1 grid laptop:grid-rows-3 laptop:grid-cols-1 tablet:grid-cols-2 items-center  phone:justify-items-center laptop:justify-items-end">
+              <Image
+                src={pic1}
+                alt="pic"
+                className="laptop:row-span-2 tablet:col-span-1 tablet:grid phone:hidden"
+              />
+              <Image
+                src={pic2}
+                alt="pic"
+                className="laptop:row-span-1 tablet:col-span-1"
+              />
             </div>
           </div>
           <div className="grid grid-cols-5">
-            <div className="col-span-4">
+            <div className="laptop:col-span-4 phone:col-span-5">
               <CautrucdethiB2 />
             </div>
           </div>
           <h2 className="title">Thông tin khóa học</h2>
-          <div className="grid grid-rows-2">
-            <div className="row-span-1 grid grid-cols-2 gap-48">
+          <div className="grid laptop:grid-rows-2 ">
+            <div className="row-span-1 grid laptop:grid-cols-2 phone:grid-cols-1 gap-48">
               <div className="col-span-1 flex items-center">
                 <div>
                   <Image
@@ -85,7 +93,7 @@ function PageAptisB2(props) {
                 <Detail />
               </div>
             </div>
-            <div className="row-span-1 w-[60%]">
+            <div className="row-span-1 laptop:w-[80%] phone:w-[100%]">
               <Mota />
             </div>
           </div>

@@ -145,8 +145,8 @@ div{
   position: absolute;
   height: 50%;
   width: 35%;
-  bottom: -20px;
-  right: -20px;
+  bottom: -5%;
+  right: -3%;
   border-radius: 20px;
   background-color: #fb9400;
   z-index: -10;
@@ -157,8 +157,8 @@ div{
   position: absolute;
   height: 30%;
   width:20%;
-  top: -20px;
-  left: -20px;
+  top: -5%;
+  left: -3%;
   border-radius: 20px;
   background-color: #23BDEE;
   z-index: -5;

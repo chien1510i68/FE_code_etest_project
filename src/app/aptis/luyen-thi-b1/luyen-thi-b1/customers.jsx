@@ -10,8 +10,12 @@ function Customers({ item }) {
       <div className="w-full py-[5%]  ">
         <div className="relative   ">
           <div
-            className={`rounded-[20px] flex items-center justify-center text-white uppercase h-[235px]`}
-            style={{ background: `url(${item.img})` }}
+            className={`rounded-[20px] flex items-center text-center justify-center  text-white uppercase h-[235px] `}
+            style={{
+              background: `url(${item.img})`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
           >
             <h2>{item.title}</h2>
           </div>

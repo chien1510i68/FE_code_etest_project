@@ -1,7 +1,7 @@
 function Mota(props) {
   const names = [
     "Mô tả:",
-    "Nhận bộ tài liệu luyện thi chứng chỉ tiếng Anh B1 VSTEP khi đăng ký khóa học tại đây",
+    "Nhận bộ tài liệu luyện thi chứng chỉ tiếng Anh B1 VSTEP khi đăng ký khóa học tại đây!",
   ];
   const ages = [
     [

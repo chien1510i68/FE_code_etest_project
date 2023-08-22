@@ -3,7 +3,7 @@ import IntroduceAptisB1 from "./luyen-thi-b1/introduce";
 import Customers from "./luyen-thi-b1/customers";
 // import pic1 from "public/aptisb1pic1.png";
 // import pic2 from "public/aptisb1pic2.png";
-// import pic3 from "public/aptisb1pic3.png";
+import pic3 from "public/aptisb1pic4.svg";
 import pic4 from "public/Mask Group.png";
 import pic5 from "public/confident-teacher-explaining-lesson-pupils 1.png";
 import Image from "next/image";
@@ -50,38 +50,45 @@ function PageAptisB1(props) {
   ];
   return (
     <section>
-      <div style={{ margin: "0 auto", width: "1440px" }}>
-        <IntroduceAptisB1 />
+      <IntroduceAptisB1 />
+      <div style={{ margin: "0 auto", maxWidth: "1440px" }}>
         <div className="mx-[10%] my-[5%]">
           <div className="my-[5%]">
             <h2 className="titleAptisB1">
               Đối tượng cần chứng chỉ tiếng Anh APTIS B1
             </h2>
-            <div className="grid gap-48 grid-cols-3">
+            <div className="grid tablet:gap-48 phone:gap-12 laptop:grid-cols-3 tablet:grid-cols-2 phone:grid-cols-1 mt-[3%] ">
               {listCustomers.map((item, index) => (
                 <Customers item={item} key={index} />
               ))}
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-24 my-[5%]">
+          <div className="grid tablet:grid-cols-3 gap-24 my-[5%] phone:grid-cols-1">
+            <div className="tablet:hidden">
+              <Image src={pic3} alt="pic" className="row-span-1 " />
+            </div>
             <div className="col-span-2 ">
               <Thoihan />
               <Cautrucdethi />
             </div>
-            <div className="col-span-1 grid grid-rows-2 gap-[20%] justify-end">
-              <Image src={pic4} alt="pic" className="row-span-1" />
+            <div className="col-span-1 grid laptop:grid-rows-2 phone:grid-rows-1 gap-[20%] justify-end phone:gap-0">
+              <Image
+                src={pic3}
+                alt="pic"
+                className="row-span-1 tablet:grid phone:hidden"
+              />
               <Image src={pic4} alt="pic" className="row-span-1" />
             </div>
           </div>
           <h2 className="title">Thông tin khóa học</h2>
-          <div className="grid grid-rows-2">
-            <div className="row-span-1 grid grid-cols-2">
+          <div className="grid tablet:grid-rows-2  phone:grid-rows-3">
+            <div className="tablet:row-span-1 grid tablet:grid-cols-2  phone:grid-cols-1 phone:row-span-2">
               <div className="col-span-1">
                 <h2 className="titleAptisB1">KHÓA ÔN B1</h2>
                 <Detail />
               </div>
-              <div className="col-span-1 relative ">
-                <div className="image-bottom-aptis-b1 image-top-aptis-b1">
+              <div className="col-span-1  ">
+                <div className="relative image-bottom-aptis-b1 image-top-aptis-b1 phone:my-[5%]">
                   <Image
                     src={pic5}
                     alt="pic"
@@ -90,7 +97,7 @@ function PageAptisB1(props) {
                 </div>
               </div>
             </div>
-            <div className="row-span-1 w-[60%]">
+            <div className="row-span-1 laptop::w-[60%] phone:w-[100%]">
               <Mota />
             </div>
           </div>
