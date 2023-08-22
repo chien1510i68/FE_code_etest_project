@@ -1,7 +1,12 @@
-'use client'
+"use client";
 import React from "react";
 import { Button, Form, Input } from "antd";
-import { MailOutlined, UserOutlined , PhoneOutlined ,EnvironmentOutlined } from "@ant-design/icons";
+import {
+  MailOutlined,
+  UserOutlined,
+  PhoneOutlined,
+  EnvironmentOutlined,
+} from "@ant-design/icons";
 const onFinish = (values) => {
   console.log("Success:", values);
 };
@@ -11,7 +16,6 @@ const onFinishFailed = (errorInfo) => {
 };
 
 const FormRegister = () => (
-
   <Form
     name="basic"
     initialValues={{
@@ -19,9 +23,9 @@ const FormRegister = () => (
     }}
     onFinish={onFinish}
     onFinishFailed={onFinishFailed}
-    className="max-w-full mx-[100px] "
+    className="max-w-full "
   >
-    <div className="grid tablet:grid-cols-2 gap-12 phone:grid-cols-1 justify-between ">
+    <div className="grid tablet:grid-cols-2 gap-12 phone:grid-cols-1 justify-between mt-[5%]">
       <Form.Item
         name="username"
         rules={[
@@ -90,8 +94,12 @@ const FormRegister = () => (
     </div>
 
     <Form.Item>
-      <Button type="primary" htmlType="submit" className="bg-[#FB9400] block mx-auto hover:opacity-80  my-[10rem] px-[5rem]">
-       Gửi thông tin 
+      <Button
+        type="primary"
+        htmlType="submit"
+        className="bg-[#FB9400] block mx-auto hover:opacity-80  my-[5%] px-[5%]"
+      >
+        Gửi thông tin
       </Button>
     </Form.Item>
   </Form>

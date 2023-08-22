@@ -1,3 +1,4 @@
+"use client";
 import { Modal, Form, Button, Input, Row, Col } from "antd";
 
 import React from "react";
@@ -34,17 +35,20 @@ const LoginModal = ({ isModalOpen, handleOk, handleCancel }) => {
         onOk={handleOk}
         onCancel={handleCancel}
         // width={508}
-        className="max-h-[208px] max-w-[508px] rounded-[38px] "
+        className="max-h-[208px] tablet:w-[508px] phone:w-[340px] rounded-[38px] "
         footer={[]}
       >
         <Row className="bg-[#FB9400] rounded-[27px] my-20 overflow-hidden">
           <Col span={9} className="object-cover transform-scale-x-[-1] ">
             <Image src={balo} alt="icon" height={140} width={157} />
           </Col>
-          <Col span={15} className="text-white text-left my-[10px]">
-            <h2 className="font-black text-[32px] cl">Đăng nhập</h2>
+          <Col
+            span={15}
+            className="text-white text-left my-[10px] leading-snug"
+          >
+            <h2 className="font-black text-[32px] ">Đăng nhập</h2>
             <p className="font-normal text-[19.4px]">
-              Học tiếng anh với E-Test mỗi ngày
+              Học tiếng anh cùng <br></br> E-Test mỗi ngày
             </p>
           </Col>
         </Row>

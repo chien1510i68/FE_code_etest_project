@@ -5,6 +5,7 @@ import Course from "@/component/course/course";
 import Route from "@/component/route/route";
 import AnotherCoures from "@/component/course/AnotherCoures";
 import FormRegister from "@/component/form/FormRegister";
+import BannerEnglishAcademic from "@/component/banner/BannerEnglishAcademic";
 
 const listEAcademic = [
   {
@@ -50,39 +51,28 @@ const listStep = [
 function PageEnglishAcademic(props) {
   return (
     <>
-      <div className="mt-[45px] w-[100vw] h-[500px] bgr-englishacademic text-[#fff] relative">
-        <div className="w-[40%] mx-auto text-center absolute top-[20%] left-[50%] translate-x-[-50%] translate-x-[-50%] border-[10px] p-[5rem] border-primaryColor border-solid ">
-          <h2 className="text-[8rem] font-[700] my-[5rem] uppercase">
-            Luyện thi Anh ngữ học thuật{" "}
-          </h2>
-          <p className="text-[4.5rem] font-[500]">
-            Khóa học mang đến cho học viên những kỹ năng cần thiết, giúp học
-            viên thành thạo các kỹ năng tiếng Anh học thuật tạo nên bước đột
-            phát cho quá trình học tập và con đường sự nghiệp tương lai.
-          </p>
-          <Button className="custom-btn uppercase font-[600] mt-[5rem] hover:border-none">
-            đăng ký tư vấn
-          </Button>
-        </div>
-      </div>
-      <Row gutter={40} className="mx-[100px] justify-between mt-[100px] ">
+      <BannerEnglishAcademic />
+      <div className="px-96 grid gap-48 laptop:grid-cols-3 tablet:grid-cols-2 phone:grid-cols-1 mt-[100px] ">
         {listEAcademic.map((item, index) => (
           <EAcadamicIntro item={item} key={index} />
         ))}
-      </Row>
+      </div>
       <>
         <h2 className="title">Thông tin khóa học </h2>
-        <Row className="mx-[50rem] mt-[50px] " gutter={0}>
+        <div
+          className="mx-96 grid gap-24 tablet:grid-cols-2  phone:grid-cols-1 mt-[50px] "
+          gutter={0}
+        >
           {inforCourses.map((item, ind) => (
             <Course item={item} key={ind} />
           ))}
-        </Row>
+        </div>
 
         <div className="w-[80vw] mx-auto mt-[100px] border-none">
           <img src="/5.jpg" className="w-full " alt="" />
         </div>
 
-        <div className="mx-[100px]">
+        <div className="mx-96">
           <h2 className="title">Lộ trình học và thi</h2>
           {listStep.map((item, index) => (
             <Route item={item} key={index} />

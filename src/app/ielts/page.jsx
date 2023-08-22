@@ -58,7 +58,7 @@ const inforCourses = [
 ];
 function IeltsPage(props) {
   return (
-    <div className="pt-[45px] bg-[#fff]">
+    <div className="pt-[45px] bg-[#fff] ">
       {/* banner */}
     <BannerIelts/>
 
@@ -69,9 +69,9 @@ function IeltsPage(props) {
 
       <>
         <h2 className="title">Thông tin khóa học </h2>
-        <div className="mx-[50rem] mt-[50px] grid gap-24 tablet:grid-cols-2 phone:grid-cols-1">
+        <div className="px-96 mt-[50px] grid  tablet:grid-cols-2 phone:grid-cols-1  gap-24">
           {inforCourses.map((item, ind) => (
-            <Course item={item} key={ind} />
+            <Course item={item} key={ind}  />
           ))}
         </div>
       </>
