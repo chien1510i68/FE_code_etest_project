@@ -4,6 +4,7 @@ import Carousels from "@/component/slider/Carousel";
 import New from "@/component/news/New";
 import FormRegister from "@/component/form/FormRegister";
 import axios from "axios";
+import { getAllNews } from "@/component/api/listApi";
 const items = [
   {
     id: "english.png",
@@ -55,21 +56,21 @@ const items = [
 //   },
 // ];
 
-async function handleGetNews() {
-  try {
-    const res = await axios.get(
-      "https://58ac-118-70-132-104.ngrok-free.app/news/all"
-    );
-    return res;
-  } catch (error) {}
-}
+// async function handleGetNews() {
+//   try {
+//     const res = await axios.get(
+//       "https://d123-118-70-132-104.ngrok-free.app/news/all"
+//     );
+//     return res;
+//   } catch (error) {}
+// }
 
 async function PageDashbroad() {
-  const res = await handleGetNews();
+  const res = await getAllNews();
   // console.log("Du lieu duoc tra ve la : ", res.data.data.items);
   let newList = null;
-  if ( res.data.success) {
-    newList = res.data.data.items.map((item) => {
+  if (res?.data?.success) {
+    newList = res?.data?.data?.items?.map((item) => {
       return {
         id: item.id,
         img: item.image,
@@ -77,7 +78,7 @@ async function PageDashbroad() {
         description: item.content,
       };
     });
-  // console.log("Thanh cong ");
+    // console.log("Thanh cong ");
   }
 
   return (

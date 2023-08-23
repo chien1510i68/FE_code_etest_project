@@ -11,8 +11,9 @@ function New(props) {
   //   }
   return (
     <div className="tablet:grid-cols-3 grid phone:grid-cols-1 gap-24   ">
-      {newList.map((item) => (
+      {newList.map((item, ind) => (
         <Link
+          key={ind}
           href={`new/${item.id}`}
           className=" col-span-1  hover:cursor-pointer mt-[15rem] mx-auto"
           //  onClick={() =>{handleNavigate(item.title)}}

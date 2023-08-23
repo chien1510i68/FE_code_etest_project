@@ -2,22 +2,29 @@
 import React from "react";
 import { Collapse } from "antd";
 import BtnArea from "./BtnArea";
+import { getAllExam } from "@/component/api/listApi";
 
-async function getData() {
-  try {
-    const response = await fetch(
-      "https://ec32-118-70-132-104.ngrok-free.app/exam/schedule/all"
-    );
-    return response.json();
-  } catch (error) {}
-}
+// async function getData() {
+//   try {
+//     const response = await fetch(
+//       "https://d123-118-70-132-104.ngrok-free.app/exam/schedule/all"
+//     );
+//     return response.json();
+//   } catch (error) {}
+// }
 
 async function Area() {
-  const data = await getData();
-  // console.log(data.data.items);
-  const items = data.data.items.map((item) => {
+  // const data = await getData();
+  const data = await getAllExam();
+
+  // let items = null;
+  // if (res?.data?.success) {
+  // console.log("data:::", data?.data?.items);
+  // console.log("menu: ", data?.data?.data?.items);
+  const items = data?.data?.data?.items?.map((item) => {
+    // console.log("item::", item);
     return {
-      key: item.schoolId,
+      key: item.id.toString(),
       label: item.nameExamSchool,
       children: (
         <div className="px-[3rem]">
@@ -46,7 +53,8 @@ async function Area() {
       ),
     };
   });
-  console.log(items);
+  // }
+  // console.log(items);
   return (
     <div>
       <BtnArea />

@@ -45,8 +45,8 @@ async function PageDetailNews({ params }: { params: { id: Number } }) {
       <div className="col-span-1">
 
         {
-          news.map((item : any )=>(
-            <div>
+          news.map((item : any, ind: number )=>(
+            <div key={ind}>
                 <h2>{item.createdDate}</h2>
             </div>
           ))

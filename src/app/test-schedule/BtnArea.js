@@ -1,23 +1,21 @@
-
-'use client'
+"use client";
 import React from "react";
 import { Button, message } from "antd";
+import { getAllExam } from "@/component/api/listApi";
 
-function BtnArea(props) {const handleClickBtn = (index) => {
+function BtnArea(props) {
+  const handleClickBtn = (index) => {
     console.log(index);
     message.info("clicked" + index);
   };
-  
- async function getData() {
-    try{
+
+  async function getData() {
+    try {
       const response = await fetch(
-        "https://ec32-118-70-132-104.ngrok-free.app/exam/schedule/all"
+        "https://d123-118-70-132-104.ngrok-free.app/exam/schedule/all"
       );
       return response.json();
-  
-    }catch(error){}
-  
-    
+    } catch (error) {}
   }
 
   return (
