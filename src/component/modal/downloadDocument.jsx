@@ -6,29 +6,6 @@ import Image from "next/image";
 import { DownloadOutlined } from "@ant-design/icons";
 // import balo from "public/world_book_fun_fb_06 [Converted]-04 1.svg";
 const DownloadDocument = () => {
-  const onFinish = async (data) => {
-    console.log(data);
-    // authenApi
-    // .login(data?.username, data?.password)
-    // .then((res) => {
-    //   Cookies.set("access_token", res?.data?.body?.dataRes?.accessToken);
-    //   // sessionStorage.setItem(
-    //   //   "accessToken",
-    //   //   res?.data?.body?.dataRes?.accessToken
-    //   // );
-
-    //   if (res?.data?.body?.status === "OK") {
-    //     navigate("/system/user");
-    //     notification.success({ message: "Đăng nhập thành công" });
-    //   } else {
-    //     notification.error({ message: "Đăng nhập không thành công" });
-    //   }
-    // })
-    // .catch((err) => {
-    //   notification.error({ message: err.toString?.() });
-    // });
-  };
-
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
   const showDocumentDownload = () => {
     console.log("123");
@@ -37,6 +14,7 @@ const DownloadDocument = () => {
   const handleCancelDownload = () => {
     setIsDocumentOpen(false);
   };
+  const [expanded, setExpanded] = useState(false);
   const list = [
     {
       id: 1,
@@ -49,7 +27,8 @@ const DownloadDocument = () => {
       id: 2,
       pic: "/1.jpg",
       title: "abcd",
-      description: "áldjksalld",
+      description:
+        "Chào mừng bạn đến với chuyên mục Tiếng Anh B2 trên trang web của chúng tôi! Đây là nơi dành riêng cho những người đã có khả năng tiếng Anh ở mức độ trung bình trên (B2) và muốn tiến xa hơn trong việc nâng cao kỹ năng giao tiếp và hiểu biết ngôn ngữ này.Chuyên mục này sẽ giúp bạn xây dựng và mở rộng kiến thức tiếng Anh của mình với những nội dung đa dạng và thú vị. Tại đây, bạn sẽ tìm thấy các bài viết, bài thảo luận, và tài liệu học được thiết kế đặc biệt để đáp ứng nhu cầu của những người đang ở mức trình độ B2.",
       download: "2s",
     },
     {
@@ -98,8 +77,17 @@ const DownloadDocument = () => {
                   <Image src={item.pic} alt="pic" height={96} width={139} />
                 }
                 title={<h2>{item.title}</h2>}
-                description={item.description}
+                description={
+                  expanded
+                    ? item.description
+                    : item.description.slice(0, 100) + "..."
+                }
               />
+              {item.description.length > 100 && (
+                <Button onClick={() => setExpanded(!expanded)}>
+                  {expanded ? "Rút gọn" : "Xem thêm"}
+                </Button>
+              )}
               <Button className="custom-btn ml-[5%] flex items-center">
                 <DownloadOutlined />
                 Download
