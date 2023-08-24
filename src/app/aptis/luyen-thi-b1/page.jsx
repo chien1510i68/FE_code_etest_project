@@ -1,8 +1,5 @@
-import React from "react";
 import IntroduceAptisB1 from "./luyen-thi-b1/introduce";
 import Customers from "./luyen-thi-b1/customers";
-// import pic1 from "public/aptisb1pic1.png";
-// import pic2 from "public/aptisb1pic2.png";
 import pic3 from "public/aptisb1pic4.svg";
 import pic4 from "public/Mask Group.png";
 import pic5 from "public/confident-teacher-explaining-lesson-pupils 1.png";
@@ -15,6 +12,8 @@ import RegisterCourseVstep from "@/component/form/RegisterCourseVstep";
 import Route from "@/component/route/route";
 import AnotherCoures from "@/component/course/AnotherCoures";
 import FormRegister from "@/component/form/FormRegister";
+import { Button } from "antd";
+import DownloadDocument from "@/component/modal/downloadDocument";
 function PageAptisB1(props) {
   const listStep = [
     { step: "Bước 1", title: "Đăng ký thông tin", content: "học viên đăng ký" },
@@ -102,6 +101,7 @@ function PageAptisB1(props) {
             </div>
           </div>
         </div>
+        <DownloadDocument />
         <RegisterCourseVstep />
         <div className="mx-[10%]">
           <h2 className="title">Lộ trình học và thi</h2>
