@@ -1,3 +1,4 @@
+import { Image } from "antd";
 import React from "react";
 const listStructExampleB1 = [
   {
@@ -37,8 +38,8 @@ function StructExamB1(props) {
       <h2 className="title text-center">Cấu trúc đề thi B1 VSTEP</h2>
       <div className="grid laptop:grid-cols-4 desktop:gap-72 tablet:gap-24 tablet:grid-cols-2 phone:grid-cols-1 ">
         {listStructExampleB1.map((item, index) => (
-          <div className="col-span-1 mb-[10rem]">
-            <img
+          <div className="col-span-1 mb-[10rem]" key={index}>
+            <Image
               src={item.img}
               alt=""
               className="w-full h-[300px] object-cover rounded-[20px]"

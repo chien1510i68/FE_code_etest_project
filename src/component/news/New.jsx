@@ -1,4 +1,4 @@
-import { Button, Col, Row, notification } from "antd";
+import { Button, Col, Image, Row, notification } from "antd";
 import Link from "next/link";
 import React from "react";
 // import { useNavigate } from "react-router";
@@ -11,13 +11,14 @@ function New(props) {
   //   }
   return (
     <div className="tablet:grid-cols-3 grid phone:grid-cols-1 gap-24   ">
-      {newList.map((item) => (
+      {newList.map((item ) => (
         <Link
+        key={item.id}
           href={`new/${item.id}`}
           className=" col-span-1  hover:cursor-pointer mt-[15rem] mx-auto"
           //  onClick={() =>{handleNavigate(item.title)}}
         >
-          <img
+          <Image
             src={item.img}
             alt="this is the image "
             className="h-[100rem] w-full object-cover rounded-t-[3rem] "

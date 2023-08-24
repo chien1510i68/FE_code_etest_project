@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, Image } from "antd";
 import React from "react";
 
 function BannerEnglishAcademic(props) {
@@ -20,7 +20,7 @@ function BannerEnglishAcademic(props) {
     // </div>
     <>
       <div className="w-[100vw] relative">
-        <img
+        <Image
           src="/anhnguhocthuat_0.png"
           className="w-full h-[70vh] object-cover"
           alt=""

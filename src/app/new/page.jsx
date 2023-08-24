@@ -58,7 +58,7 @@ const items = [
 async function handleGetNews() {
   try {
     const res = await axios.get(
-      "https://58ac-118-70-132-104.ngrok-free.app/news/all"
+      "https://4b79-118-70-132-104.ngrok-free.app/news/all"
     );
     return res;
   } catch (error) {}
@@ -68,7 +68,7 @@ async function PageDashbroad() {
   const res = await handleGetNews();
   // console.log("Du lieu duoc tra ve la : ", res.data.data.items);
   let newList = null;
-  if ( res.data.success) {
+  if (res &&  res.data?.success) {
     newList = res.data.data.items.map((item) => {
       return {
         id: item.id,

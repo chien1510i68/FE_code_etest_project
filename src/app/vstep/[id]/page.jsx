@@ -7,6 +7,7 @@ import RegisterCourseVstep from "@/component/form/RegisterCourseVstep";
 import Route from "@/component/route/route";
 import AnotherCoures from "@/component/course/AnotherCoures";
 import FormRegister from "@/component/form/FormRegister";
+import axios from "axios";
 const listStep = [
   { step: "Bước 1", title: "Đăng ký thông tin", content: "học viên đăng ký" },
   { step: "Bước 2", title: "Nộp hồ sơ - Lệ phí", content: "học viên nộp" },
@@ -14,18 +15,32 @@ const listStep = [
   { step: "Bước 4", title: "Trước ngày thi", content: "bộ phận đào tạo" },
   { step: "Bước 5", title: "Nhận kết quả", content: "học viên nhận" },
 ];
+const handleGetdata = () => {
+  const response = axios.get(
+    "https://4b79-118-70-132-104.ngrok-free.app/news/8"
+  );
+  return response; 
+};
 function PageVstepB1(props) {
+  const res = handleGetdata();
+  console.log(res);
+
+  
   return (
     <div>
       <BannerVstepB1 />
-      <div className="max-w-[1440px] desktop:mx-[10%] tablet:mx-[10%] phone:mx-[5%]">
+
+      <h2 className="text-[60px] text-center my-[100px]"> this is the demo</h2>
+
+      {/* content vstep b1   */}
+      {/* <div className="max-w-[1440px] desktop:mx-[10%] tablet:mx-[10%] phone:mx-[5%]">
         <VstepB1Intro />
         <StructExamB1 />
         <div className="mb-[10rem]">
           <h2 className="title">Thông tin khóa học </h2>
           <CourseVstepB1 />
         </div>
-      </div>
+      </div> */}
       <RegisterCourseVstep />
 
       <div className="max-w-[1440px] desktop:mx-[10%] tablet:mx-[10%] phone:mx-[5%]">
@@ -37,7 +52,7 @@ function PageVstepB1(props) {
         </>
         <AnotherCoures />
         <h2 className="title">Đăng ký nhận tư vấn </h2>
-        <FormRegister />  
+        <FormRegister />
       </div>
     </div>
   );
