@@ -1,59 +1,49 @@
 "use client";
 import { Modal, Form, Button, Input, Row, Col, List, Avatar } from "antd";
-
-import React, { useState } from "react";
+import { AppContext } from "../AppContext/AppContext";
+import React, { useEffect, useState, useContext } from "react";
 import Image from "next/image";
 import { DownloadOutlined } from "@ant-design/icons";
-// import balo from "public/world_book_fun_fb_06 [Converted]-04 1.svg";
+import { getAllDocument } from "@/api/apiDocument";
+
 const DownloadDocument = () => {
-  const [isDocumentOpen, setIsDocumentOpen] = useState(false);
-  const showDocumentDownload = () => {
-    console.log("123");
-    setIsDocumentOpen(true);
+  const { data, dispatch } = useContext(AppContext);
+  const { modalOpen, listDataDocument } = data;
+  console.log("listDataDocument:: ", listDataDocument);
+
+  const showDocumentDownload = async () => {
+    dispatch({ type: "modalOpen" });
+
+    const res = await getAllDocument().then((data) => data);
+    console.log("res:: ", res?.data?.items);
+    dispatch({ type: "getDocument", payload: res?.data?.items });
   };
+
   const handleCancelDownload = () => {
-    setIsDocumentOpen(false);
+    dispatch({ type: "modalClose" });
   };
-  const [expanded, setExpanded] = useState(false);
-  const list = [
-    {
-      id: 1,
-      pic: "/2.jpg",
-      title: "abcd",
-      description: "áldjksalld",
-      download: "1a",
-    },
-    {
-      id: 2,
-      pic: "/1.jpg",
-      title: "abcd",
-      description:
-        "Chào mừng bạn đến với chuyên mục Tiếng Anh B2 trên trang web của chúng tôi! Đây là nơi dành riêng cho những người đã có khả năng tiếng Anh ở mức độ trung bình trên (B2) và muốn tiến xa hơn trong việc nâng cao kỹ năng giao tiếp và hiểu biết ngôn ngữ này.Chuyên mục này sẽ giúp bạn xây dựng và mở rộng kiến thức tiếng Anh của mình với những nội dung đa dạng và thú vị. Tại đây, bạn sẽ tìm thấy các bài viết, bài thảo luận, và tài liệu học được thiết kế đặc biệt để đáp ứng nhu cầu của những người đang ở mức trình độ B2.",
-      download: "2s",
-    },
-    {
-      id: 3,
-      pic: "/5.jpg",
-      title: "abcd",
-      description:
-        "áldjksalldsfdsfsdfsdfsdfsfffffffsdddddddddddddddddddddddddđ",
-      download: "3c",
-    },
-    {
-      id: 3,
-      pic: "/5.jpg",
-      title: "abcd",
-      description:
-        "áldjksalldsfdsfsdfsdfsdfsfffffffsdddddddddddddddddddddddddđ",
-      download: "3c",
-    },
-  ];
+  // const expandContent = () => {
+  //   dispatch({ type: "documentExpand" });
+  // };
+  // const compactContent = () => {
+  //   dispatch({ type: "documentCompact" });
+  // };
+
+  const [expandedItems, setExpandedItems] = useState({});
+  const toggleExpand = (itemID) => {
+    setExpandedItems((prev) => ({
+      ...prev,
+      [itemID]: !prev[itemID],
+    }));
+  };
+  const download = () => {};
+
   return (
     <>
       <div className="mx-[10%] my-[5%]">
         <Button
           className="custom-btn mt-[10%]"
-          onClick={(e) => setIsDocumentOpen(true)}
+          onClick={showDocumentDownload}
           // isModalOpen={isDocumentOpen}
           // handleCancel={(e) => setIsDocumentOpen(false)}
         >
@@ -62,7 +52,7 @@ const DownloadDocument = () => {
       </div>
       <Modal
         title="DANH SÁCH TÀI LIỆU"
-        open={isDocumentOpen}
+        open={modalOpen}
         // onOk={handleOk}
         onCancel={handleCancelDownload}
         width={708}
@@ -70,22 +60,23 @@ const DownloadDocument = () => {
         footer={[]}
       >
         <List>
-          {list.map((item, ind) => (
-            <List.Item key={ind}>
+          {listDataDocument.map((item) => (
+            <List.Item key={item.id}>
               <List.Item.Meta
                 avatar={
-                  <Image src={item.pic} alt="pic" height={96} width={139} />
+                  <Image src={item.image} alt="pic" height={96} width={139} />
                 }
-                title={<h2>{item.title}</h2>}
+                title={<h2>{item.name}</h2>}
                 description={
-                  expanded
-                    ? item.description
-                    : item.description.slice(0, 100) + "..."
+                  expandedItems[item.id]
+                    ? item.content
+                    : item.content.slice(0, 70) + "..."
                 }
               />
-              {item.description.length > 100 && (
-                <Button onClick={() => setExpanded(!expanded)}>
-                  {expanded ? "Rút gọn" : "Xem thêm"}
+
+              {item.content.length > 70 && (
+                <Button onClick={() => toggleExpand(item.id)}>
+                  {expandedItems[item.id] ? "Rút gọn" : "Xem thêm"}
                 </Button>
               )}
               <Button className="custom-btn ml-[5%] flex items-center">

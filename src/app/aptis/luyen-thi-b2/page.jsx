@@ -12,6 +12,7 @@ import RegisterCourseVstep from "@/component/form/RegisterCourseVstep";
 import Route from "@/component/route/route";
 import AnotherCoures from "@/component/course/AnotherCoures";
 import FormRegister from "@/component/form/FormRegister";
+import DownloadDocument from "@/component/modal/downloadDocument";
 function PageAptisB2(props) {
   const listObject = [
     "Học viên có trình độ đầu vào tương đương Aptis B1, cần củng cố kiến thức và thông thạo kĩ năng làm bài thi Aptis để đạt Aptis B2",
@@ -98,6 +99,7 @@ function PageAptisB2(props) {
             </div>
           </div>
         </div>
+        <DownloadDocument />
         <RegisterCourseVstep />
         <div className="mx-[10%]">
           <h2 className="title">Lộ trình học và thi</h2>
