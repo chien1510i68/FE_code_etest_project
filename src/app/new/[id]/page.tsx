@@ -3,7 +3,7 @@ import axios from "axios";
 async function getNewsItem(id: any) {
   try {
     const response = await axios(
-      `https://4b79-118-70-132-104.ngrok-free.app/news/${id}`
+      `https://e751-118-70-132-104.ngrok-free.app/news/${id}`
     );
     return response;
   } catch (error) {}
@@ -12,7 +12,7 @@ async function getNewsItem(id: any) {
 async function handleGetNews() {
   try {
     const res = await axios.get(
-      "https://4b79-118-70-132-104.ngrok-free.app/news/all"
+      "https://e751-118-70-132-104.ngrok-free.app/news/all"
     );
     return res;
   } catch (error) {}
