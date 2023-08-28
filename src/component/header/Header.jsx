@@ -5,6 +5,7 @@ import LoginModal from "../modal/LoginModal";
 import RegisterModal from "../modal/RegisterModal";
 import MenuHeader from "@/component/menu/MenuHeader";
 import RegisterAccountModal from "../modal/RegisterAccountModal";
+import Link from "next/link";
 
 function Header() {
   const [isModalRegisterOpen, setIsModalRegisterOpen] = useState(false);
@@ -73,7 +74,9 @@ function Header() {
       key: "2",
     },
     {
-      label: "Hồ sơ",
+      label: (
+        <Link href={"/user/edit-profile"}>Hồ sơ </Link>
+      ),
       key: "3",
     },
   ];
