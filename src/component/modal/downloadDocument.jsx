@@ -8,11 +8,11 @@ import { getAllDocument } from "@/api/apiDocument";
 
 const DownloadDocument = () => {
   const { data, dispatch } = useContext(AppContext);
-  const { modalOpen, listDataDocument } = data;
+  const { modalDownloadOpen, listDataDocument } = data;
   console.log("listDataDocument:: ", listDataDocument);
 
   const showDocumentDownload = async () => {
-    dispatch({ type: "modalOpen" });
+    dispatch({ type: "modalDownloadOpen" });
 
     const res = await getAllDocument().then((data) => data);
     console.log("res:: ", res?.data?.items);
@@ -20,7 +20,7 @@ const DownloadDocument = () => {
   };
 
   const handleCancelDownload = () => {
-    dispatch({ type: "modalClose" });
+    dispatch({ type: "modalDownloadClose" });
   };
   // const expandContent = () => {
   //   dispatch({ type: "documentExpand" });
@@ -52,7 +52,7 @@ const DownloadDocument = () => {
       </div>
       <Modal
         title="DANH SÁCH TÀI LIỆU"
-        open={modalOpen}
+        open={modalDownloadOpen}
         // onOk={handleOk}
         onCancel={handleCancelDownload}
         width={708}

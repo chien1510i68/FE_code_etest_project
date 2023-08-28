@@ -1,7 +1,5 @@
 "use client";
 import { Modal, Form, Button, Input, Row, Col } from "antd";
-// import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import React from "react";
 import Image from "next/image";
 import balo from "public/zyro-image.svg";
 import {
@@ -10,22 +8,28 @@ import {
   PhoneOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
+import { AppContext } from "../AppContext/AppContext";
+import React, { useContext } from "react";
+
+const RegisterModal = () => {
+  const { data, dispatch } = useContext(AppContext);
+  const { modalLoginOpen, modalRegisterOpen, modalProfileOpen } = data;
   const onFinish = async (data) => {
     console.log(data);
+    ////đặt thông báo đkí thông tin thành công
+    dispatch({ type: "modalRegisterClose" });
   };
 
-  const handleOkRegister = () => {
-    console.log("123");
-    // setIsModalRegisterOpen(false);
+  const handleCancel = () => {
+    dispatch({ type: "modalRegisterClose" });
   };
 
   return (
     <>
       <Modal
         // title="ĐĂNG NHẬP"
-        open={isModalOpen}
-        onOk={handleOkRegister}
+        open={modalRegisterOpen}
+        // onOk={handleOk}
         onCancel={handleCancel}
         // width={500}
         className="max-h-[208px] tablet:w-[508px] phone:w-[340px] rounded-[38px] "

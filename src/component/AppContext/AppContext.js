@@ -5,7 +5,10 @@ export const AppContext = createContext();
 
 const initialData = {
   //   getAllUser: {},
-  modalOpen: false,
+  modalDownloadOpen: false,
+  modalLoginOpen: false,
+  modalRegisterOpen: false,
+  modalRegisterAccOpen: false,
   listDataDocument: [],
   expand: false,
   //   drawerOpen: false,
@@ -18,14 +21,27 @@ const reducer = (state, action) => {
   switch (action.type) {
     case "getDocument":
       return { ...state, listDataDocument: action.payload };
-    case "modalOpen":
-      return { ...state, modalOpen: true, userID: action.payload };
-    case "modalClose":
-      return { ...state, modalOpen: false };
+    case "modalDownloadOpen":
+      return { ...state, modalDownloadOpen: true, userID: action.payload };
+    case "modalDownloadClose":
+      return { ...state, modalDownloadOpen: false };
+    case "modalLoginOpen":
+      return { ...state, modalLoginOpen: true };
+    case "modalLoginClose":
+      return { ...state, modalLoginOpen: false };
+    case "modalRegisterOpen":
+      return { ...state, modalRegisterOpen: true };
+    case "modalRegisterClose":
+      return { ...state, modalRegisterOpen: false };
+    case "modalRegisterAccOpen":
+      return { ...state, modalRegisterAccOpen: true };
+    case "modalRegisterAccClose":
+      return { ...state, modalRegisterAccOpen: false };
     case "documentExpand":
       return { ...state, expand: true };
     case "documentCompact":
       return { ...state, expand: false };
+
     default:
       return state;
   }

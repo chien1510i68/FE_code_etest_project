@@ -1,39 +1,50 @@
 "use client";
 
 import { Modal, Form, Button, Input, Row, Col } from "antd";
-
-import React from "react";
+import { AppContext } from "../AppContext/AppContext";
+import React, { useContext } from "react";
 import Image from "next/image";
 import balo from "public/zyro-image.svg";
-const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
+const RegisterAccountModal = () => {
+  // const onFinish = async (data) => {
+  //   console.log(data);
+  // authenApi
+  // .login(data?.username, data?.password)
+  // .then((res) => {
+  //   Cookies.set("access_token", res?.data?.body?.dataRes?.accessToken);
+  //   // sessionStorage.setItem(
+  //   //   "accessToken",
+  //   //   res?.data?.body?.dataRes?.accessToken
+  //   // );
+
+  //   if (res?.data?.body?.status === "OK") {
+  //     navigate("/system/user");
+  //     notification.success({ message: "Đăng nhập thành công" });
+  //   } else {
+  //     notification.error({ message: "Đăng nhập không thành công" });
+  //   }
+  // })
+  // .catch((err) => {
+  //   notification.error({ message: err.toString?.() });
+  // });
+  // };
+  const { data, dispatch } = useContext(AppContext);
+  const { modalRegisterAccOpen } = data;
   const onFinish = async (data) => {
     console.log(data);
-    // authenApi
-    // .login(data?.username, data?.password)
-    // .then((res) => {
-    //   Cookies.set("access_token", res?.data?.body?.dataRes?.accessToken);
-    //   // sessionStorage.setItem(
-    //   //   "accessToken",
-    //   //   res?.data?.body?.dataRes?.accessToken
-    //   // );
+    dispatch({ type: "modalRegisterAccClose" });
 
-    //   if (res?.data?.body?.status === "OK") {
-    //     navigate("/system/user");
-    //     notification.success({ message: "Đăng nhập thành công" });
-    //   } else {
-    //     notification.error({ message: "Đăng nhập không thành công" });
-    //   }
-    // })
-    // .catch((err) => {
-    //   notification.error({ message: err.toString?.() });
-    // });
+    //đặt thông báo gửi thông tin thành công
+  };
+
+  const handleCancel = () => {
+    dispatch({ type: "modalRegisterAccClose" });
   };
   return (
     <>
       <Modal
         // title="ĐĂNG NHẬP"
-        open={isModalOpen}
-        onOk={handleOk}
+        open={modalRegisterAccOpen}
         onCancel={handleCancel}
         // width={500}
         className="max-h-[208px] tablet:w-[508px] phone:w-[340px] rounded-[38px] "
@@ -114,4 +125,4 @@ const RegisterModal = ({ isModalOpen, handleOk, handleCancel }) => {
     </>
   );
 };
-export default RegisterModal;
+export default RegisterAccountModal;
