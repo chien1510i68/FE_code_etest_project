@@ -42,7 +42,7 @@ function Introduce(props) {
           </button>
         </div>
         <div
-          className="absolute laptop:h-[400px] laptop:w-[600px] laptop:top-[5%] right-[-10rem] tablet:h-[270px] tablet:w-[400px] tablet:top-[10
+          className="absolute laptop:h-[400px] laptop:w-[600px] laptop:top-[20%] right-[-10rem] tablet:h-[270px] tablet:w-[400px] tablet:top-[10
           %] phone:h-[170px] phone:w-[240px] phone: top-[40rem]"
         >
           <Image

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "../component/header/Header";
 import Footer from "../component/footer/Footer";
+import AppProvider from "@/component/AppContext/AppContext"
 // import 'animate.css';
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +21,10 @@ export default function RootLayout({
     <html lang="en">
      
       <body className={inter.className}>
-        <Header />
+        <AppProvider ><Header />
         {children}
-        <Footer />
+        <Footer /></AppProvider>
+        
       </body>
     </html>
   );

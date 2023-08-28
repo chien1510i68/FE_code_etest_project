@@ -1,51 +1,23 @@
 "use client";
 import { Dropdown } from "antd";
-import { useState } from "react";
 import LoginModal from "../modal/LoginModal";
 import RegisterModal from "../modal/RegisterModal";
 import MenuHeader from "@/component/menu/MenuHeader";
-import RegisterAccountModal from "../modal/RegisterAccountModal";
+import { useRouter } from "next/navigation";
+import { AppContext } from "../AppContext/AppContext";
+import React, { useState, useContext } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 function Header() {
-  const [isModalRegisterOpen, setIsModalRegisterOpen] = useState(false);
-  const [isModalRegisterAccountOpen, setIsModalRegisterAccountOpen] =
-    useState(false);
-  const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
-  const [isModalInforUserOpen, setIsModalInforUsernOpen] = useState(false);
+  const { data, dispatch } = useContext(AppContext);
+  const router = useRouter();
   const showModalRegister = () => {
-    // console.log("123");
-    setIsModalRegisterOpen(true);
-  };
-
-  const handleCancelRegister = () => {
-    setIsModalRegisterOpen(false);
-  };
-
-  const showModalRegisterAccount = () => {
-    // console.log("123");
-    setIsModalRegisterAccountOpen(true);
-  };
-  const handleOkRegisterAccount = () => {
-    console.log("123");
-    // setIsModalRegisterOpen(false);
-  };
-  const handleCancelRegisterAccount = () => {
-    setIsModalRegisterAccountOpen(false);
+    dispatch({ type: "modalRegisterOpen" });
   };
 
   const showModalLogin = () => {
-    setIsModalLoginOpen(true);
-  };
-  const handleOkLogin = () => {
-    setIsModalLoginOpen(false);
-  };
-  const handleCancelLogin = () => {
-    setIsModalLoginOpen(false);
-  };
-
-  const showModalInforUser = () => {
-    setIsModalInforUsernOpen(true);
+    dispatch({ type: "modalLoginOpen" });
   };
 
   const onClick = (e) => {
@@ -58,10 +30,6 @@ function Header() {
       showModalLogin();
       // notification.success({ message: "Đã nhấp vào day la " + e.key });
     }
-    if (e.key == 3) {
-      showModalInforUser();
-    }
-    // setCurrent(e.key);
   };
 
   const items = [
@@ -74,9 +42,7 @@ function Header() {
       key: "2",
     },
     {
-      label: (
-        <Link href={"/user/edit-profile"}>Hồ sơ </Link>
-      ),
+      label: <Link href="/user/edit-profile">Hồ sơ</Link>,
       key: "3",
     },
   ];
@@ -103,10 +69,12 @@ function Header() {
               arrow
             >
               <p onClick={(e) => e.preventDefault()}>
-                <img
+                <Image
                   src="/profile-user.png"
                   className="pl-[2rem] my-auto h-[7rem] cursor-pointer "
                   alt="sth"
+                  width={36}
+                  height={26}
                 />
               </p>
             </Dropdown>
@@ -114,21 +82,10 @@ function Header() {
         </div>
       </div>
 
-      <RegisterModal
-        isModalOpen={isModalRegisterOpen}
-        handleCancel={handleCancelRegister}
-        // handleOk={handleOkRegister}
-      />
-      <RegisterAccountModal
-        isModalOpen={isModalRegisterAccountOpen}
-        handleCancel={handleCancelRegisterAccount}
-        handleOk={handleOkRegisterAccount}
-      />
-      <LoginModal
-        isModalOpen={isModalLoginOpen}
-        handleCancel={handleCancelLogin}
-        handleOk={handleOkLogin}
-      />
+      <RegisterModal />
+      <LoginModal />
+      {/* <RegisterAccountModal        
+      /> */}
     </div>
   );
 }

@@ -1,10 +1,11 @@
 "use client";
 import { Modal, Form, Button, Input, Row, Col } from "antd";
+import { AppContext } from "../AppContext/AppContext";
+import React, { useContext } from "react";
 
-import React from "react";
 import Image from "next/image";
 import balo from "public/world_book_fun_fb_06 [Converted]-04 1.svg";
-const LoginModal = ({ isModalOpen, handleOk, handleCancel }) => {
+const LoginModal = () => {
   const onFinish = async (data) => {
     console.log(data);
     // authenApi
@@ -26,13 +27,27 @@ const LoginModal = ({ isModalOpen, handleOk, handleCancel }) => {
     // .catch((err) => {
     //   notification.error({ message: err.toString?.() });
     // });
+
+    console.log("123");
+    dispatch({ type: "modalLoginClose" });
+    //đặt thông báo đăng nhập thành công
   };
+  const { data, dispatch } = useContext(AppContext);
+  const { modalLoginOpen, modalRegisterOpen, modalProfileOpen } = data;
+
+  const showModalRegister = () => {
+    dispatch({ type: "modalRegisterOpen" });
+    dispatch({ type: "modalLoginClose" });
+  };
+  const handleCancel = () => {
+    dispatch({ type: "modalLoginClose" });
+  };
+
   return (
     <>
       <Modal
         // title="ĐĂNG NHẬP"
-        open={isModalOpen}
-        onOk={handleOk}
+        open={modalLoginOpen}
         onCancel={handleCancel}
         // width={508}
         className="max-h-[208px] tablet:w-[508px] phone:w-[340px] rounded-[38px] "
@@ -103,6 +118,7 @@ const LoginModal = ({ isModalOpen, handleOk, handleCancel }) => {
             <Button
               type="default"
               // htmlType="submit"
+              onClick={showModalRegister}
               className="mr-10 rounded-[50px]"
             >
               Đăng ký
