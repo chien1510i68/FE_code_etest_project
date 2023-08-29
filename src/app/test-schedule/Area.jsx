@@ -6,7 +6,7 @@ import BtnArea from "./BtnArea";
 async function getData() {
   try {
     const response = await fetch(
-      "https://ec32-118-70-132-104.ngrok-free.app/exam/schedule/all"
+      "https://dc44-118-70-132-104.ngrok-free.app/exam/schedule/all"
     );
     return response.json();
   } catch (error) {}

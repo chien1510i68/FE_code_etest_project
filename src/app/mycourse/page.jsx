@@ -1,4 +1,3 @@
-
 import Carousels from "@/component/slider/Carousel";
 import React from "react";
 import TableCourse from "./TableCourse";
@@ -28,10 +27,11 @@ function PageMyCourse() {
     <div className="">
       <Carousels items={items} />
 
-      <div>
-        <h2>Khóa học của tôi </h2>
-        <TableCourse/>
-        
+      <div className="mx-auto max-w-[1440w]">
+        <div className="mx-[10%] ">
+          <h2 className="my-[5%]">Khóa học của tôi </h2>
+          <TableCourse />
+        </div>
       </div>
     </div>
   );

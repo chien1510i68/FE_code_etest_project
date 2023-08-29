@@ -28,7 +28,7 @@ const columns: ColumnsType<DataType> = [
 ];
 
 const data: DataType[] = [];
-for (let i = 0; i < 46; i++) {
+for (let i = 0; i < 6; i++) {
   data.push({
     key: i,
     name: `Edward King ${i}`,
