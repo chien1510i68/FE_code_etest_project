@@ -12,7 +12,7 @@ function BtnArea(props) {
   async function getData() {
     try {
       const response = await fetch(
-        "https://d123-118-70-132-104.ngrok-free.app/exam/schedule/all"
+        "https://79c1-118-70-132-104.ngrok-free.app/exam/schedule/all"
       );
       return response.json();
     } catch (error) {}

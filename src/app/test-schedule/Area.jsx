@@ -22,7 +22,7 @@ async function Area() {
   // console.log("data:::", data?.data?.items);
   // console.log("menu: ", data?.data?.data?.items);
   const items = data?.data?.data?.items?.map((item) => {
-    // console.log("item::", item);
+    console.log("item::", item);
     return {
       key: item.id.toString(),
       label: item.nameExamSchool,
