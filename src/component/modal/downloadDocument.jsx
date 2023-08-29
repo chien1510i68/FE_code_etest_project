@@ -36,7 +36,7 @@ const DownloadDocument = () => {
       [itemID]: !prev[itemID],
     }));
   };
-  const download = () => {};
+  // const download = () => {};
 
   return (
     <>

@@ -9,6 +9,7 @@ const initialData = {
   modalLoginOpen: false,
   modalRegisterOpen: false,
   modalRegisterAccOpen: false,
+  modalForgetPasswordOpen: false,
   listDataDocument: [],
   expand: false,
   //   drawerOpen: false,
@@ -29,6 +30,10 @@ const reducer = (state, action) => {
       return { ...state, modalLoginOpen: true };
     case "modalLoginClose":
       return { ...state, modalLoginOpen: false };
+    case "modalForgetPasswordOpen":
+      return { ...state, modalForgetPasswordOpen: true };
+    case "modalForgetPasswordClose":
+      return { ...state, modalForgetPasswordOpen: false };
     case "modalRegisterOpen":
       return { ...state, modalRegisterOpen: true };
     case "modalRegisterClose":

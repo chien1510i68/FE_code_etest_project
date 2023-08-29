@@ -5,7 +5,7 @@ import React, { useContext } from "react";
 
 import Image from "next/image";
 import balo from "public/world_book_fun_fb_06 [Converted]-04 1.svg";
-const LoginModal = () => {
+const ForgetPassword = () => {
   const onFinish = async (data) => {
     console.log(data);
     // authenApi
@@ -33,25 +33,18 @@ const LoginModal = () => {
     //đặt thông báo đăng nhập thành công
   };
   const { data, dispatch } = useContext(AppContext);
-  const { modalLoginOpen } = data;
+  const { modalForgetPasswordOpen } = data;
 
-  const showModalRegister = () => {
-    dispatch({ type: "modalRegisterOpen" });
-    dispatch({ type: "modalLoginClose" });
-  };
+  console.log("modalForgetPasswordOpen: ", modalForgetPasswordOpen);
   const handleCancel = () => {
-    dispatch({ type: "modalLoginClose" });
-  };
-  const handleForgetPassword = () => {
-    dispatch({ type: "modalForgetPasswordOpen" });
-    dispatch({ type: "modalLoginClose" });
+    dispatch({ type: "modalForgetPasswordClose" });
   };
 
   return (
     <>
       <Modal
         // title="ĐĂNG NHẬP"
-        open={modalLoginOpen}
+        open={modalForgetPasswordOpen}
         onCancel={handleCancel}
         // width={508}
         className="max-h-[208px] tablet:w-[508px] phone:w-[340px] rounded-[38px] "
@@ -61,14 +54,8 @@ const LoginModal = () => {
           <Col span={9} className="object-cover transform-scale-x-[-1] ">
             <Image src={balo} alt="icon" height={140} width={157} />
           </Col>
-          <Col
-            span={15}
-            className="text-white text-left my-[10px] leading-snug"
-          >
-            <h2 className="font-black text-[32px] ">Đăng nhập</h2>
-            <p className="font-normal text-[19.4px]">
-              Học tiếng anh cùng <br></br> E-Test mỗi ngày
-            </p>
+          <Col span={15} className="text-white text-left my-[auto] ">
+            <h2 className="font-black text-[32px]  ">Quên mật khẩu?</h2>
           </Col>
         </Row>
         <Form
@@ -79,63 +66,41 @@ const LoginModal = () => {
           }}
           onFinish={onFinish}
         >
+          <h3 className="my-[3%] mx-auto">
+            Nhập vào email hoặc số điện thoại của bạn để lấy lại mật khẩu.
+          </h3>
           <Form.Item
-            name="username"
+            name="forgetPassword"
             rules={[
               {
                 required: true,
-                message: "Vui lòng nhập tài khoản.",
+                message: "Vui lòng nhập email hoặc số điện thoại của bạn.",
               },
             ]}
           >
             <Input
               className="h-40"
               // prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="Tài khoản: "
+              // placeholder="Tài khoản: "
               allowClear
             />
           </Form.Item>
 
-          <Form.Item
-            name="password"
-            rules={[
-              {
-                required: true,
-                message: "Vui lòng nhập mật khẩu.",
-              },
-            ]}
-          >
-            <Input.Password
-              className="h-40"
-              // prefix={<LockOutlined className="site-form-item-icon" />}
-              type="password"
-              placeholder="Mật khẩu:"
-              // allowClear
-            />
-          </Form.Item>
-          <Form.Item className="flex justify-end">
-            <div
-              className="text-[#9E988F] underline decoration-solid decoration-[#9E988F] cursor-pointer "
-              onClick={handleForgetPassword}
-            >
-              Quên mật khẩu?
-            </div>
-          </Form.Item>
           <Form.Item className="flex justify-end ">
             <Button
               type="default"
               // htmlType="submit"
-              onClick={showModalRegister}
+              onClick={handleCancel}
               className="mr-10 rounded-[50px]"
             >
-              Đăng ký
+              Hủy
             </Button>
             <Button
               type="primary"
               htmlType="submit"
               className="rounded-[50px] bg-[#FB9400]"
             >
-              Đăng nhập
+              Gửi
             </Button>
           </Form.Item>
         </Form>
@@ -143,4 +108,4 @@ const LoginModal = () => {
     </>
   );
 };
-export default LoginModal;
+export default ForgetPassword;

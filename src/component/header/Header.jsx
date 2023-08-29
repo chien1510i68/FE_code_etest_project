@@ -3,6 +3,7 @@ import { Dropdown } from "antd";
 import LoginModal from "../modal/LoginModal";
 import RegisterModal from "../modal/RegisterModal";
 import MenuHeader from "@/component/menu/MenuHeader";
+import ForgetPassword from "../modal/ForgetPassword";
 import { useRouter } from "next/navigation";
 import { AppContext } from "../AppContext/AppContext";
 import React, { useState, useContext } from "react";
@@ -84,6 +85,7 @@ function Header() {
 
       <RegisterModal />
       <LoginModal />
+      <ForgetPassword />
       {/* <RegisterAccountModal        
       /> */}
     </div>
