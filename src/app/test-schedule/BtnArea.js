@@ -1,25 +1,25 @@
-"use client";
+// "use client";
 import React from "react";
-import { Button, message } from "antd";
-
+import { Button, message, Tabs } from "antd";
+import { getAllExamSchedule } from "@/api/apiExam";
 function BtnArea(props) {
-  const handleClickBtn = (index) => {
-    console.log(index);
-    message.info("clicked" + index);
-  };
+  // const handleClickBtn = (index) => {
+  //   console.log(index);
+  //   message.info("clicked" + index);
+  // };
+  async function getDataArea() {
+    const data = await getAllExamSchedule();
 
-  async function getData() {
-    try {
-      const response = await fetch(
-        "https://dc44-118-70-132-104.ngrok-free.app/exam/schedule/all"
-      );
-      return response.json();
-    } catch (error) {}
+    const items = data?.data?.items?.map((item) => {
+      console.log("item::", item);
+    });
   }
+
+  // getDataArea();
 
   return (
     <div>
-      <div className="grid grid-cols-3 mb-[5rem] ">
+      {/* <div className="grid grid-cols-3 mb-[5rem] ">
         <Button
           onClick={() => {
             handleClickBtn(1);
@@ -44,7 +44,18 @@ function BtnArea(props) {
         >
           khu vực miền trung{" "}
         </Button>
-      </div>
+      </div> */}
+      {/* <Tabs
+        defaultActiveKey="1"
+        centered
+        items=
+          [
+            label: `Khu Vực ${item.nameArea}`,
+            key: item.areaId,
+            children: `Content of Tab Pane ${id}`,
+          ]
+        
+      /> */}
     </div>
   );
 }

@@ -14,3 +14,16 @@ export const getAllNews = async (params) => {
     }
   } catch (error) {}
 };
+export const getNewsById = async (id) => {
+  try {
+    const res = await axiosServer.get(`/news/${id}`);
+    const { data, success, error } = res?.data;
+    if (success) {
+      return {
+        data: data || [],
+      };
+    } else {
+      message.error(error || "Lỗi không lấy được dữ liệu");
+    }
+  } catch (error) {}
+};

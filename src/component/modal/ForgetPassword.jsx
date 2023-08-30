@@ -35,7 +35,6 @@ const ForgetPassword = () => {
   const { data, dispatch } = useContext(AppContext);
   const { modalForgetPasswordOpen } = data;
 
-  console.log("modalForgetPasswordOpen: ", modalForgetPasswordOpen);
   const handleCancel = () => {
     dispatch({ type: "modalForgetPasswordClose" });
   };

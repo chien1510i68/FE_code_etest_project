@@ -4,7 +4,8 @@ import IeltsIntro from "@/component/introduce/IeltsIntro";
 import Course from "@/component/course/course";
 import FormRegister from "@/component/form/FormRegister";
 import AnotherCoures from "@/component/course/AnotherCoures";
-import BannerIelts from '@/component/banner/BannerIelts'
+import Route from "../../component/route/route";
+import BannerIelts from "@/component/banner/BannerIelts";
 const listIntroduceIelts = [
   {
     image: "bar-chart.png",
@@ -58,32 +59,35 @@ const inforCourses = [
 ];
 function IeltsPage(props) {
   return (
-    <div className="pt-[45px] bg-[#fff] ">
-      {/* banner */}
-    <BannerIelts/>
+    <div className="mx-auto  max-w-[1440px]">
+      <div className="pt-[45px] bg-[#fff] ">
+        {/* banner */}
+        <BannerIelts />
 
-      <div>
-        <h2 className="title">Giới thiệu tổng quan</h2>
-        <IeltsIntro listIntroduceIelts={listIntroduceIelts} />
-      </div>
-
-      <>
-        <h2 className="title">Thông tin khóa học </h2>
-        <div className="px-96 mt-[50px] grid  tablet:grid-cols-2 phone:grid-cols-1  gap-24">
-          {inforCourses.map((item, ind) => (
-            <Course item={item} key={ind}  />
-          ))}
+        <div>
+          <h2 className="title">Giới thiệu tổng quan</h2>
+          <IeltsIntro listIntroduceIelts={listIntroduceIelts} />
         </div>
-      </>
 
-      <>
-        <h2 className="title">Lộ trình học </h2>
-      </>
+        <>
+          <h2 className="title">Thông tin khóa học </h2>
+          <div className="px-96 mt-[50px] grid  tablet:grid-cols-2 phone:grid-cols-1  gap-24">
+            {inforCourses.map((item, ind) => (
+              <Course item={item} key={ind} />
+            ))}
+          </div>
+        </>
 
-      <>
-        <h2 className="title">Đăng ký khóa học</h2>
-        <FormRegister />
-      </>
+        <>
+          <h2 className="title">Lộ trình học </h2>
+          {/* <Route /> */}
+        </>
+
+        <>
+          <h2 className="title">Đăng ký khóa học</h2>
+          <FormRegister />
+        </>
+      </div>
     </div>
   );
 }
