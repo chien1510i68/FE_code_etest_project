@@ -17,7 +17,7 @@ function New(props) {
             <Image
               src="kh_12.jpg"
               alt="this is the image "
-              className="h-[100rem] w-full object-cover rounded-t-[3rem] "
+              className=" w-full object-cover rounded-t-[3rem] "
             />
             <Link
               key={item.id}
