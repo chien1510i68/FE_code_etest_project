@@ -132,3 +132,36 @@ div{
   color: red;
   height: 50px !important;
 }
+.titleAptisB1{
+  color: #fb9400;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 10px 0;
+}
+
+.image-bottom-aptis-b1:before{
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 35%;
+  bottom: -5%;
+  right: -3%;
+  border-radius: 20px;
+  background-color: #fb9400;
+  z-index: -10;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.image-top-aptis-b1:after{
+  content: "";
+  position: absolute;
+  height: 30%;
+  width:20%;
+  top: -5%;
+  left: -3%;
+  border-radius: 20px;
+  background-color: #23BDEE;
+  z-index: -5;
+  /* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); */
+}
+.image-customer{}
