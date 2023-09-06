@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 // "use server"
 import { Button, Col, Row } from "antd";
 import React from "react";
