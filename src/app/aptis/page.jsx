@@ -1,4 +1,4 @@
-import Introduce from "./aptis/introduce1";
+import BannerAptis from "@/component/banner/BannerAptis.jsx";
 
 import Course from "../../component/course/course.jsx";
 import Route from "../../component/route/route.jsx";
@@ -25,15 +25,16 @@ async function PageAptis() {
   // console.log("res ::", res?.data?.items);
   let adList = [];
   let routeList = [];
+  let banner = {};
   if (res) {
     routeList = res?.data?.items.slice(4, 9);
-
+    banner = res?.data?.items[14];
     console.log("route", routeList);
     adList = res?.data?.items.slice(15, 18);
   }
   return (
     <>
-      <Introduce />
+      <BannerAptis banner={banner} />
       <div className="max-w-[1440px] mx-auto">
         <div className="mx-[10%]">
           <h2 className="title mt-[0]">Tại sao nên chọn chúng tôi</h2>

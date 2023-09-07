@@ -25,8 +25,8 @@ const items = [
       getItem("Luyện thi Aptis B2", "/aptis/luyen-thi-b2", null),
     ]),
     getItem("Luyện thi VStep", "/vstep", null, [
-      getItem("Luyện thi B1", "/vstep/luyen-thi-b1", null),
-      getItem("Luyện thi B2", "/vstep/luyen-thi-b2", null),
+      getItem("Luyện thi Vstep B1", "/vstep/luyen-thi-b1", null),
+      getItem("Luyện thi Vstep B2", "/vstep/luyen-thi-b2", null),
     ]),
     getItem("Anh Ngữ Học Thuật", "/englishacademic", null),
   ]),

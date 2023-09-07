@@ -1,5 +1,5 @@
 import React from "react";
-import Intro from "./luyenthib2/intro";
+import Intro from "../../../component/banner/BannerAptisB2";
 import pic4 from "public/Rectangle 21 (2).png";
 import pic1 from "public/aptisb2pic1.png";
 import pic2 from "public/aptisb2pic2.png";
@@ -13,27 +13,28 @@ import Route from "@/component/route/route";
 import AnotherCoures from "@/component/course/AnotherCoures";
 import FormRegister from "@/component/form/FormRegister";
 import DownloadDocument from "@/component/modal/downloadDocument";
-function PageAptisB2(props) {
+import { getDataDisplay } from "@/api/apiDisplay";
+async function PageAptisB2(props) {
   const listObject = [
     "Học viên có trình độ đầu vào tương đương Aptis B1, cần củng cố kiến thức và thông thạo kĩ năng làm bài thi Aptis để đạt Aptis B2",
     "Học viên có 1 – 2 kỹ năng chưa đạt Aptis B2, cần được hướng dẫn và luyện tập để nâng cao kĩ năng đó lên Aptis B2",
   ];
-  const listStep = [
-    { step: "Bước 1", title: "Đăng ký thông tin", content: "học viên đăng ký" },
-    { step: "Bước 2", title: "Nộp hồ sơ - Lệ phí", content: "học viên nộp" },
-    { step: "Bước 3", title: "Hướng dẫn ôn thi", content: "bộ phận đào tạo" },
-    {
-      step: "Bước 4",
-      title: "Trước ngày thi",
-      content:
-        "Đội ngũ giảng viên dày dặn kinh nghiệm, có chuyên môn cao, cập nhật dạng đề thi liên tục và bám sát nội dung thi.",
-    },
-    { step: "Bước 5", title: "Nhận kết quả", content: "học viên nhận" },
-  ];
 
+  const res = await getDataDisplay();
+  // console.log("Du lieu duoc tra ve la : ", res.data.data.items);
+  // console.log("res ::", res?.data?.items);
+  let adList = [];
+  let routeList = [];
+  let banner = {};
+  if (res) {
+    routeList = res?.data?.items.slice(4, 9);
+    banner = res?.data?.items[38];
+    console.log("route", routeList);
+    adList = res?.data?.items.slice(15, 18);
+  }
   return (
     <section>
-      <Intro />
+      <Intro banner={banner} />
       <div style={{ margin: "0 auto", maxWidth: "1440px" }}>
         <div className="mx-[10%]    ">
           <div className="grid laptop:grid-cols-3 phone:grid-cols-1 gap-24 items-center  ">
@@ -103,7 +104,7 @@ function PageAptisB2(props) {
         <RegisterCourseVstep />
         <div className="mx-[10%]">
           <h2 className="title">Lộ trình học và thi</h2>
-          {listStep.map((item, index) => (
+          {routeList.map((item, index) => (
             <Route item={item} key={index} />
           ))}
           <AnotherCoures />

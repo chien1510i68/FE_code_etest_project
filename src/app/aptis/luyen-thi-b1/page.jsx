@@ -1,4 +1,4 @@
-import IntroduceAptisB1 from "./luyen-thi-b1/introduce";
+import BannerAptisB1 from "@/component/banner/BannerAptisB1";
 import Customers from "./luyen-thi-b1/customers";
 import pic3 from "public/aptisb1pic4.svg";
 import pic4 from "public/Mask Group.png";
@@ -15,40 +15,21 @@ import FormRegister from "@/component/form/FormRegister";
 import DownloadDocument from "@/component/modal/downloadDocument";
 import { getDataDisplay } from "@/api/apiDisplay";
 async function PageAptisB1(props) {
-  const listCustomers = [
-    {
-      img: "/aptisb1pic1.png",
-      title: "Dành cho giáo viên",
-      description:
-        "Aptis thường được các giáo viên chọn lựa để kiểm tra trình độ để nâng cao chất lượng giảng dạy của ngành giáo dục.",
-    },
-    {
-      img: "/aptisb1pic2.png",
-      title: "Dành cho học sinh",
-      description:
-        "Bài kiểm tra Aptis còn dành cho học sinh trong độ tuổi từ 13 đến 17 tuổi. Nội dung kiểm tra xoay quanh các kiến thức tiếng Anh mà các em đã được học, phù hợp với trình độ học sinh và là tiền đề để thi các chứng chỉ tiếng Anh quốc tế cao hơn.",
-    },
-    {
-      img: "/aptisb1pic3.png",
-      title: "Dành cho các doanh nghiệp",
-      description:
-        "Chứng chỉ Aptis khá thông dụng dành cho các công ty và nhà tuyển dụng. Bài thi được điều chỉnh nội dung phù hợp với nhu cầu của từng tổ chức. Các nội dung liên quan đến nhiều lĩnh vực như kinh doanh, du lịch, v.v.",
-    },
-  ];
   const res = await getDataDisplay();
   // console.log("Du lieu duoc tra ve la : ", res.data.data.items);
   // console.log("res ::", res?.data?.items);
-  let adList = [];
+  let listCustomers = [];
   let routeList = [];
+  let banner = {};
   if (res) {
     routeList = res?.data?.items.slice(4, 9);
-
+    banner = res?.data?.items[34];
     // console.log("route", routeList);
-    adList = res?.data?.items.slice(15, 18);
+    listCustomers = res?.data?.items.slice(35, 38);
   }
   return (
     <section>
-      <IntroduceAptisB1 />
+      <BannerAptisB1 banner={banner} />
       <div style={{ margin: "0 auto", maxWidth: "1440px" }}>
         <div className="mx-[10%] my-[5%]">
           <div className="my-[5%]">

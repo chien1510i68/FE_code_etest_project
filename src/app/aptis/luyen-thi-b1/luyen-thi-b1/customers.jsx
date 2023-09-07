@@ -1,5 +1,3 @@
-// import { url } from "inspector";
-import Image from "next/image";
 import React from "react";
 
 function Customers({ item }) {
@@ -12,8 +10,9 @@ function Customers({ item }) {
           <div
             className={`rounded-[20px] flex items-center text-center justify-center  text-white uppercase h-[235px] `}
             style={{
-              background: `url(${item.img})`,
+              background: `url(${item.image})`,
               backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
