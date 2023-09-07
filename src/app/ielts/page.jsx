@@ -6,6 +6,8 @@ import FormRegister from "@/component/form/FormRegister";
 import AnotherCoures from "@/component/course/AnotherCoures";
 import Route from "../../component/route/route";
 import BannerIelts from "@/component/banner/BannerIelts";
+import { getDataDisplay } from "@/api/apiDisplay";
+import Image from "next/image";
 const listIntroduceIelts = [
   {
     image: "bar-chart.png",
@@ -57,21 +59,28 @@ const inforCourses = [
       "Vận dụng thành thạo các chiến lược thi VSTEP Có kĩ năng viết tiếng Anh học thuật nhằm làm tốt các dạng bài viết trong kì thi. Có kĩ năng đọc hiểu tiếng Anh nhanh và hiệu quả.  Có kĩ năng nghe một cách hiệu quả với các chiến lược làm bài thi nghe.  Mở rộng vốn từ và phát triển kĩ năng tìm ý khi viết hay nói.  Thành thạo nhiều chủ đề nói thực tế, đa dạng, nâng cao sự tự tin trong giao tiếp.  Trải nghiệm với các bài thi thử theo định dạng VSTEP.",
   },
 ];
-function IeltsPage(props) {
+async function IeltsPage(props) {
+  const res = await getDataDisplay();
+  // console.log("Du lieu duoc tra ve la : ", res.data.data.items);
+  // console.log("res ::", res?.data?.items);
+  let adList = [];
+  let banner = [];
+  if (res) {
+    adList = res?.data?.items.slice(19, 25);
+    banner = res?.data?.items.slice(18, 19);
+  }
   return (
-    <div className="mx-auto  max-w-[1440px]">
-      <div className="pt-[45px] bg-[#fff] ">
-        {/* banner */}
-        <BannerIelts />
-
+    <div className="mx-auto ">
+      <BannerIelts banner={banner} />
+      <div className=" bg-[#fff] mx-[10%]  max-w-[1440px]">
         <div>
           <h2 className="title">Giới thiệu tổng quan</h2>
-          <IeltsIntro listIntroduceIelts={listIntroduceIelts} />
+          <IeltsIntro adList={adList} />
         </div>
 
         <>
           <h2 className="title">Thông tin khóa học </h2>
-          <div className="px-96 mt-[50px] grid  tablet:grid-cols-2 phone:grid-cols-1  gap-24">
+          <div className="mt-[50px] grid  tablet:grid-cols-2 phone:grid-cols-1  gap-24">
             {inforCourses.map((item, ind) => (
               <Course item={item} key={ind} />
             ))}
@@ -80,7 +89,7 @@ function IeltsPage(props) {
 
         <>
           <h2 className="title">Lộ trình học </h2>
-          {/* <Route /> */}
+          <Image src="/ielts.png" alt="pic" width={900} height={423} />
         </>
 
         <>

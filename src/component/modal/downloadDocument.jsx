@@ -70,16 +70,19 @@ const DownloadDocument = () => {
                 description={
                   expandedItems[item.id]
                     ? item.content
-                    : item.content.slice(0, 70) + "..."
+                    : item.content.slice(0, 50) + "..."
                 }
               />
 
-              {item.content.length > 70 && (
+              {item.content.length > 50 && (
                 <Button onClick={() => toggleExpand(item.id)}>
                   {expandedItems[item.id] ? "Rút gọn" : "Xem thêm"}
                 </Button>
               )}
-              <Button className="custom-btn ml-[5%] flex items-center">
+              <Button
+                href={item.file}
+                className="custom-btn ml-[5%] flex items-center"
+              >
                 <DownloadOutlined />
                 Download
               </Button>

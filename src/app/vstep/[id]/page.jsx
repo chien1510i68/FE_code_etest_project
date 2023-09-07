@@ -22,7 +22,13 @@ async function PageVstepB1(props) {
   // console.log("Du lieu duoc tra ve la : ", res.data.data.items);
   // console.log("res ::", res?.data?.items);
   let adList = [];
+  let routeList = [];
+  let coursesList = [];
   if (res) {
+    routeList = res?.data?.items.slice(4, 9);
+
+    coursesList = res?.data?.items.slice(9, 14);
+    console.log("route", routeList);
     adList = res?.data?.items.slice(1, 4);
     adList.map((item) => {
       return {
@@ -56,7 +62,7 @@ async function PageVstepB1(props) {
       <div className="max-w-[1440px] desktop:mx-[10%] tablet:mx-[10%] phone:mx-[5%]">
         <>
           <h2 className="title">Lộ trình học và thi</h2>
-          {listStep.map((item, index) => (
+          {routeList.map((item, index) => (
             <Route item={item} key={index} />
           ))}
         </>

@@ -12,21 +12,9 @@ import RegisterCourseVstep from "@/component/form/RegisterCourseVstep";
 import Route from "@/component/route/route";
 import AnotherCoures from "@/component/course/AnotherCoures";
 import FormRegister from "@/component/form/FormRegister";
-import { Button } from "antd";
 import DownloadDocument from "@/component/modal/downloadDocument";
-function PageAptisB1(props) {
-  const listStep = [
-    { step: "Bước 1", title: "Đăng ký thông tin", content: "học viên đăng ký" },
-    { step: "Bước 2", title: "Nộp hồ sơ - Lệ phí", content: "học viên nộp" },
-    { step: "Bước 3", title: "Hướng dẫn ôn thi", content: "bộ phận đào tạo" },
-    {
-      step: "Bước 4",
-      title: "Trước ngày thi",
-      content:
-        "Đội ngũ giảng viên dày dặn kinh nghiệm, có chuyên môn cao, cập nhật dạng đề thi liên tục và bám sát nội dung thi.",
-    },
-    { step: "Bước 5", title: "Nhận kết quả", content: "học viên nhận" },
-  ];
+import { getDataDisplay } from "@/api/apiDisplay";
+async function PageAptisB1(props) {
   const listCustomers = [
     {
       img: "/aptisb1pic1.png",
@@ -47,6 +35,17 @@ function PageAptisB1(props) {
         "Chứng chỉ Aptis khá thông dụng dành cho các công ty và nhà tuyển dụng. Bài thi được điều chỉnh nội dung phù hợp với nhu cầu của từng tổ chức. Các nội dung liên quan đến nhiều lĩnh vực như kinh doanh, du lịch, v.v.",
     },
   ];
+  const res = await getDataDisplay();
+  // console.log("Du lieu duoc tra ve la : ", res.data.data.items);
+  // console.log("res ::", res?.data?.items);
+  let adList = [];
+  let routeList = [];
+  if (res) {
+    routeList = res?.data?.items.slice(4, 9);
+
+    // console.log("route", routeList);
+    adList = res?.data?.items.slice(15, 18);
+  }
   return (
     <section>
       <IntroduceAptisB1 />
@@ -105,7 +104,7 @@ function PageAptisB1(props) {
         <RegisterCourseVstep />
         <div className="mx-[10%]">
           <h2 className="title">Lộ trình học và thi</h2>
-          {listStep.map((item, index) => (
+          {routeList.map((item, index) => (
             <Route item={item} key={index} />
           ))}
           <AnotherCoures />

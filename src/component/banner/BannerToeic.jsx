@@ -1,39 +1,41 @@
 /* eslint-disable @next/next/no-img-element */
 // "use server"
 import { Button, Col, Row } from "antd";
+import Image from "next/image";
 import React from "react";
 
-function BannerToeic(props) {
-  return (
+function BannerToeic({ banner }) {
+  return banner.map((item) => (
     <>
-      <Row className="border-b-[2rem] border-b-solid border-b-primaryColor">
-        <Col span={12}>
-          <img
-            src="/ctr_5.jpg"
-            className="w-full object-cover border-r-[2rem] border-r-solid border-r-primaryColor"
+      <div
+        key={1}
+        className="border-b-[2rem] border-b-solid border-b-primaryColor grid  tablet:grid-cols-2 phone:grid-cols-1 "
+      >
+        <div className=" col-span-1  tablet:block phone:hidden border-r-[2rem] border-r-solid border-r-primaryColor">
+          <Image
+            src={item.image}
+            className=" object-cover "
             alt=""
+            width={728}
+            height={444}
           />
-        </Col>
-        <Col className="bg-[#FFF4E5] text-left " span={12}>
-          <div className="block-center left-[40%]">
-            <h2 className="font-[500] text-[8rem] text-[#000000] ">
-              Luyện thi toeic
+        </div>
+        <div className="col-span-1 ">
+          <div className="bg-[#FFF4E5] pt-[10%] px-[10%]  h-full ">
+            <h2 className="pb-[5rem] block  font-[500] text-[8rem]">
+              {item.title}
             </h2>
-            <p className="leading-[9rem] font-[400] text-[4rem]">
-              TOEIC (Test of English for International Communication) – Bài kiểm
-              tra tiếng Anh giao tiếp quốc tế, là một chứng chỉ tiếng Anh quốc
-              tế về giao tiếp dành cho người đi làm không phải là người sử dụng
-              tiếng Anh làm tiếng mẹ đẻ, đặc biệt là những đối tượng muốn sử
-              dụng tiếng Anh trong môi trường giao tiếp và làm việc quốc tế.
+            <p className="py-auto block  font-[400] text-[4rem]">
+              {item.description}
             </p>
-            <Button className="custom-btn mt-[2rem] uppercase">
-              đăng ký tư vấn
+            <Button className="ml-auto block my-[5%]  bg-[#FB9400] shadow-md hover:scale-[1.1] text-[#fff] hover:border-none border-none ">
+              {" "}
+              Đăng ký tư vấn
             </Button>
           </div>
-        </Col>
-      </Row>
+        </div>
+      </div>
     </>
-  );
+  ));
 }
-
 export default BannerToeic;

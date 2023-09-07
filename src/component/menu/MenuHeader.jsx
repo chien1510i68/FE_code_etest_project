@@ -54,11 +54,13 @@ const MenuHeader = () => {
             // notification.success({ message: "Đã nhấp vào day la " + e.key });
           } else {
             router.push(e.key);
+            // console.log(e);
           }
         }}
         className="font-[600] items-center w-[70vw] phone:hidden tablet:flex"
         mode="horizontal"
         items={items}
+        // onSelect={console.log}
       ></Menu>
       {/* <h2>this is the test </h2> */}
       <Dropdown
