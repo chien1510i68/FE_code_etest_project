@@ -94,7 +94,7 @@ function Footer() {
           </div> */}
           <div className=" row-span-1">LOGO</div>
           <div className=" row-span-1 grid grid-cols-2">
-            <div className=" col-span-1">
+            <div className=" col-span-1  border-r-2 border-[black]">
               <p>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
                 diam nonummy nibh euismod tincidunt ut laoreet dolore magna
@@ -103,19 +103,19 @@ function Footer() {
             </div>
             <div className=" col-span-1">
               <div className="flex justify-center items-center my-[1rem]">
-                <PhoneOutlined className="text-[7rem] w-[20%]" />
-                <h2 className="w-[30%]"> Địa chỉ</h2>
-                <h2 className="w-[50%]"> +84 1234567890</h2>
+                {/* <PhoneOutlined className="text-[7rem] w-[20%]" /> */}
+                <h3 className="w-[30%]"> Địa chỉ</h3>
+                <h3 className="w-[50%]"> +84 1334567890</h3>
               </div>
               <div className="flex justify-center items-center my-[1rem]">
-                <EnvironmentFilled className="text-[7rem] w-[20%]" />
-                <h2 className="w-[30%]"> Liên hệ</h2>
-                <h2 className="w-[50%]"> Công ty cổ phần zzzzzz</h2>
+                {/* <EnvironmentFilled className="text-[7rem] w-[30%]" /> */}
+                <h3 className="w-[30%]"> Liên hệ</h3>
+                <h3 className="w-[50%]"> Công ty cổ phần zzzzzz</h3>
               </div>
               <div className="flex justify-center items-center my-[1rem]">
-                <MailOutlined className="text-[7rem] w-[20%]" />
-                <h2 className="w-[30%]"> Email</h2>
-                <h2 className="w-[50%]"> etest@gmail.com</h2>
+                {/* <MailOutlined className="text-[7rem] w-[30%]" /> */}
+                <h3 className="w-[30%]"> Email</h3>
+                <h3 className="w-[50%]"> etest@gmail.com</h3>
               </div>
             </div>
           </div>
