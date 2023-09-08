@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row } from "antd";
+// import { Col, Row } from "antd";
 import {
   PhoneOutlined,
   EnvironmentFilled,
@@ -51,26 +51,26 @@ function Footer() {
         </div>
       </div>
       <div>
-        <div className="px-[10%] bg-[#F3F3F3] py-[5%] flex">
-          <div className="">
+        <div className="px-[10%] bg-[#F3F3F3] py-[5%] grid grid-rows-2">
+          {/* <div className="">
             <h2 className="10rem"> logo</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
               nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
               erat volutpat.
             </p>
-          </div>
-          <div
+          </div> */}
+          {/* <div
             span={1}
             className="border-r-[.5rem] h-[] border-[#333] border-solid"
-          ></div>
-          <div span={10}>
+          ></div> */}
+          {/* <div span={10}>
             <div gutter={30} className="text-[#333]">
               <div
                 span={24}
                 className="flex justify-center items-center my-[1rem]"
               >
-                {/* <PhoneOutlined className="text-[7rem] w-[20%]"  /> */}
+                <PhoneOutlined className="text-[7rem] w-[20%]"  />
                 <h2 className="w-[30%]"> Địa chỉ</h2>
                 <h2 className="w-[50%]"> +84 1234567890</h2>
               </div>
@@ -78,7 +78,7 @@ function Footer() {
                 span={24}
                 className="flex justify-center items-center my-[1rem]"
               >
-                {/* <EnvironmentFilled className="text-[7rem] w-[20%]"  /> */}
+                <EnvironmentFilled className="text-[7rem] w-[20%]"  />
                 <h2 className="w-[30%]"> Liên hệ</h2>
                 <h2 className="w-[50%]"> Công ty cổ phần zzzzzz</h2>
               </div>
@@ -86,7 +86,34 @@ function Footer() {
                 span={24}
                 className="flex justify-center items-center my-[1rem]"
               >
-                {/* <MailOutlined className="text-[7rem] w-[20%]"  /> */}
+                <MailOutlined className="text-[7rem] w-[20%]"  />
+                <h2 className="w-[30%]"> Email</h2>
+                <h2 className="w-[50%]"> etest@gmail.com</h2>
+              </div>
+            </div>
+          </div> */}
+          <div className=" row-span-1">LOGO</div>
+          <div className=" row-span-1 grid grid-cols-2">
+            <div className=" col-span-1">
+              <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat.
+              </p>
+            </div>
+            <div className=" col-span-1">
+              <div className="flex justify-center items-center my-[1rem]">
+                <PhoneOutlined className="text-[7rem] w-[20%]" />
+                <h2 className="w-[30%]"> Địa chỉ</h2>
+                <h2 className="w-[50%]"> +84 1234567890</h2>
+              </div>
+              <div className="flex justify-center items-center my-[1rem]">
+                <EnvironmentFilled className="text-[7rem] w-[20%]" />
+                <h2 className="w-[30%]"> Liên hệ</h2>
+                <h2 className="w-[50%]"> Công ty cổ phần zzzzzz</h2>
+              </div>
+              <div className="flex justify-center items-center my-[1rem]">
+                <MailOutlined className="text-[7rem] w-[20%]" />
                 <h2 className="w-[30%]"> Email</h2>
                 <h2 className="w-[50%]"> etest@gmail.com</h2>
               </div>
