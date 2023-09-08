@@ -1,7 +1,6 @@
 import React from "react";
 
 function Customers({ item }) {
-  console.log("item", item);
   const img = "/aptisb1pic1.png";
   return (
     <>

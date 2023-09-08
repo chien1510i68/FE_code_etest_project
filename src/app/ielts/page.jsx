@@ -1,51 +1,12 @@
-import { Button, Col, Row } from "antd";
 import React from "react";
 import IeltsIntro from "@/component/introduce/IeltsIntro";
-import Course from "@/component/course/course";
 import FormRegister from "@/component/form/FormRegister";
 import AnotherCoures from "@/component/course/AnotherCoures";
-import Route from "../../component/route/route";
+import Course from "@/component/studyDetail/course";
 import BannerIelts from "@/component/banner/BannerIelts";
 import { getDataDisplay } from "@/api/apiDisplay";
+import { getServiceById } from "@/api/apiService";
 import Image from "next/image";
-const listIntroduceIelts = [
-  {
-    image: "bar-chart.png",
-    title: "mục tiêu",
-    description:
-      "Chương trình luyện thi IELTS tại E-Test giúp học viên có được sự hiểu biết toàn diện về cấu trúc bài thi IELTS, thành thục kỹ năng.",
-  },
-  {
-    image: "trend.png",
-    title: "mục tiêu",
-    description:
-      "Chương trình luyện thi IELTS tại E-Test giúp học viên có được sự hiểu biết toàn diện về cấu trúc bài thi IELTS, thành thục kỹ năng.",
-  },
-  {
-    image: "open-book.png",
-    title: "mục tiêu",
-    description:
-      "Chương trình luyện thi IELTS tại E-Test giúp học viên có được sự hiểu biết toàn diện về cấu trúc bài thi IELTS, thành thục kỹ năng.",
-  },
-  {
-    image: "open-book.png",
-    title: "mục tiêu",
-    description:
-      "Chương trình luyện thi IELTS tại E-Test giúp học viên có được sự hiểu biết toàn diện về cấu trúc bài thi IELTS, thành thục kỹ năng.Chương trình luyện thi IELTS tại E-Test giúp học viên có được sự hiểu biết toàn diện về cấu trúc bài thi IELTS, thành thục kỹ năng.",
-  },
-  {
-    image: "open-book.png",
-    title: "mục tiêu",
-    description:
-      "Chương trình luyện thi IELTS tại E-Test giúp học viên có được sự hiểu biết toàn diện về cấu trúc bài thi IELTS, thành thục kỹ năng.",
-  },
-  {
-    image: "open-book.png",
-    title: "mục tiêu",
-    description:
-      "Chương trình luyện thi IELTS tại E-Test giúp học viên có được sự hiểu biết toàn diện về cấu trúc bài thi IELTS, thành thục kỹ năng.",
-  },
-];
 
 const inforCourses = [
   {
@@ -69,33 +30,38 @@ async function IeltsPage(props) {
     adList = res?.data?.items.slice(19, 25);
     banner = res?.data?.items.slice(18, 19);
   }
+  const res2 = await getServiceById(12);
+  let service = [];
+  if (res2) {
+    service = res2?.data;
+  }
   return (
-    <div className="mx-auto ">
+    <div className="">
       <BannerIelts banner={banner} />
-      <div className=" bg-[#fff] mx-[10%]  max-w-[1440px]">
-        <div>
-          <h2 className="title">Giới thiệu tổng quan</h2>
-          <IeltsIntro adList={adList} />
-        </div>
-
-        <>
-          <h2 className="title">Thông tin khóa học </h2>
-          <div className="mt-[50px] grid  tablet:grid-cols-2 phone:grid-cols-1  gap-24">
-            {inforCourses.map((item, ind) => (
-              <Course item={item} key={ind} />
-            ))}
+      <div className=" max-w-[1440px] mx-[auto] bg-[#fff] ">
+        <div className="mx-[10%]">
+          <div>
+            <h2 className="title">Giới thiệu tổng quan</h2>
+            <IeltsIntro adList={adList} />
           </div>
-        </>
 
-        <>
-          <h2 className="title">Lộ trình học </h2>
-          <Image src="/ielts.png" alt="pic" width={900} height={423} />
-        </>
+          <>
+            <h2 className="title">Thông tin khóa học </h2>
+            <Course service={service} />
+          </>
 
-        <>
-          <h2 className="title">Đăng ký khóa học</h2>
-          <FormRegister />
-        </>
+          <>
+            <h2 className="title">Lộ trình học </h2>
+            <div className="flex justify-center">
+              <Image src="/ielts.png" alt="pic" width={900} height={423} />
+            </div>
+          </>
+
+          <>
+            <h2 className="title">Đăng ký khóa học</h2>
+            <FormRegister />
+          </>
+        </div>
       </div>
     </div>
   );

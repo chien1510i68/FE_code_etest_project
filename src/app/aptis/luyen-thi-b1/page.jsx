@@ -6,14 +6,15 @@ import pic5 from "public/confident-teacher-explaining-lesson-pupils 1.png";
 import Image from "next/image";
 import Thoihan from "./luyen-thi-b1/thoihan";
 import Cautrucdethi from "./luyen-thi-b1/cautrucdethii";
-import Detail from "./luyen-thi-b1/detail";
-import Mota from "./luyen-thi-b1/mota";
+import Detail from "@/component/studyDetail/detail";
+import Detail2 from "@/component/studyDetail/detail2";
 import RegisterCourseVstep from "@/component/form/RegisterCourseVstep";
 import Route from "@/component/route/route";
 import AnotherCoures from "@/component/course/AnotherCoures";
 import FormRegister from "@/component/form/FormRegister";
 import DownloadDocument from "@/component/modal/downloadDocument";
 import { getDataDisplay } from "@/api/apiDisplay";
+import { getServiceById } from "@/api/apiService";
 async function PageAptisB1(props) {
   const res = await getDataDisplay();
   // console.log("Du lieu duoc tra ve la : ", res.data.data.items);
@@ -26,6 +27,11 @@ async function PageAptisB1(props) {
     banner = res?.data?.items[34];
     // console.log("route", routeList);
     listCustomers = res?.data?.items.slice(35, 38);
+  }
+  const res2 = await getServiceById(16);
+  let service = [];
+  if (res2) {
+    service = res2?.data;
   }
   return (
     <section>
@@ -52,7 +58,7 @@ async function PageAptisB1(props) {
             </div>
             <div className="col-span-1 grid laptop:grid-rows-2 phone:grid-rows-1 gap-[20%] justify-end phone:gap-0">
               <Image
-                src={pic3}
+                src={pic5}
                 alt="pic"
                 className="row-span-1 tablet:grid phone:hidden"
               />
@@ -64,23 +70,26 @@ async function PageAptisB1(props) {
             <div className="tablet:row-span-1 grid tablet:grid-cols-2  phone:grid-cols-1 phone:row-span-2">
               <div className="col-span-1">
                 <h2 className="titleAptisB1">KHÓA ÔN B1</h2>
-                <Detail />
+                <Detail service={service} />
               </div>
               <div className="col-span-1  ">
                 <div className="relative image-bottom-aptis-b1 image-top-aptis-b1 phone:my-[5%]">
                   <Image
-                    src={pic5}
+                    src={service.image}
                     alt="pic"
                     className="object-cover rounded-[15px] z-100"
+                    width={600}
+                    height={336}
                   />
                 </div>
               </div>
             </div>
             <div className="row-span-1 laptop::w-[60%] phone:w-[100%]">
-              <Mota />
+              <Detail2 service={service} />
             </div>
           </div>
         </div>
+
         <DownloadDocument />
         <RegisterCourseVstep />
         <div className="mx-[10%]">

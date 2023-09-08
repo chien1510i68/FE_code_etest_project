@@ -1,7 +1,7 @@
-function Mota(props) {
+function Detail2({ service }) {
   const names = [
     "Mô tả:",
-    "Nhận bộ tài liệu luyện thi chứng chỉ tiếng Anh B1 VSTEP khi đăng ký khóa học tại đây!",
+    "Nhận bộ tài liệu luyện thi chứng chỉ tiếng Anh B2 VSTEP khi đăng ký khóa học tại đây",
   ];
   const ages = [
     [
@@ -13,12 +13,15 @@ function Mota(props) {
 
   return (
     <div>
-      {/* {combinedList.map((person, index) => (
-          <div key={index} className="flex items-end my-[10px] gap-[5px] ">
-            <h2>{person.name}</h2> : <p>{person.age}</p>
-          </div>
-        ))} */}
-      {names.map((name, index) => (
+      <div className=" my-[10px] gap-[5px] ">
+        <h3>Mô tả:</h3>
+        <ul className="list-disc ml-[5%]">
+          {service.detailDescription.map((item, subIndex) => (
+            <li key={subIndex}>{item}</li>
+          ))}
+        </ul>
+      </div>
+      {/* {names.map((name, index) => (
         <div key={index} className="my-[10px] gap-[5px] ">
           <h2 className="name">{name}</h2>
           {Array.isArray(ages[index]) ? (
@@ -31,9 +34,9 @@ function Mota(props) {
             <p className="age">{ages[index]}</p>
           )}
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
 
-export default Mota;
+export default Detail2;

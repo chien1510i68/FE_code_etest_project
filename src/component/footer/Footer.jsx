@@ -51,7 +51,7 @@ function Footer() {
         </div>
       </div>
       <div>
-        <div className="px-[10%] bg-[#F3F3F3] py-[10%] flex">
+        <div className="px-[10%] bg-[#F3F3F3] py-[5%] flex">
           <div className="">
             <h2 className="10rem"> logo</h2>
             <p>

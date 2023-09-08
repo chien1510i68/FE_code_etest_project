@@ -1,19 +1,21 @@
 import React from "react";
 import Intro from "../../../component/banner/BannerAptisB2";
-import pic4 from "public/Rectangle 21 (2).png";
 import pic1 from "public/aptisb2pic1.png";
 import pic2 from "public/aptisb2pic2.png";
 import Image from "next/image";
 import TableExample from "./luyenthib2/table";
 import CautrucdethiB2 from "./luyenthib2/cautrucdethib2";
-import Detail from "./luyenthib2/detail";
-import Mota from "./luyenthib2/mota";
+import Detail from "@/component/studyDetail/detail";
+import Detail2 from "@/component/studyDetail/detail2";
+
 import RegisterCourseVstep from "@/component/form/RegisterCourseVstep";
 import Route from "@/component/route/route";
 import AnotherCoures from "@/component/course/AnotherCoures";
 import FormRegister from "@/component/form/FormRegister";
 import DownloadDocument from "@/component/modal/downloadDocument";
 import { getDataDisplay } from "@/api/apiDisplay";
+import { getServiceById } from "@/api/apiService";
+
 async function PageAptisB2(props) {
   const listObject = [
     "Học viên có trình độ đầu vào tương đương Aptis B1, cần củng cố kiến thức và thông thạo kĩ năng làm bài thi Aptis để đạt Aptis B2",
@@ -21,17 +23,23 @@ async function PageAptisB2(props) {
   ];
 
   const res = await getDataDisplay();
-  // console.log("Du lieu duoc tra ve la : ", res.data.data.items);
-  // console.log("res ::", res?.data?.items);
+
   let adList = [];
   let routeList = [];
   let banner = {};
   if (res) {
     routeList = res?.data?.items.slice(4, 9);
     banner = res?.data?.items[38];
-    console.log("route", routeList);
+
     adList = res?.data?.items.slice(15, 18);
   }
+
+  const res2 = await getServiceById(17);
+  let service = [];
+  if (res2) {
+    service = res2?.data;
+  }
+  // console.log("object ádasd", service);
   return (
     <section>
       <Intro banner={banner} />
@@ -78,25 +86,29 @@ async function PageAptisB2(props) {
               <CautrucdethiB2 />
             </div>
           </div>
+        </div>
+        <div className="mx-[10%]">
           <h2 className="title">Thông tin khóa học</h2>
           <div className="grid laptop:grid-rows-2 ">
             <div className="row-span-1 grid laptop:grid-cols-2 phone:grid-cols-1 gap-48">
               <div className="col-span-1 flex items-center">
                 <div>
                   <Image
-                    src={pic4}
+                    src={service.image}
                     alt="pic"
                     className="object-cover rounded-[15px] z-100"
+                    width={600}
+                    height={336}
                   />
                 </div>
               </div>
               <div className="col-span-1 relative ">
                 <h2 className="titleAptisB1">KHÓA ÔN B2</h2>
-                <Detail />
+                <Detail service={service} />
               </div>
             </div>
             <div className="row-span-1 laptop:w-[80%] phone:w-[100%]">
-              <Mota />
+              <Detail2 service={service} />
             </div>
           </div>
         </div>

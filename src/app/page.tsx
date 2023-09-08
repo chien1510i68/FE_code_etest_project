@@ -105,7 +105,7 @@ export default function Home() {
       <div className="">
         <Carousels items={items} />
       </div>
-      <div className="  mb-[5rem] max-w-[1440px] desktop:mx-[10%] tablet:mx-[10%] phone:mx-[5%]">
+      <div className="  mb-[5rem] max-w-[1440px] mx-[10%]">
         {/* Tin tức mới nhất của website tiếng anh  */}
         <div className="animate__animated  animate__fadeInLeft">
           <div className=" mt-[30rem] text-[#333] grid gap-12 tablet:grid-cols-2 phone:grid-cols-1">
@@ -207,7 +207,7 @@ export default function Home() {
         </h2>
         <Sliders />
       </div>
-      <div className=" mt-[20rem] mb-[5rem] max-w-[1440px] desktop:mx-[10%] tablet:mx-[10%] phone:mx-[5%]">
+      <div className=" mt-[20rem] mb-[5rem] max-w-[1440px] mx-[10%] ">
         <div>
           <h2 className="text-[8rem] font-[500]  text-center mb-[10rem] break-before-column text-[#f79500]">
             Đăng ký tư vấn

@@ -64,7 +64,7 @@ const DownloadDocument = () => {
             <List.Item key={item.id}>
               <List.Item.Meta
                 avatar={
-                  <Image src={item.image} alt="pic" height={96} width={139} />
+                  <Image src={item.image} alt="pic" height={50} width={50} />
                 }
                 title={<h2>{item.name}</h2>}
                 description={
