@@ -11,19 +11,19 @@ function Course({ service }) {
           {service.name}
         </h2>
         <div className="px-[5%] py-[5%]  ">
-          <div className="flex my-[10px] gap-[5px] ">
+          <div className="flex my-[10px] gap-[5px] items-baseline ">
             <h3>Trình độ đầu vào:</h3> <p>{service.requestStudents}</p>
           </div>
-          <div className="flex my-[10px] gap-[5px] ">
+          <div className="flex my-[10px] gap-[5px] items-baseline ">
             <h3>Số buổi:</h3> <p>{service.numberTeachingSessions}</p>
           </div>
-          <div className="flex my-[10px] gap-[5px] ">
+          <div className="flex my-[10px] gap-[5px] items-baseline ">
             <h3>Lịch học:</h3> <p>{service.schedule}</p>
           </div>
-          <div className="flex my-[10px] gap-[5px] ">
+          <div className="flex my-[10px] gap-[5px] items-baseline ">
             <h3>Hình thức học:</h3> <p>{service.learningForm}</p>
           </div>
-          <div className="flex my-[10px] gap-[5px] ">
+          <div className="flex my-[10px] gap-[5px] items-baseline ">
             <h3>Lộ trình đào tạo:</h3>
             <ul className="list-disc ml-[5%]">
               {service.curriculum.map((item, subIndex) => (
@@ -31,7 +31,9 @@ function Course({ service }) {
               ))}
             </ul>
           </div>
-          <div className="flex my-[10px] gap-[5px] ">{service.description}</div>
+          <div className="flex my-[10px] gap-[5px] items-baseline ">
+            {service.description}
+          </div>
           <Button className="mx-auto block  bg-primaryColor custom-btn uppercase hover:text-[#fff]">
             Đăng ký học{" "}
           </Button>

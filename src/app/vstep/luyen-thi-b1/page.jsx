@@ -17,9 +17,8 @@ async function PageVstepB1(props) {
   const res = await getDataDisplay();
 
   let banner = {};
-  let routeList = [];
+
   if (res) {
-    routeList = res?.data?.items.slice(4, 9);
     banner = res?.data?.items[32];
   }
   const res2 = await getServiceById(14);
@@ -66,9 +65,7 @@ async function PageVstepB1(props) {
         <div className=" mx-[10%] ">
           <>
             <h2 className="title">Lộ trình học và thi</h2>
-            {routeList.map((item, index) => (
-              <Route item={item} key={index} />
-            ))}
+            <Route />
           </>
           <AnotherCoures />
           <h2 className="title">Đăng ký nhận tư vấn </h2>

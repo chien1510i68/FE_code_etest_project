@@ -17,7 +17,7 @@ function getItem(label, key, icon, children) {
 
 const items = [
   getItem("TRANG CHỦ", "/", null),
-  getItem("CHƯƠNG TRÌNH ĐÀO TẠO ANH NGỮ", "ielts", null, [
+  getItem("CHƯƠNG TRÌNH ĐÀO TẠO ANH NGỮ", null, null, [
     getItem("Luyện thi TOEIC", "/toeic", null),
     getItem("Luyện thi IELTS", "/ielts", null),
     getItem("Luyện thi Aptis", "/aptis", null, [
@@ -57,7 +57,7 @@ const MenuHeader = () => {
             // console.log(e);
           }
         }}
-        className="font-[600] items-center w-[70vw] phone:hidden tablet:flex"
+        className="font-[500] items-center w-[70vw] phone:hidden tablet:flex"
         mode="horizontal"
         items={items}
         // onSelect={console.log}

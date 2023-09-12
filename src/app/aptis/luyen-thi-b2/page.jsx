@@ -25,10 +25,9 @@ async function PageAptisB2(props) {
   const res = await getDataDisplay();
 
   let adList = [];
-  let routeList = [];
+
   let banner = {};
   if (res) {
-    routeList = res?.data?.items.slice(4, 9);
     banner = res?.data?.items[38];
 
     adList = res?.data?.items.slice(15, 18);
@@ -39,12 +38,13 @@ async function PageAptisB2(props) {
   if (res2) {
     service = res2?.data;
   }
+
   // console.log("object ádasd", service);
   return (
     <section>
       <Intro banner={banner} />
       <div style={{ margin: "0 auto", maxWidth: "1440px" }}>
-        <div className="mx-[10%]    ">
+        {/* <div className="mx-[10%]    ">
           <div className="grid laptop:grid-cols-3 phone:grid-cols-1 gap-24 items-center  ">
             <div className="col-span-2  mr-[5%] ">
               <h2 className="titleAptisB1">
@@ -86,7 +86,12 @@ async function PageAptisB2(props) {
               <CautrucdethiB2 />
             </div>
           </div>
-        </div>
+        </div> */}
+
+        <div
+          className=" mx-[10%]"
+          dangerouslySetInnerHTML={{ __html: service?.content }}
+        ></div>
         <div className="mx-[10%]">
           <h2 className="title">Thông tin khóa học</h2>
           <div className="grid laptop:grid-rows-2 ">
@@ -94,7 +99,7 @@ async function PageAptisB2(props) {
               <div className="col-span-1 flex items-center">
                 <div>
                   <Image
-                    src={service.image}
+                    src={service?.image}
                     alt="pic"
                     className="object-cover rounded-[15px] z-100"
                     width={600}
@@ -116,9 +121,7 @@ async function PageAptisB2(props) {
         <RegisterCourseVstep />
         <div className="mx-[10%]">
           <h2 className="title">Lộ trình học và thi</h2>
-          {routeList.map((item, index) => (
-            <Route item={item} key={index} />
-          ))}
+          <Route />
           <AnotherCoures />
           <FormRegister />
         </div>

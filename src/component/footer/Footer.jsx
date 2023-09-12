@@ -104,17 +104,17 @@ function Footer() {
             <div className=" col-span-1">
               <div className="flex justify-center items-center my-[1rem]">
                 {/* <PhoneOutlined className="text-[7rem] w-[20%]" /> */}
-                <h3 className="w-[30%]"> Địa chỉ</h3>
+                <h3 className="w-[30%]"> Địa chỉ:</h3>
                 <h3 className="w-[50%]"> +84 1334567890</h3>
               </div>
               <div className="flex justify-center items-center my-[1rem]">
                 {/* <EnvironmentFilled className="text-[7rem] w-[30%]" /> */}
-                <h3 className="w-[30%]"> Liên hệ</h3>
+                <h3 className="w-[30%]"> Liên hệ:</h3>
                 <h3 className="w-[50%]"> Công ty cổ phần zzzzzz</h3>
               </div>
               <div className="flex justify-center items-center my-[1rem]">
                 {/* <MailOutlined className="text-[7rem] w-[30%]" /> */}
-                <h3 className="w-[30%]"> Email</h3>
+                <h3 className="w-[30%]"> Email:</h3>
                 <h3 className="w-[50%]"> etest@gmail.com</h3>
               </div>
             </div>

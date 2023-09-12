@@ -1,11 +1,9 @@
 "use client";
+import {useEffect} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "animate.css";
-// import { Carousel } from "antd";
 import { Button, Col, Row } from "antd";
-// import 'antd/dist/antd.css';
-
 import {
   BarsOutlined,
   CheckSquareFilled,
@@ -19,7 +17,11 @@ import Sliders from "@/component/Slider/Slider";
 import New from "@/component/news/New";
 import FormRegister from "../component/form/FormRegister";
 import Carousels from "@/component/slider/Carousel";
+import { getDataDisplay } from "@/api/apiDisplay";
+import { getServiceById } from "@/api/apiService";
+import { getAllSlide } from "@/api/apiSlide";
 export default function Home() {
+
   const items = [
     {
       id: "/1.jpg",
@@ -100,6 +102,33 @@ export default function Home() {
         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     },
   ];
+  
+  useEffect(() => {
+    async function fetchData() {     
+      
+      let banner = [];
+      const res = await getAllSlide()
+      if (res) {
+      banner = res?.data?.items.slice(0, 4);
+      }
+
+      const res2 = await getServiceById(16);
+      let service = [];
+      if (res2) {
+      service = res2?.data;
+      }
+    
+      const res3 = await getDataDisplay();
+      let strengList = [];
+      if (res3) {
+      strengList = res?.data?.items.slice(35, 38);
+      }
+    }
+
+    fetchData();
+  }, []);
+  
+  // console.log("fetchData", fetchData);
   return (
     <main className="bg-[#fff] mx-[auto]">
       <div className="">
@@ -262,3 +291,4 @@ export default function Home() {
     </main>
   );
 }
+

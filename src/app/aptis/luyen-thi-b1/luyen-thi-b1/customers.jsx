@@ -28,7 +28,9 @@ function Customers({ item }) {
         </div>
 
         <div className="text-left mt-[5rem]">
-          <p className="text-[4rem] font-[400] ">{item.description}</p>
+          <p className="laptop:text-[4rem] phone:text-[3.5rem]  font-[400] ">
+            {item.description}
+          </p>
         </div>
       </div>
     </>

@@ -1,7 +1,7 @@
 const { default: axios } = require("axios");
 
 const axiosServer = axios.create({
-  baseURL: "https://d66a-118-70-132-104.ngrok-free.app",
+  baseURL: "https://acd2-118-70-132-104.ngrok-free.app",
   headers: { "ngrok-skip-browser-warning": "1" },
 });
 

@@ -19,12 +19,8 @@ async function PageVstepB2(props) {
   // console.log("Du lieu duoc tra ve la : ", res.data.data.items);
   // console.log("res ::", res?.data?.items);
   let banner = {};
-  let routeList = [];
   if (res) {
-    routeList = res?.data?.items.slice(4, 9);
     banner = res?.data?.items[33];
-    // console.log("route", routeList);
-    // adList = res?.data?.items.slice(15, 18);
   }
   const res2 = await getServiceById(15);
   let service = [];
@@ -51,35 +47,14 @@ async function PageVstepB2(props) {
       image: "/Rectangle 1011.png",
     },
   ];
-  const examSructureVstepB2 = [
-    {
-      title: "Listening (35 câu hỏi - 40 phút)",
-      content:
-        "* Phần 1: Nghe thông báo. *Phần 2: Nghe đoạn hội thoại. Phần 3: Nghe đoạn hội thoại/ diễn thuyết. ",
-    },
-    {
-      title: "Speaking (3 phần - 12 phút)",
-      content:
-        "Phần 1: Tương tác xã hội. Phần 2: Thảo luận các giải pháp. Phần 3: Phát triển chủ đề.",
-    },
-    {
-      title: "Reading (40 câu hỏi - 60 phút)",
-      content:
-        "Đề thi bao gồm 4 đoạn văn, mỗi đoạn là 10 câu, nội dung các đoạn xoay quanh cuộc sống hàng ngày như: công việc, nghề nghiệp, sở thích cá nhân,…",
-    },
-    {
-      title: "Writing (2 bài - 60 phút)",
-      content:
-        " Bài 1:  120 từ - Viết email.  Bài 2:  250 từ - Viết luận đưa ra các ý kiến tranh luận về vấn đề xã hội/ ý kiến nào đó.",
-    },
-  ];
 
   return (
     <>
       <BannerVstepB2 banner={banner} />
       <div className="max-w-[1440px] mx-[auto]">
         <div className="mx-[10%]">
-          <VstepB2Intro listIntroduceVstepB2={listIntroduceVstepB2} />
+          {/* <VstepB2Intro listIntroduceVstepB2={listIntroduceVstepB2} /> */}
+          <div dangerouslySetInnerHTML={{ __html: service?.content }}></div>
           <div>
             <h2 className="text-orange-500 mb-[8rem] mt-[10rem] font-[500] text-[6rem]">
               Cấu trúc đề thi B2 VSTEP
@@ -88,10 +63,6 @@ async function PageVstepB2(props) {
               Tương tự như cấu trúc bài thi B1 VSTEP, bài thi B2 cũng gồm có 4
               kỹ năng:{" "}
             </p>
-            <div>
-              {/* <ExamStructureVstepB2 examSructureVstepB2={examSructureVstepB2} /> */}
-              ;
-            </div>
           </div>
           <div className="mx-[10%] ">
             <h2 className="title">Thông tin khóa học</h2>
@@ -125,9 +96,7 @@ async function PageVstepB2(props) {
         <div className="mx-[10%]">
           <>
             <h2 className="title">Lộ trình học và thi</h2>
-            {routeList.map((item, index) => (
-              <Route item={item} key={index} />
-            ))}
+            <Route />
           </>
           <AnotherCoures />
           <h2 className="title">Đăng ký nhận tư vấn </h2>

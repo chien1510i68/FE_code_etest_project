@@ -1,9 +1,9 @@
 import BannerAptis from "@/component/banner/BannerAptis.jsx";
 
-import Course from "../../component/course/course.jsx";
-import Route from "../../component/route/route.jsx";
-import AnotherCoures from "../../component/course/AnotherCoures";
-import FormRegister from "../../component/form/FormRegister";
+import Course from "@/component/course/course.jsx";
+import Route from "@/component/route/route.jsx";
+import AnotherCoures from "@/component/course/AnotherCoures";
+import FormRegister from "@/component/form/FormRegister";
 import Advertisement from "./aptis/advertisement";
 import { getDataDisplay } from "@/api/apiDisplay";
 async function PageAptis() {
@@ -24,12 +24,10 @@ async function PageAptis() {
   // console.log("Du lieu duoc tra ve la : ", res.data.data.items);
   // console.log("res ::", res?.data?.items);
   let adList = [];
-  let routeList = [];
+
   let banner = {};
   if (res) {
-    routeList = res?.data?.items.slice(4, 9);
     banner = res?.data?.items[14];
-    console.log("route", routeList);
     adList = res?.data?.items.slice(15, 18);
   }
   return (
@@ -37,7 +35,7 @@ async function PageAptis() {
       <BannerAptis banner={banner} />
       <div className="max-w-[1440px] mx-auto">
         <div className="mx-[10%]">
-          <h2 className="title mt-[0]">Tại sao nên chọn chúng tôi</h2>
+          <h2 className="title mt-[5%]">Tại sao nên chọn chúng tôi</h2>
           <div className=" grid gap-48 laptop:grid-cols-3 tablet:grid-cols-2 phone:grid-cols-1 mt-[5%]">
             {adList.map((value, index) => (
               <Advertisement key={index} value={value} />
@@ -52,9 +50,7 @@ async function PageAptis() {
           </div>
           <div className="">
             <h2 className="title">Lộ trình học và thi</h2>
-            {routeList.map((item, index) => (
-              <Route item={item} key={index} />
-            ))}
+            <Route />
           </div>
           <AnotherCoures />
           <FormRegister />

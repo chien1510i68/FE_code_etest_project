@@ -6,28 +6,6 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import balo from "public/zyro-image.svg";
 const RegisterAccountModal = () => {
-  // const onFinish = async (data) => {
-  //   console.log(data);
-  // authenApi
-  // .login(data?.username, data?.password)
-  // .then((res) => {
-  //   Cookies.set("access_token", res?.data?.body?.dataRes?.accessToken);
-  //   // sessionStorage.setItem(
-  //   //   "accessToken",
-  //   //   res?.data?.body?.dataRes?.accessToken
-  //   // );
-
-  //   if (res?.data?.body?.status === "OK") {
-  //     navigate("/system/user");
-  //     notification.success({ message: "Đăng nhập thành công" });
-  //   } else {
-  //     notification.error({ message: "Đăng nhập không thành công" });
-  //   }
-  // })
-  // .catch((err) => {
-  //   notification.error({ message: err.toString?.() });
-  // });
-  // };
   const { data, dispatch } = useContext(AppContext);
   const { modalRegisterAccOpen } = data;
   const onFinish = async (data) => {

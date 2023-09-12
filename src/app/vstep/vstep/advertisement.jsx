@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 function Advertisement({ adList }) {
-  console.log("object:::", adList);
+  // console.log("object:::", adList);
   return (
     <>
       {adList.map((value, index) => (
