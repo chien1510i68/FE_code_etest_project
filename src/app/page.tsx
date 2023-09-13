@@ -1,5 +1,5 @@
 "use client";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "animate.css";
@@ -22,64 +22,7 @@ import { getServiceById } from "@/api/apiService";
 import { getAllSlide } from "@/api/apiSlide";
 export default function Home() {
 
-  const items = [
-    {
-      id: "/1.jpg",
-    },
-    {
-      id: "/2.jpg",
-    },
-    {
-      id: "/5.jpg",
-    },
-    {
-      id: "/6.jpg",
-    },
-    {
-      id: "/7.jpg",
-    },
-    {
-      id: "/8.jpg",
-    },
-  ];
-  const listStrengthDescription = [
-    {
-      icon: <BarsOutlined />,
-      description:
-        "Cung cấp học liệu miễn phí, bám sát cấu trúc đề. Xây dựng lộ trình học chi tiết, theo sát và hướng dẫn học viên tới khi thi đạt chứng chỉ. Đồng thời đây cũng là môi trường đào tạo truyền cảm hứng tích cực cho học viên.",
-      title: "Đào tạo chất lượng ",
-    },
-    {
-      title: "Uy tín, chuyên nghiệp",
-      icon: <LikeFilled />,
-      description:
-        "E-Test được quản lý bởi IDP Education, tổ chức giáo dục quốc tế, có trụ sở chính tại Úc và có mặt tại hơn 32 quốc gia trên toàn cầu. IDP chuyên cung cấp các dịch vụ giảng dạy tiếng Anh và tổ chức kỳ thi IELTS trên toàn thế giới.",
-    },
-    {
-      title: "Giáo trình hiện đại",
-      icon: <FolderFilled />,
-      description:
-        "Giáo trình luyện thi được các chuyên gia IELTS tại Anh quốc kết hợp với các giảng viên giàu kinh nghiệm tại Trung tâm Anh ngữ E-Test thiết kế và liên tục phát triển và hoàn thiện trong nhiều năm qua.",
-    },
-    {
-      title: "Tư vấn nhiệt tình",
-      icon: <UserSwitchOutlined />,
-      description:
-        "Để đạt điểm cao tiếng Anh, chăm chỉ thôi chưa đủ, bạn cần có chiến lực học tập rõ ràng, xác định hành trình phải đi, đích sẽ đến. Các chuyên gia của E-Test sẽ tư vấn cho bạn lộ trình học tập riêng biệt phù hợp với khả năng của bạn.",
-    },
-    {
-      title: "Cam kết đầu ra",
-      icon: <GithubOutlined />,
-      description:
-        "E-Test cam kết hỗ trợ học viên thi đạt bằng hợp đồng. Học viên được hỗ trợ ôn tập đến khi thi đạt chứng chỉ. Không phát sinh thêm chi phí. Tham gia khóa học, bạn sẽ được cam kết bằng văn bản cho điểm số đầu ra của mình.",
-    },
-    {
-      title: "Giảng viên xuất sắc",
-      icon: <CheckSquareFilled />,
-      description:
-        "Giảng viên công tác tại các trường chuyên ngoại ngữ, kinh nghiệm coi thi, cập nhật dạng đề thi liên tục và bám sát nội dung bài thi. Được E-Test tuyển chọn qua phỏng vấn theo quy chuẩn khiêm ngặt. ",
-    },
-  ];
+  
   const newList = [
     {
       img: "https://images.unsplash.com/photo-1599906823892-321f8347dfcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2UlMjBuYXR1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
@@ -102,37 +45,43 @@ export default function Home() {
         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     },
   ];
-  
+  const [banner, setBanner] = useState([])
+  const [service, setservice] = useState([])
+  const [strengList, setstrengList] = useState([])
+  const [slideList, setSlideList] = useState([])
+
   useEffect(() => {
     async function fetchData() {     
       
-      let banner = [];
+      
       const res = await getAllSlide()
+      
       if (res) {
-      banner = res?.data?.items.slice(0, 4);
+      setBanner(res?.data?.items.slice(0, 4))
       }
 
       const res2 = await getServiceById(16);
-      let service = [];
-      if (res2) {
-      service = res2?.data;
+            if (res2) {
+        setservice(res2?.data);
       }
     
       const res3 = await getDataDisplay();
-      let strengList = [];
+     console.log(" res3", res3?.data?.items);
       if (res3) {
-      strengList = res?.data?.items.slice(35, 38);
+        setstrengList(res3?.data?.items.slice(45, 51))
+        setSlideList(res3?.data?.items.slice(9, 14))
       }
-    }
+      
+    }console.log("object setlisst", banner);
 
     fetchData();
   }, []);
   
-  // console.log("fetchData", fetchData);
+  // console.log("banner", banner);
   return (
     <main className="bg-[#fff] mx-[auto]">
       <div className="">
-        <Carousels items={items} />
+        <Carousels banner={banner} />
       </div>
       <div className="  mb-[5rem] max-w-[1440px] mx-[10%]">
         {/* Tin tức mới nhất của website tiếng anh  */}
@@ -168,11 +117,11 @@ export default function Home() {
           </div>
         </div>
         <div className=" mt-[25rem]">
-          <h2 className="text-[8rem] font-[500] text-center mb-[10rem]  break-before-column text-[#f79500] animate__animated animate__bounce">
+          <h2 className="title">
             Thế mạnh của chúng tôi
           </h2>
           <Row gutter={[32, 60]} className="">
-            {listStrengthDescription.map((item, index) => (
+            {strengList.map((item, index) => (
               <Col className="mt-[5rem] " lg={8} md={12} sm={24} key={index}>
                 <StrengthDescription item={item} />
               </Col>
@@ -234,7 +183,7 @@ export default function Home() {
         <h2 className="text-[8rem] font-[500] text-center mb-[10rem] break-before-column text-[#f79500]">
           Chương trình anh ngữ
         </h2>
-        <Sliders />
+        <Sliders slideList={slideList} />
       </div>
       <div className=" mt-[20rem] mb-[5rem] max-w-[1440px] mx-[10%] ">
         <div>
