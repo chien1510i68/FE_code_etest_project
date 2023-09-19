@@ -5,12 +5,14 @@ export const AppContext = createContext();
 
 const initialData = {
   //   getAllUser: {},
+  modalStudyScheduleOpen: false,
   modalDownloadOpen: false,
   modalLoginOpen: false,
   modalRegisterOpen: false,
   modalRegisterAccOpen: false,
   modalForgetPasswordOpen: false,
   listDataDocument: [],
+  studyScheduleDetail: [],
   expand: false,
   //   drawerOpen: false,
   //   userID: null,
@@ -18,7 +20,7 @@ const initialData = {
 
 const reducer = (state, action) => {
   // console.log("object state", state);
-  console.log("action:: ", action);
+  // console.log("action:: ", action);
   switch (action.type) {
     case "getDocument":
       return { ...state, listDataDocument: action.payload };
@@ -42,6 +44,12 @@ const reducer = (state, action) => {
       return { ...state, modalRegisterAccOpen: true };
     case "modalRegisterAccClose":
       return { ...state, modalRegisterAccOpen: false };
+    case "modalStudyScheduleOpen":
+      return { ...state, modalStudyScheduleOpen: true };
+    case "modalStudyScheduleClose":
+      return { ...state, modalStudyScheduleOpen: false };
+    case "getStudyScheduleDetail":
+      return { ...state, studyScheduleDetail: action.payload };
     case "documentExpand":
       return { ...state, expand: true };
     case "documentCompact":

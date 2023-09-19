@@ -1,4 +1,5 @@
 import { Col } from "antd";
+import Image from "next/image";
 import React from "react";
 
 const inforCourses = [
@@ -16,10 +17,21 @@ const inforCourses = [
 function EAcadamicIntro({ item }) {
   return (
     <>
-      <div className="p-[5rem]  shadow-md ">
-        <div className="w-full">
-          <img src={item.img} alt="" className="w-full" />
-          <div className="text-left mt-[5rem]">
+      <div className="p-[5rem]  shadow-md  ">
+        <div className=" grid grid-rows-2">
+          <div className=" row-span-1 flex items-center ">
+            <div className="h-[210px] w-[310px] relative">
+              <Image
+                src={item.image}
+                alt="pic"
+                width={312}
+                height={206}
+                className=" object-fit"
+              />
+            </div>
+          </div>
+
+          <div className="text-left pt-[5rem] row-span-1">
             <h2 className="text-[5rem] font-[600] text-primaryColor my-[3rem]">
               {item.title}
             </h2>

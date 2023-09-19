@@ -4,7 +4,7 @@ import Carousels from "@/component/slider/Carousel";
 import New from "@/component/news/New";
 import FormRegister from "@/component/form/FormRegister";
 import { getAllNews } from "@/api/apiNews";
-import axios from "axios";
+
 const items = [
   {
     id: "english.png",
@@ -20,14 +20,7 @@ async function PageDashbroad() {
   // console.log("res news::", res);
   let newList = [];
   if (res) {
-    newList = res?.data?.items.map((item) => {
-      return {
-        id: item.id,
-        img: item.image,
-        title: item.name,
-        description: item.content,
-      };
-    });
+    newList = res?.data?.items;
     // console.log("Thanh cong ");
   }
 

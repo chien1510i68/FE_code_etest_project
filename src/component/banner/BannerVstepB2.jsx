@@ -1,26 +1,22 @@
 import React from "react";
 import { Button } from "antd";
 
-function BannerVstepB2(props) {
+function BannerVstepB2({ banner }) {
   return (
-    <div className="flex bg-[#FFF4E5] ">
-      <div>
-        <h1 className="uppercase py-auto mt-[25rem] text-center font-[500] text-[8rem]">
-          Luyện thi b2 vstep
+    <div className=" bg-[#FFF4E5] grid grid-cols-2 ">
+      <div className=" phone:col-span-2 px-[10%]  laptop:col-span-1">
+        <h1 className="uppercase py-auto   text-center font-[500] text-[8rem] mt-[10%] mb-[5%]">
+          {banner.title}
         </h1>
-        <p className="leading-[9rem] font-[400]">
-          VSTEP (Vietnamese Standardized Test of English Proficiency) là kỳ thi
-          đánh giá năng lực tiếng Anh theo Khung năng lực ngoại ngữ (NLNN) 6 bậc
-          dùng cho Việt Nam (tương đương với trình độ A1, A2, B1, B2, C1,C2).
-          Tiếng Anh B1 VSTEP là chứng chỉ tiếng Anh bậc 4 theo khung NLNN 6 bậc
-          Việt Nam.
-        </p>
-        <Button className="uppercase custom-btn mt-[2rem]">
-          đăng ký tư vấn
-        </Button>
+        <p className="leading-[9rem] font-[400]">{banner.description}</p>
+        <div className="flex justify-center">
+          <Button className="uppercase  custom-btn  mt-[5%] mb-[10%]">
+            đăng ký tư vấn
+          </Button>
+        </div>
       </div>
-      <div>
-        <img src="/banner_b2_vstep.png" alt="" />
+      <div className=" laptop:col-span-1 hidden laptop:block ">
+        <img src={banner.image} alt="" />
       </div>
     </div>
   );

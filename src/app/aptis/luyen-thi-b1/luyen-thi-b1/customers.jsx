@@ -1,9 +1,6 @@
-// import { url } from "inspector";
-import Image from "next/image";
 import React from "react";
 
 function Customers({ item }) {
-  console.log("item", item);
   const img = "/aptisb1pic1.png";
   return (
     <>
@@ -12,8 +9,9 @@ function Customers({ item }) {
           <div
             className={`rounded-[20px] flex items-center text-center justify-center  text-white uppercase h-[235px] `}
             style={{
-              background: `url(${item.img})`,
+              background: `url(${item.image})`,
               backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
@@ -30,7 +28,9 @@ function Customers({ item }) {
         </div>
 
         <div className="text-left mt-[5rem]">
-          <p className="text-[4rem] font-[400] ">{item.description}</p>
+          <p className="laptop:text-[4rem] phone:text-[3.5rem]  font-[400] ">
+            {item.description}
+          </p>
         </div>
       </div>
     </>

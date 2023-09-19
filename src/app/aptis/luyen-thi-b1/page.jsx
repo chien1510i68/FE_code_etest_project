@@ -1,4 +1,4 @@
-import IntroduceAptisB1 from "./luyen-thi-b1/introduce";
+import BannerAptisB1 from "@/component/banner/BannerAptisB1";
 import Customers from "./luyen-thi-b1/customers";
 import pic3 from "public/aptisb1pic4.svg";
 import pic4 from "public/Mask Group.png";
@@ -6,53 +6,37 @@ import pic5 from "public/confident-teacher-explaining-lesson-pupils 1.png";
 import Image from "next/image";
 import Thoihan from "./luyen-thi-b1/thoihan";
 import Cautrucdethi from "./luyen-thi-b1/cautrucdethii";
-import Detail from "./luyen-thi-b1/detail";
-import Mota from "./luyen-thi-b1/mota";
+import Detail from "@/component/studyDetail/detail";
+import Detail2 from "@/component/studyDetail/detail2";
 import RegisterCourseVstep from "@/component/form/RegisterCourseVstep";
 import Route from "@/component/route/route";
 import AnotherCoures from "@/component/course/AnotherCoures";
 import FormRegister from "@/component/form/FormRegister";
-import { Button } from "antd";
 import DownloadDocument from "@/component/modal/downloadDocument";
-function PageAptisB1(props) {
-  const listStep = [
-    { step: "Bước 1", title: "Đăng ký thông tin", content: "học viên đăng ký" },
-    { step: "Bước 2", title: "Nộp hồ sơ - Lệ phí", content: "học viên nộp" },
-    { step: "Bước 3", title: "Hướng dẫn ôn thi", content: "bộ phận đào tạo" },
-    {
-      step: "Bước 4",
-      title: "Trước ngày thi",
-      content:
-        "Đội ngũ giảng viên dày dặn kinh nghiệm, có chuyên môn cao, cập nhật dạng đề thi liên tục và bám sát nội dung thi.",
-    },
-    { step: "Bước 5", title: "Nhận kết quả", content: "học viên nhận" },
-  ];
-  const listCustomers = [
-    {
-      img: "/aptisb1pic1.png",
-      title: "Dành cho giáo viên",
-      description:
-        "Aptis thường được các giáo viên chọn lựa để kiểm tra trình độ để nâng cao chất lượng giảng dạy của ngành giáo dục.",
-    },
-    {
-      img: "/aptisb1pic2.png",
-      title: "Dành cho học sinh",
-      description:
-        "Bài kiểm tra Aptis còn dành cho học sinh trong độ tuổi từ 13 đến 17 tuổi. Nội dung kiểm tra xoay quanh các kiến thức tiếng Anh mà các em đã được học, phù hợp với trình độ học sinh và là tiền đề để thi các chứng chỉ tiếng Anh quốc tế cao hơn.",
-    },
-    {
-      img: "/aptisb1pic3.png",
-      title: "Dành cho các doanh nghiệp",
-      description:
-        "Chứng chỉ Aptis khá thông dụng dành cho các công ty và nhà tuyển dụng. Bài thi được điều chỉnh nội dung phù hợp với nhu cầu của từng tổ chức. Các nội dung liên quan đến nhiều lĩnh vực như kinh doanh, du lịch, v.v.",
-    },
-  ];
+import { getDataDisplay } from "@/api/apiDisplay";
+import { getServiceById } from "@/api/apiService";
+async function PageAptisB1(props) {
+  const res = await getDataDisplay();
+  let listCustomers = [];
+
+  let banner = {};
+  if (res) {
+    banner = res?.data?.items[34];
+
+    listCustomers = res?.data?.items.slice(35, 38);
+  }
+  const res2 = await getServiceById(16);
+  let service = [];
+  if (res2) {
+    service = res2?.data;
+  }
+  console.log("object service", service);
   return (
     <section>
-      <IntroduceAptisB1 />
+      <BannerAptisB1 banner={banner} />
       <div style={{ margin: "0 auto", maxWidth: "1440px" }}>
         <div className="mx-[10%] my-[5%]">
-          <div className="my-[5%]">
+          {/* <div className="my-[5%]">
             <h2 className="titleAptisB1">
               Đối tượng cần chứng chỉ tiếng Anh APTIS B1
             </h2>
@@ -72,42 +56,44 @@ function PageAptisB1(props) {
             </div>
             <div className="col-span-1 grid laptop:grid-rows-2 phone:grid-rows-1 gap-[20%] justify-end phone:gap-0">
               <Image
-                src={pic3}
+                src={pic5}
                 alt="pic"
                 className="row-span-1 tablet:grid phone:hidden"
               />
-              <Image src={pic4} alt="pic" className="row-span-1" />
+              <img src={pic4} alt="pic" className="row-span-1" />
             </div>
-          </div>
+          </div> */}
+          <div dangerouslySetInnerHTML={{ __html: service?.content }}></div>
           <h2 className="title">Thông tin khóa học</h2>
-          <div className="grid tablet:grid-rows-2  phone:grid-rows-3">
-            <div className="tablet:row-span-1 grid tablet:grid-cols-2  phone:grid-cols-1 phone:row-span-2">
+          <div className="grid laptop:grid-rows-3  phone:grid-rows-3">
+            <div className="laptop:row-span-2 grid laptop:grid-cols-2  phone:grid-cols-1 phone:row-span-2">
               <div className="col-span-1">
                 <h2 className="titleAptisB1">KHÓA ÔN B1</h2>
-                <Detail />
+                <Detail service={service} />
               </div>
               <div className="col-span-1  ">
                 <div className="relative image-bottom-aptis-b1 image-top-aptis-b1 phone:my-[5%]">
                   <Image
-                    src={pic5}
+                    src={service?.image}
                     alt="pic"
                     className="object-cover rounded-[15px] z-100"
+                    width={600}
+                    height={336}
                   />
                 </div>
               </div>
             </div>
-            <div className="row-span-1 laptop::w-[60%] phone:w-[100%]">
-              <Mota />
+            <div className="row-span-1  laptop::w-[60%] phone:w-[100%]">
+              <Detail2 service={service} />
             </div>
           </div>
         </div>
+
         <DownloadDocument />
         <RegisterCourseVstep />
         <div className="mx-[10%]">
           <h2 className="title">Lộ trình học và thi</h2>
-          {listStep.map((item, index) => (
-            <Route item={item} key={index} />
-          ))}
+          <Route />
           <AnotherCoures />
           <FormRegister />
         </div>

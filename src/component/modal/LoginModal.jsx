@@ -7,28 +7,6 @@ import Image from "next/image";
 import balo from "public/world_book_fun_fb_06 [Converted]-04 1.svg";
 const LoginModal = () => {
   const onFinish = async (data) => {
-    console.log(data);
-    // authenApi
-    // .login(data?.username, data?.password)
-    // .then((res) => {
-    //   Cookies.set("access_token", res?.data?.body?.dataRes?.accessToken);
-    //   // sessionStorage.setItem(
-    //   //   "accessToken",
-    //   //   res?.data?.body?.dataRes?.accessToken
-    //   // );
-
-    //   if (res?.data?.body?.status === "OK") {
-    //     navigate("/system/user");
-    //     notification.success({ message: "Đăng nhập thành công" });
-    //   } else {
-    //     notification.error({ message: "Đăng nhập không thành công" });
-    //   }
-    // })
-    // .catch((err) => {
-    //   notification.error({ message: err.toString?.() });
-    // });
-
-    console.log("123");
     dispatch({ type: "modalLoginClose" });
     //đặt thông báo đăng nhập thành công
   };

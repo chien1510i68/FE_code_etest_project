@@ -5,14 +5,15 @@ import Image from "next/image";
 function Advertisement({ value }) {
   return (
     <>
-      <div className="h-[81rem] bg-[#FFF4E5]  shadow-md rounded-[5px]">
+      <div className=" bg-[#FFF4E5]  shadow-md rounded-[5px]">
         <div className="p-[6rem] mt-[3rem]">
           <Image src={star} height={17} width={130} alt="rating" />
 
-          <div className="text-[6rem] font-bold my-[5rem]">
-            {value.title} {value.icon}
+          <div className="text-[6rem] font-bold my-[5rem] flex">
+            {value.title}{" "}
+            <Image src={value.image} height={24} width={24} alt="sthg" />
           </div>
-          <p>{value.content}</p>
+          <p>{value.description}</p>
         </div>
       </div>
     </>

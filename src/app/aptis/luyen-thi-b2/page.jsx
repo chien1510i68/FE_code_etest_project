@@ -1,41 +1,50 @@
 import React from "react";
-import Intro from "./luyenthib2/intro";
-import pic4 from "public/Rectangle 21 (2).png";
+import Intro from "../../../component/banner/BannerAptisB2";
 import pic1 from "public/aptisb2pic1.png";
 import pic2 from "public/aptisb2pic2.png";
 import Image from "next/image";
 import TableExample from "./luyenthib2/table";
 import CautrucdethiB2 from "./luyenthib2/cautrucdethib2";
-import Detail from "./luyenthib2/detail";
-import Mota from "./luyenthib2/mota";
+import Detail from "@/component/studyDetail/detail";
+import Detail2 from "@/component/studyDetail/detail2";
+
 import RegisterCourseVstep from "@/component/form/RegisterCourseVstep";
 import Route from "@/component/route/route";
 import AnotherCoures from "@/component/course/AnotherCoures";
 import FormRegister from "@/component/form/FormRegister";
 import DownloadDocument from "@/component/modal/downloadDocument";
-function PageAptisB2(props) {
+import { getDataDisplay } from "@/api/apiDisplay";
+import { getServiceById } from "@/api/apiService";
+
+async function PageAptisB2(props) {
   const listObject = [
     "Học viên có trình độ đầu vào tương đương Aptis B1, cần củng cố kiến thức và thông thạo kĩ năng làm bài thi Aptis để đạt Aptis B2",
     "Học viên có 1 – 2 kỹ năng chưa đạt Aptis B2, cần được hướng dẫn và luyện tập để nâng cao kĩ năng đó lên Aptis B2",
   ];
-  const listStep = [
-    { step: "Bước 1", title: "Đăng ký thông tin", content: "học viên đăng ký" },
-    { step: "Bước 2", title: "Nộp hồ sơ - Lệ phí", content: "học viên nộp" },
-    { step: "Bước 3", title: "Hướng dẫn ôn thi", content: "bộ phận đào tạo" },
-    {
-      step: "Bước 4",
-      title: "Trước ngày thi",
-      content:
-        "Đội ngũ giảng viên dày dặn kinh nghiệm, có chuyên môn cao, cập nhật dạng đề thi liên tục và bám sát nội dung thi.",
-    },
-    { step: "Bước 5", title: "Nhận kết quả", content: "học viên nhận" },
-  ];
 
+  const res = await getDataDisplay();
+
+  let adList = [];
+
+  let banner = {};
+  if (res) {
+    banner = res?.data?.items[38];
+
+    adList = res?.data?.items.slice(15, 18);
+  }
+
+  const res2 = await getServiceById(17);
+  let service = [];
+  if (res2) {
+    service = res2?.data;
+  }
+
+  // console.log("object ádasd", service);
   return (
     <section>
-      <Intro />
+      <Intro banner={banner} />
       <div style={{ margin: "0 auto", maxWidth: "1440px" }}>
-        <div className="mx-[10%]    ">
+        {/* <div className="mx-[10%]    ">
           <div className="grid laptop:grid-cols-3 phone:grid-cols-1 gap-24 items-center  ">
             <div className="col-span-2  mr-[5%] ">
               <h2 className="titleAptisB1">
@@ -77,25 +86,34 @@ function PageAptisB2(props) {
               <CautrucdethiB2 />
             </div>
           </div>
+        </div> */}
+
+        <div
+          className=" mx-[10%]"
+          dangerouslySetInnerHTML={{ __html: service?.content }}
+        ></div>
+        <div className="mx-[10%]">
           <h2 className="title">Thông tin khóa học</h2>
           <div className="grid laptop:grid-rows-2 ">
             <div className="row-span-1 grid laptop:grid-cols-2 phone:grid-cols-1 gap-48">
               <div className="col-span-1 flex items-center">
                 <div>
                   <Image
-                    src={pic4}
+                    src={service?.image}
                     alt="pic"
                     className="object-cover rounded-[15px] z-100"
+                    width={600}
+                    height={336}
                   />
                 </div>
               </div>
               <div className="col-span-1 relative ">
                 <h2 className="titleAptisB1">KHÓA ÔN B2</h2>
-                <Detail />
+                <Detail service={service} />
               </div>
             </div>
             <div className="row-span-1 laptop:w-[80%] phone:w-[100%]">
-              <Mota />
+              <Detail2 service={service} />
             </div>
           </div>
         </div>
@@ -103,9 +121,7 @@ function PageAptisB2(props) {
         <RegisterCourseVstep />
         <div className="mx-[10%]">
           <h2 className="title">Lộ trình học và thi</h2>
-          {listStep.map((item, index) => (
-            <Route item={item} key={index} />
-          ))}
+          <Route />
           <AnotherCoures />
           <FormRegister />
         </div>

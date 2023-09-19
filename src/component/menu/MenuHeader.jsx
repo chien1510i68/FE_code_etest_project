@@ -17,7 +17,7 @@ function getItem(label, key, icon, children) {
 
 const items = [
   getItem("TRANG CHỦ", "/", null),
-  getItem("CHƯƠNG TRÌNH ĐÀO TẠO ANH NGỮ", "ielts", null, [
+  getItem("CHƯƠNG TRÌNH ĐÀO TẠO ANH NGỮ", null, null, [
     getItem("Luyện thi TOEIC", "/toeic", null),
     getItem("Luyện thi IELTS", "/ielts", null),
     getItem("Luyện thi Aptis", "/aptis", null, [
@@ -25,14 +25,14 @@ const items = [
       getItem("Luyện thi Aptis B2", "/aptis/luyen-thi-b2", null),
     ]),
     getItem("Luyện thi VStep", "/vstep", null, [
-      getItem("Luyện thi B1", "/vstep/luyen-thi-b1", null),
-      getItem("Luyện thi B2", "/vstep/luyen-thi-b2", null),
+      getItem("Luyện thi Vstep B1", "/vstep/luyen-thi-b1", null),
+      getItem("Luyện thi Vstep B2", "/vstep/luyen-thi-b2", null),
     ]),
     getItem("Anh Ngữ Học Thuật", "/englishacademic", null),
   ]),
 
   getItem("LỊCH THI", "/test-schedule", null),
-  getItem("LỊCH ÔN TẬP", "sub4", null),
+  getItem("LỊCH ÔN TẬP", "/study-schedule", null),
   getItem("TIN TỨC", "/new", null),
   getItem("THI THỬ", "englishacademic", null),
   getItem(" ĐĂNG KÝ TƯ VẤN", "sub6", null),
@@ -54,11 +54,13 @@ const MenuHeader = () => {
             // notification.success({ message: "Đã nhấp vào day la " + e.key });
           } else {
             router.push(e.key);
+            // console.log(e);
           }
         }}
-        className="font-[600] items-center w-[70vw] phone:hidden tablet:flex"
+        className="font-[500] items-center w-[70vw] phone:hidden tablet:flex"
         mode="horizontal"
         items={items}
+        // onSelect={console.log}
       ></Menu>
       {/* <h2>this is the test </h2> */}
       <Dropdown

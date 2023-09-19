@@ -1,19 +1,21 @@
 import { Col, Row } from "antd";
+import Image from "next/image";
 import React from "react";
 
-function IeltsIntro(props) {
-  const { listIntroduceIelts } = props;
+function IeltsIntro({ adList }) {
   return (
-    <div className="px-96 grid gap-24 tablet:grid-cols-3 phone:grid-cols-2 justify-between ">
-      {listIntroduceIelts.map((item, index) => (
+    <div className="grid tablet:gap-24 desktop:grid-cols-3 tablet:grid-cols-2 phone:grid-cols-1 justify-between ">
+      {adList.map((item, index) => (
         <div
           key={index}
-          className="border-[2px] col-span-1 p-[4rem]  border-solid border-primaryColor mt-[20rem]"
+          className="border-[2px] col-span-1 p-[4rem]  border-solid border-primaryColor my-[5%]"
         >
-          <img
+          <Image
             src={item.image}
-            alt=""
-            className="h-[15rem] w-[15rem] mx-auto "
+            alt="icon"
+            className=" mx-auto "
+            height={65}
+            width={65}
           />
           <p className="text-[4.5rem] text-center font-[600] py-[2rem] uppercase ">
             {item.title}
